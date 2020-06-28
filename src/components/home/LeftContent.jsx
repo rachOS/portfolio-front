@@ -3,7 +3,7 @@ import React from "react";
 
 // init component
 const LeftContent = () => {
-    return <div className="left-content">LeftContent</div>;
+    return <aside className="navbar">LeftContent</aside>;
 };
 
 // export component
