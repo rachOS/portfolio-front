@@ -1,7 +1,7 @@
 .container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr [col-start]);
-    grid-template-rows: repeat(10, 10vh [row-start]);
+    grid-template-columns: repeat(6, 16.45vw [col-start]);
+    grid-template-rows: repeat(10, 9.78vh [row-start]);
     grid-template-areas:
         "leftMenu header header header header"
         "leftMenu main main main main"
@@ -24,11 +24,10 @@
     grid-column-end: col-start 6;
     grid-row-start: row-start 0;
     grid-row-end: row-start 1;
-    display: flex;
-    flex-wrap: nowrap;
 }
 .MuiList-root.MuiList-padding {
     display: flex;
+    margin: 1.4rem;
 }
 .main-content {
     margin: 0;
