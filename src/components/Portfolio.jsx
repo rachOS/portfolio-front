@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link, Switch, Route, useRouteMatch, useParams } from "react-router-dom";
+import Axios from "axios";
+
+// import Material UI
 import {
     Paper,
-    Button,
+    IconButton,
+    Box,
     Tabs,
     Tab,
     Card,
@@ -10,36 +15,57 @@ import {
     Typography,
     Avatar,
 } from "@material-ui/core";
-import {
-    KeyboardArrowLeft,
-    KeyboardArrowRight,
-} from "@material-ui/icons/KeyboardArrowRight";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import AvatarGroup from "@material-ui/lab/AvatarGroup";
 
 // import components
-
-// import data
+import Screenshot from "./portfolio/Screenshot";
 
 // import style
 import "./style/portfolio.css";
 
 function Portfolio() {
+    let { path, url } = useRouteMatch();
+    const {id} = useParams()
+    const [projects, setProjects] = useState([{}]);
+    const getProjects = () => {
+        const url = `${process.env.REACT_APP_HOST}/projects`;
+        Axios.get(url)
+            .then((response) => response.data)
+            .then((data) => setProjects(data));
+    };
+    useEffect(() => {
+        getProjects();
+    }, []);
+    console.log("project", projects);
+
+    const avatar = projects.map((project) => (
+        <Avatar variant="square" alt={project.name} src="#">
+            <Link to={`${url}/${project.id}`}>{project.name}</Link>
+        </Avatar>
+    ));
+
     return (
         <Card className=" main-content ">
             <Paper className="portfolio-container">
                 <Card className="carousel">
-                    <Button>Back</Button>
-                    <AvatarGroup max={10}>
-                        <Avatar variant="square" alt="project name" src="#" />
-                        <Avatar variant="square" alt="project name" src="#" />
-                        <Avatar variant="square" alt="project name" src="#" />
-                        <Avatar variant="square" alt="project name" src="#" />
-                        <Avatar variant="square" alt="project name" src="#" />
+                    <IconButton>
+                        <ArrowBackIosIcon />{" "}
+                    </IconButton>
+                    <AvatarGroup max={10} id="avatargroup1">
+                        {avatar}
                     </AvatarGroup>
-                    <Button>Next</Button>
+                    <IconButton>
+                        <ArrowForwardIosIcon />
+                    </IconButton>
                 </Card>
                 <Card className="preview">
-                    <Typography>Projet 1</Typography>
+                    <Switch>
+                        <Route path={`${path}/:topicId`}>
+                            <Screenshot screenshot={avatar && avatar[0].name}/>
+                        </Route>
+                    </Switch>
                 </Card>
                 <Card className="form">
                     <Tabs>

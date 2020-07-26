@@ -11,6 +11,7 @@ import Contact from "./components/Contact";
 import Header from "./components/Header";
 import LeftContent from "./components/LeftContent";
 import Footer from "./components/Footer";
+import Screenshot from "./components/portfolio/Screenshot";
 
 // import style
 import "./App.css";
@@ -24,7 +25,13 @@ function App() {
                     <Header />
                     <Switch>
                         <Route exact path="/" component={MainContent} />
-                        <Route path="/portfolio" component={Portfolio} />
+                        <Route path="/portfolio">
+                            <Portfolio />
+                            <Route
+                                path="/portfolio/:id"
+                                component={Screenshot}
+                            />
+                        </Route>
                         <Route path="/details" component={Details} />
                         <Route path="/contact" component={Contact} />
                     </Switch>

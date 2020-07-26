@@ -24,4 +24,22 @@
 }
 .carousel {
     grid-area: carousel;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 3px 3px 1px #000, -3px -3px 1px #000;
+    border-radius: 2px;
+    padding: 0;
+}
+.MuiAvatar-root.MuiAvatar-square.MuiAvatarGroup-avatar.MuiAvatar-colorDefault{
+    width: max-content;
+    margin: 0 2px;
+    border: 1px solid;
+    justify-self: stretch;
+}
+#avatargroup1{
+    display: flex;
+    justify-content: flex-start;
+    justify-items: stretch;
+    width: 100%;
 }
