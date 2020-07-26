@@ -1,0 +1,29 @@
+.portfolio-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 1fr 1fr;
+    grid-template-areas:
+        "carousel carousel carousel form form"
+        "preview preview preview form form"
+        "preview preview preview form form";
+    background-color: #2196f3;
+    padding: 5px;
+    height: 100%;
+    row-gap: 5px;
+    column-gap: 5px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.form {
+    grid-area: form;
+    border: 1px solid;
+}
+.preview {
+    grid-area: preview;
+    border: 1px solid;
+}
+.carousel {
+    grid-area: carousel;
+    border: 1px solid;
+}
