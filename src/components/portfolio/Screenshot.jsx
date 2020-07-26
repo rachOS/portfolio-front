@@ -8,9 +8,10 @@ import Container from "@material-ui/core/Container";
 // import style
 
 function Screenshot({ screenshot }) {
+    console.log(screenshot)
     return (
         <Container>
-            <h1>{screenshot}</h1>
+            <h1>ok</h1>
         </Container>
     );
 }

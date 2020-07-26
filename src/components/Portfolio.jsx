@@ -62,8 +62,9 @@ function Portfolio() {
                 </Card>
                 <Card className="preview">
                     <Switch>
-                        <Route path={`${path}/:topicId`}>
-                            <Screenshot screenshot={avatar && avatar[0].name}/>
+                        <Route path={`${path}/:id`}>
+                        {/* faire une route dans le back pour recup url pour un projet */}
+                            <Screenshot screen="envoyer la props"/>
                         </Route>
                     </Switch>
                 </Card>
