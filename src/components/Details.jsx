@@ -1,5 +1,11 @@
 import React from "react";
-import { Paper } from "@material-ui/core";
+import {
+    Paper,
+    Card,
+    CardContent,
+    Button,
+    CardActions,
+} from "@material-ui/core";
 
 // import components
 
@@ -7,10 +13,24 @@ import { Paper } from "@material-ui/core";
 
 // import style
 import "../App.css";
+import "./style/details.css";
 
 function Details() {
     return (
-            <Paper className="main-content">Details</Paper>
+        <Card className="main-content">
+            <Paper className="details-container">
+                <CardContent className="cv">
+                    CV
+                    <CardActions>
+                        <Button>Télécharger</Button>
+                    </CardActions>
+                </CardContent>
+                <CardContent className="infos">
+                    Disponibilités et infos
+                </CardContent>
+                <CardContent className="form">Une question?</CardContent>
+            </Paper>
+        </Card>
     );
 }
 

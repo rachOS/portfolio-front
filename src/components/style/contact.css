@@ -1,0 +1,31 @@
+.contact-container {
+    display: grid;
+    grid-template-columns: 0.3fr 0.5fr 1fr;
+    grid-template-rows: 0.5fr 0.1fr 1fr 1fr;
+    grid-template-areas:
+        "title title title"
+        "email phone ."
+        "text text ."
+        "text text .";
+    padding: 50px;
+    height: 100%;
+    row-gap: 5px;
+    column-gap: 5px;
+}
+
+.title {
+    grid-area: title;
+    border: 1px solid;
+}
+.email {
+    grid-area: email;
+    border: 1px solid;
+}
+.phone {
+    grid-area: phone;
+    border: 1px solid;
+}
+.text {
+    grid-area: text;
+    border: 1px solid;
+}

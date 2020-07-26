@@ -9,5 +9,6 @@
     flex-wrap: wrap;
     justify-content: start;
     align-items: flex-start;
+    padding: 50px;
 }
 

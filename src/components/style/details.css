@@ -1,0 +1,29 @@
+.details-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "cv cv infos infos infos"
+        "cv cv infos infos infos"
+        "cv cv form form form"
+        "cv cv form form form";
+    height: 100%;
+    row-gap: 5px;
+    column-gap: 5px;
+    justify-items: stretch;
+    align-items: stretch;
+    padding: 50px;
+}
+
+.cv{
+    grid-area: cv;
+    border: 1px solid;
+}
+.infos{
+    grid-area: infos;
+    border: 1px solid;
+}
+.form{
+    grid-area: form;
+    border: 1px solid;
+}
