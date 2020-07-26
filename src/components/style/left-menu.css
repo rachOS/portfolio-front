@@ -1,4 +1,12 @@
-.left-container{
-    display: flex;
-    align-items: stretch;
+.left-container {
+    display: grid;
+    justify-content: stretch;
+}
+
+#accordion-summary1,
+#accordion-summary2,
+#accordion-summary3 {
+    display: grid;
+    flex-wrap: wrap;
+    flex-direction: column;
 }

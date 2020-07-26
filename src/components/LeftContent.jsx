@@ -15,13 +15,14 @@ import {
 
 //import style
 import "../App.css";
+import "./style/left-menu.css"
 
 // init component
 const LeftContent = () => {
     return (
-        <Paper className="left-menu ">
+        <Paper className="left-menu left-container">
             <Accordion>
-                <AccordionSummary>
+                <AccordionSummary id="accordion-summary1">
                     <Avatar
                         alt="Grégory chamekh"
                         src="../static/image/linkedin _avatar.jpeg"
@@ -74,7 +75,7 @@ const LeftContent = () => {
                 </AccordionDetails>
             </Accordion>
             <Accordion>
-                <AccordionSummary>
+                <AccordionSummary id="accordion-summary2">
                     <Typography variant="h1">C.V.</Typography>
                     <Button>Afficher</Button>
                 </AccordionSummary>
@@ -88,8 +89,8 @@ const LeftContent = () => {
                     <Button>Télécharger</Button>
                 </AccordionDetails>
             </Accordion>
-            <Accordion>
-                <AccordionSummary>
+            <Accordion id="accordion-summary3">
+                <AccordionSummary className="accordion-summary">
                     <Typography variant="h1">Dispo</Typography>
                     <Typography variant="subtitle2">
                         Disponible immédiatement
