@@ -1,7 +1,7 @@
 .container {
     display: grid;
     grid-template-columns: 0.5fr 1fr 1fr 1fr;
-    grid-template-rows: 0.1fr 1fr  0.125fr;
+    grid-template-rows: 0.1fr 1fr 0.125fr;
     grid-template-areas:
         "leftMenu header header header header"
         "leftMenu main main main main"
@@ -17,12 +17,10 @@
 .left-menu {
     grid-area: leftMenu;
     margin: 0;
-
 }
 .header {
     grid-area: header;
     margin: 0;
-
 }
 .MuiList-root.MuiList-padding {
     display: flex;
@@ -31,13 +29,11 @@
 .main-content {
     margin: 0;
     grid-area: main;
-
 }
-.contact{
-    background-color: #4EC044;
+.contact {
+    background-color: #4ec044;
 }
 .footer {
     margin: 0;
     grid-area: footer;
-
 }

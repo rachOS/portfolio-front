@@ -1,7 +1,13 @@
 // import library
 import React from "react";
 import { Link } from "react-router-dom";
-import { Paper, MenuList, MenuItem } from "@material-ui/core";
+import { Paper, MenuList, MenuItem, Button, Avatar } from "@material-ui/core";
+import HomeIcon from "@material-ui/icons/Home";
+import ContactMailIcon from "@material-ui/icons/ContactMail";
+import InfoIcon from "@material-ui/icons/Info";
+import CollectionsIcon from "@material-ui/icons/Collections";
+import AvatarGroup from "@material-ui/lab/AvatarGroup";
+import AssignmentIcon from "@material-ui/icons/Assignment";
 
 // import style
 import "../App.css";
@@ -11,18 +17,36 @@ const Header = () => {
     return (
         <Paper className="header">
             <MenuList>
-                <MenuItem>
-                    <Link to="/">Acceuil</Link>
-                </MenuItem>
-                <MenuItem>
-                    <Link to="/portfolio">Portfolio</Link>
-                </MenuItem>
-                <MenuItem>
-                    <Link to="/details">Détails</Link>
-                </MenuItem>
-                <MenuItem>
-                    <Link to="/contact">Contact</Link>
-                </MenuItem>
+                <AvatarGroup>
+                        <Link to="/">
+                            <Button>
+                                {" "}
+                                Acceuil <HomeIcon />{" "}
+                            </Button>
+                        </Link>
+
+                        <Link to="/portfolio">
+                            <Button>
+                                {" "}
+                                Portfolio
+                                <CollectionsIcon />
+                            </Button>
+                        </Link>
+
+                    <Link to="/details">
+                        <Button>
+                            {" "}
+                            Détails <InfoIcon />{" "}
+                        </Button>
+                    </Link>
+
+                    <Link to="/contact">
+                        <Button>
+                            {" "}
+                            Contact <ContactMailIcon />{" "}
+                        </Button>
+                    </Link>
+                </AvatarGroup>
             </MenuList>
         </Paper>
     );

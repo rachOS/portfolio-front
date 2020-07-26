@@ -8,11 +8,13 @@ import {
     CardContent,
     MobileStepper,
     Typography,
+    Avatar,
 } from "@material-ui/core";
 import {
     KeyboardArrowLeft,
     KeyboardArrowRight,
 } from "@material-ui/icons/KeyboardArrowRight";
+import AvatarGroup from "@material-ui/lab/AvatarGroup";
 
 // import components
 
@@ -26,16 +28,15 @@ function Portfolio() {
         <Card className=" main-content ">
             <Paper className="portfolio-container">
                 <CardContent className="carousel">
-                    <MobileStepper>
-                        <Button>
-                            Back
-                            <KeyboardArrowLeft />
-                        </Button>
-                        <Button>
-                            Next
-                            <KeyboardArrowRight />
-                        </Button>
-                    </MobileStepper>
+                    <Button>Back</Button>
+                    <AvatarGroup max={10}>
+                        <Avatar variant="square" alt="project name" src="#" />
+                        <Avatar variant="square" alt="project name" src="#" />
+                        <Avatar variant="square" alt="project name" src="#" />
+                        <Avatar variant="square" alt="project name" src="#" />
+                        <Avatar variant="square" alt="project name" src="#" />
+                    </AvatarGroup>
+                    <Button>Next</Button>
                 </CardContent>
                 <CardContent className="preview">
                     <Typography>Projet 1</Typography>

@@ -19,7 +19,7 @@ function App() {
     return (
         <Router>
             <CssBaseline>
-                <div container className="container ">
+                <div container className="container">
                     <LeftContent />
                     <Header />
                     <Switch>
