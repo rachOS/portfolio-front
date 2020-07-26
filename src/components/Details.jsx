@@ -1,6 +1,7 @@
 import React from "react";
 import {
     Paper,
+    Box,
     Card,
     CardContent,
     Button,
@@ -17,20 +18,18 @@ import "./style/details.css";
 
 function Details() {
     return (
-        <Card className="main-content">
+        <Box className="main-content">
             <Paper className="details-container">
-                <CardContent className="cv">
+                <Card className="cv">
                     CV
                     <CardActions>
                         <Button>Télécharger</Button>
                     </CardActions>
-                </CardContent>
-                <CardContent className="infos">
-                    Disponibilités et infos
-                </CardContent>
-                <CardContent className="form">Une question?</CardContent>
+                </Card>
+                <Card className="infos">Disponibilités et infos</Card>
+                <Card className="form">Une question?</Card>
             </Paper>
-        </Card>
+        </Box>
     );
 }
 

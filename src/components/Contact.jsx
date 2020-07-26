@@ -1,6 +1,7 @@
 import React from "react";
 import {
     Paper,
+    Box,
     Card,
     CardContent,
     Button,
@@ -17,26 +18,22 @@ import "./style/contact.css";
 
 function Contact() {
     return (
-        <Card className="main-content contact">
+        <Box className="main-content contact">
             <Paper className="contact-container">
-                <CardContent className="title">
+                <Card className="title">
                     <Typography variant="h1">Contactez moi!</Typography>
-                </CardContent>
-                <CardContent className="email">
+                </Card>
+                <Card className="email">
                     <Typography variant="">Email</Typography>
-                </CardContent>
-                <CardContent className="phone">
-                    <Typography  variant="">
-                        Tel
-                    </Typography>
-                </CardContent>
-                <CardContent className="text">
-                    <Typography  variant="">
-                        Texte
-                    </Typography>
-                </CardContent>
+                </Card>
+                <Card className="phone">
+                    <Typography variant="">Tel</Typography>
+                </Card>
+                <Card className="text">
+                    <Typography variant="">Texte</Typography>
+                </Card>
             </Paper>
-        </Card>
+        </Box>
     );
 }
 

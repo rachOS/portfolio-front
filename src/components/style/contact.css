@@ -18,17 +18,13 @@ body.contact-container{
 
 .title {
     grid-area: title;
-    border: 1px solid;
 }
 .email {
     grid-area: email;
-    border: 1px solid;
 }
 .phone {
     grid-area: phone;
-    border: 1px solid;
 }
 .text {
     grid-area: text;
-    border: 1px solid;
 }

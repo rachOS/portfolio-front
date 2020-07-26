@@ -27,7 +27,7 @@ function Portfolio() {
     return (
         <Card className=" main-content ">
             <Paper className="portfolio-container">
-                <CardContent className="carousel">
+                <Card className="carousel">
                     <Button>Back</Button>
                     <AvatarGroup max={10}>
                         <Avatar variant="square" alt="project name" src="#" />
@@ -37,11 +37,11 @@ function Portfolio() {
                         <Avatar variant="square" alt="project name" src="#" />
                     </AvatarGroup>
                     <Button>Next</Button>
-                </CardContent>
-                <CardContent className="preview">
+                </Card>
+                <Card className="preview">
                     <Typography>Projet 1</Typography>
-                </CardContent>
-                <CardContent className="form">
+                </Card>
+                <Card className="form">
                     <Tabs>
                         <Tab label="Description" />
                         <Tab label="L'équipe" />
@@ -49,7 +49,7 @@ function Portfolio() {
                         <Tab label="Les fontionnalités" />
                         <Tab label="Le partage" />
                     </Tabs>
-                </CardContent>
+                </Card>
             </Paper>
         </Card>
     );

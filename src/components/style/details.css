@@ -17,13 +17,10 @@
 
 .cv{
     grid-area: cv;
-    border: 1px solid;
 }
 .infos{
     grid-area: infos;
-    border: 1px solid;
 }
 .form{
     grid-area: form;
-    border: 1px solid;
 }

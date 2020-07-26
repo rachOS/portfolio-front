@@ -17,14 +17,11 @@
 
 .form {
     grid-area: form;
-    border: 1px solid;
     width: 100%;
 }
 .preview {
     grid-area: preview;
-    border: 1px solid;
 }
 .carousel {
     grid-area: carousel;
-    border: 1px solid;
 }
