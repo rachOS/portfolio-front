@@ -27,7 +27,8 @@ import "./style/portfolio.css";
 
 function Portfolio() {
     let { path, url } = useRouteMatch();
-    const {id} = useParams()
+
+
     const [projects, setProjects] = useState([{}]);
     const getProjects = () => {
         const url = `${process.env.REACT_APP_HOST}/projects`;
@@ -53,7 +54,7 @@ function Portfolio() {
                     <IconButton>
                         <ArrowBackIosIcon />{" "}
                     </IconButton>
-                    <AvatarGroup max={10} id="avatargroup1">
+                    <AvatarGroup id="avatargroup1">
                         {avatar}
                     </AvatarGroup>
                     <IconButton>
