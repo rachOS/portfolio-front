@@ -34,26 +34,24 @@ function Informations() {
     }, [id]);
 
     return (
-        <Card className="form">
+        <Card>
             <NavBar />
             <Switch>
-                <Route path={`${path}`}>
-                    <Screenshot project={project} />
-                    <Route path={`${path}/description`}>
-                        <Description project={project} />
-                    </Route>
-                    <Route path={`${path}/team`}>
-                        <Team project={project} />
-                    </Route>
-                    <Route path={`${path}/stacks`}>
-                        <Stacks project={project} />
-                    </Route>
-                    <Route path={`${path}/features`}>
-                        <Features project={project} />
-                    </Route>
-                    <Route path={`${path}/share`}>
-                        <Share project={project} />
-                    </Route>
+                {/* <Screenshot project={project} /> */}
+                <Route path={`${path}/description`}>
+                    <Description project={project} />
+                </Route>
+                <Route path={`${path}/team`}>
+                    <Team project={project} />
+                </Route>
+                <Route path={`${path}/stacks`}>
+                    <Stacks project={project} />
+                </Route>
+                <Route path={`${path}/features`}>
+                    <Features project={project} />
+                </Route>
+                <Route path={`${path}/share`}>
+                    <Share project={project} />
                 </Route>
             </Switch>
         </Card>

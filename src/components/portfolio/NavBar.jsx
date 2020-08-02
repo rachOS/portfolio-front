@@ -14,6 +14,7 @@ import { Tabs, Tab, Card } from "@material-ui/core";
 // import data
 
 // import style
+import "../style/portfolio.css";
 
 function NavBar() {
     let { path, url } = useRouteMatch();

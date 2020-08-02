@@ -51,7 +51,7 @@ function Portfolio() {
         getProjects();
     }, []);
 
-     const getProject = (idProject) => {
+    const getProject = (idProject) => {
         const projectsURL = `${process.env.REACT_APP_HOST}/projects/${idProject}`;
         Axios.get(projectsURL)
             .then((response) => response.data)
@@ -82,14 +82,17 @@ function Portfolio() {
                         <ArrowForwardIosIcon />
                     </IconButton>
                 </Card>
-                <Card className="preview">
-                    <Switch>
-                        <Route path={`${path}/:id`}>
-                            {/* passer projectID en props */}
+                <Switch>
+                    <Route path={`${path}/:id`}>
+                        <Card className="preview">
+                            <Screenshot/>
+                        </Card>
+                        {/* passer projectID en props */}
+                        <Card className="form">
                             <Informations projects={projects} />
-                        </Route>
-                    </Switch>
-                </Card>
+                        </Card>
+                    </Route>
+                </Switch>
             </Paper>
         </Card>
     );

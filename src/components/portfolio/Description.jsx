@@ -15,6 +15,7 @@ import {
 // import data
 
 // import style
+import "../style/portfolio.css";
 
 function Description({ project }) {
     return (

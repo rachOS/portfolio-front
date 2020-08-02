@@ -18,9 +18,11 @@
 .form {
     grid-area: form;
     width: 100%;
+    border: solid 1px red;
 }
 .preview {
     grid-area: preview;
+    border: solid 1px rgb(4, 0, 255);
 }
 .carousel {
     grid-area: carousel;

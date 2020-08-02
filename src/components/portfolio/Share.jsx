@@ -6,6 +6,7 @@ import { Container } from '@material-ui/core';
 // import data
 
 // import style
+import "../style/portfolio.css";
 
 function Share() {
   return (
