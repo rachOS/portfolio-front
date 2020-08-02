@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { Route, Switch, useRouteMatch, useParams } from "react-router-dom";
-import { Card } from "@material-ui/core";
+import { Card, Box } from "@material-ui/core";
 
 // import components
 
@@ -27,8 +27,8 @@ function Screenshot() {
     }, [id]);
     return (
         <Card>
-            Projet:
-            <img src={project.screenshot} alt={project.name} />
+            Screenshot du projet :
+            <img src={project && project.screenshot} alt={project && project.name} />
         </Card>
     );
 }

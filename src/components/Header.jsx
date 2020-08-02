@@ -1,6 +1,6 @@
 // import library
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Paper, MenuList, MenuItem, Button, Avatar } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
@@ -18,20 +18,20 @@ const Header = () => {
         <Paper className="header">
             <MenuList>
                 <AvatarGroup>
-                        <Link to="/">
-                            <Button>
-                                {" "}
-                                Acceuil <HomeIcon />{" "}
-                            </Button>
-                        </Link>
+                    <Link to="/">
+                        <Button>
+                            {" "}
+                            Acceuil <HomeIcon />{" "}
+                        </Button>
+                    </Link>
 
-                        <Link to="/portfolio">
-                            <Button>
-                                {" "}
-                                Portfolio
-                                <CollectionsIcon />
-                            </Button>
-                        </Link>
+                    <Link to={`/portfolio`}>
+                        <Button>
+                            {" "}
+                            Portfolio
+                            <CollectionsIcon />
+                        </Button>
+                    </Link>
 
                     <Link to="/details">
                         <Button>

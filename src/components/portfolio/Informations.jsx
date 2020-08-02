@@ -37,7 +37,6 @@ function Informations() {
         <Card>
             <NavBar />
             <Switch>
-                {/* <Screenshot project={project} /> */}
                 <Route path={`${path}/description`}>
                     <Description project={project} />
                 </Route>

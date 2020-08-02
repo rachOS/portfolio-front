@@ -71,30 +71,16 @@ function Portfolio() {
     ));
 
     return (
-        <Card className="main-content">
-            <Paper className="portfolio-container">
-                <Card className="carousel">
-                    <IconButton>
-                        <ArrowBackIosIcon />{" "}
-                    </IconButton>
-                    <AvatarGroup id="avatargroup1">{avatar}</AvatarGroup>
-                    <IconButton>
-                        <ArrowForwardIosIcon />
-                    </IconButton>
-                </Card>
-                <Switch>
-                    <Route path={`${path}/:id`}>
-                        <Card className="preview">
-                            <Screenshot/>
-                        </Card>
-                        {/* passer projectID en props */}
-                        <Card className="form">
-                            <Informations projects={projects} />
-                        </Card>
-                    </Route>
-                </Switch>
-            </Paper>
-        </Card>
+            <Card>
+                <IconButton>
+                    <ArrowBackIosIcon />{" "}
+                </IconButton>
+                <AvatarGroup id="avatargroup1">{avatar}</AvatarGroup>
+                <IconButton>
+                    <ArrowForwardIosIcon />
+                </IconButton>
+            {/* TODO NavProject.jsx */}
+            </Card>
     );
 }
 

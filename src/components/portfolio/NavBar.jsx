@@ -21,7 +21,7 @@ function NavBar() {
 
     const tabLabel = [
         {
-            label: "Description",
+            label: "La description",
             url: `${url}/description`
         },
         {
