@@ -24,8 +24,8 @@ const Header = () => {
                             Acceuil <HomeIcon />{" "}
                         </Button>
                     </Link>
-
-                    <Link to={`/portfolio`}>
+                    {/* appeler une fonction pour afficher l' id du projet le plus récent */}
+                    <Link to={`/portfolio/1/description`}>
                         <Button>
                             {" "}
                             Portfolio

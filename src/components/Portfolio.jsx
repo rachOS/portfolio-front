@@ -62,25 +62,30 @@ function Portfolio() {
         getProject(id);
     }, [id]);
 
-    console.log("PROJECT", project);
+    console.log(
+        "PROJECT",
+        projects
+            .map((i) => i)
+            .sort((a, b) => (a < b ? -1 : a > b ? 1 : 0))
+    );
 
     const avatar = projects.map((project) => (
         <Avatar variant="square" alt={project.name} src="#">
-            <Link to={`${url}/${project.id}`}>{project.name}</Link>
+            <Link to={`${url}/${project.id}/description`}>{project.name}</Link>
         </Avatar>
     ));
 
     return (
-            <Card>
-                <IconButton>
-                    <ArrowBackIosIcon />{" "}
-                </IconButton>
-                <AvatarGroup id="avatargroup1">{avatar}</AvatarGroup>
-                <IconButton>
-                    <ArrowForwardIosIcon />
-                </IconButton>
+        <Card className="">
+            <IconButton>
+                <ArrowBackIosIcon />{" "}
+            </IconButton>
+            <AvatarGroup id="avatargroup1">{avatar}</AvatarGroup>
+            <IconButton>
+                <ArrowForwardIosIcon />
+            </IconButton>
             {/* TODO NavProject.jsx */}
-            </Card>
+        </Card>
     );
 }
 
