@@ -25,13 +25,7 @@ function App() {
                     <Header />
                     <Switch>
                         <Route exact path="/" component={MainContent} />
-                        <Route path="/portfolio">
-                            <Portfolio />
-                            <Route
-                                path="/portfolio/:id"
-                                component={Screenshot}
-                            />
-                        </Route>
+                        <Route path="/portfolio" component={Portfolio} />
                         <Route path="/details" component={Details} />
                         <Route path="/contact" component={Contact} />
                     </Switch>

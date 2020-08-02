@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, Switch, Route, useRouteMatch, useParams } from "react-router-dom";
+import {
+    Link,
+    Switch,
+    Route,
+    useRouteMatch,
+    useParams,
+} from "react-router-dom";
 import Axios from "axios";
 
 // import Material UI
@@ -28,11 +34,10 @@ import "./style/portfolio.css";
 function Portfolio() {
     let { path, url } = useRouteMatch();
 
-
     const [projects, setProjects] = useState([{}]);
     const getProjects = () => {
-        const url = `${process.env.REACT_APP_HOST}/projects`;
-        Axios.get(url)
+        const url2 = `${process.env.REACT_APP_HOST}/projects`;
+        Axios.get(url2)
             .then((response) => response.data)
             .then((data) => setProjects(data));
     };
@@ -48,24 +53,21 @@ function Portfolio() {
     ));
 
     return (
-        <Card className=" main-content ">
+        <Card className="main-content">
             <Paper className="portfolio-container">
                 <Card className="carousel">
                     <IconButton>
                         <ArrowBackIosIcon />{" "}
                     </IconButton>
-                    <AvatarGroup id="avatargroup1">
-                        {avatar}
-                    </AvatarGroup>
+                    <AvatarGroup id="avatargroup1">{avatar}</AvatarGroup>
                     <IconButton>
                         <ArrowForwardIosIcon />
                     </IconButton>
                 </Card>
                 <Card className="preview">
-                    <Switch>
+                     <Switch>
                         <Route path={`${path}/:id`}>
-                        {/* faire une route dans le back pour recup url pour un projet */}
-                            <Screenshot screen="envoyer la props"/>
+                            <Screenshot screen="envoyer la props" />
                         </Route>
                     </Switch>
                 </Card>

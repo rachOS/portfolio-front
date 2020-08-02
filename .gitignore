@@ -1,5 +1,8 @@
 # modules
 /node_modules
 
+#vscode
+/.vscode
+
 # environment varriables
 .env
