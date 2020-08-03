@@ -6,7 +6,7 @@ import {
     Route,
     useRouteMatch,
 } from "react-router-dom";
-import { CssBaseline, Card, Paper } from "@material-ui/core";
+import { CssBaseline, Card, Paper, Container, Box } from "@material-ui/core";
 
 // import components
 import MainContent from "./components/MainContent";
@@ -17,17 +17,16 @@ import Header from "./components/Header";
 import LeftContent from "./components/LeftContent";
 import Footer from "./components/Footer";
 import Screenshot from "./components/portfolio/Screenshot";
+import Informations from "./components/portfolio/Informations";
 
 // import style
 import "./App.css";
-import "./components/style/portfolio.css";
-import Informations from "./components/portfolio/Informations";
 
 function App() {
     return (
         <Router>
             <CssBaseline>
-                <div container className="container">
+                <Box className="container">
                     <LeftContent />
                     <Header />
                     <Switch>
@@ -47,7 +46,7 @@ function App() {
                         <Route path="/contact" component={Contact} />
                     </Switch>
                     <Footer className="footer" />
-                </div>
+                </Box>
             </CssBaseline>
         </Router>
     );

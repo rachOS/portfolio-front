@@ -31,7 +31,7 @@ import Informations from "./portfolio/Informations";
 import Screenshot from "./portfolio/Screenshot";
 
 // import style
-import "./style/portfolio.css";
+import "../App.css";
 
 function Portfolio() {
     const { id } = useParams();
@@ -76,7 +76,7 @@ function Portfolio() {
     ));
 
     return (
-        <Card className="">
+        <Card className="nav-project">
             <IconButton>
                 <ArrowBackIosIcon />{" "}
             </IconButton>

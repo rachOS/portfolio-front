@@ -15,7 +15,7 @@ import Screenshot from "./Screenshot";
 // import data
 
 // import style
-import "../style/portfolio.css";
+import "../../App.css";
 
 function Informations() {
     const { id } = useParams();
@@ -34,7 +34,7 @@ function Informations() {
     }, [id]);
 
     return (
-        <Card>
+        <Card className="infos">
             <NavBar />
             <Switch>
                 <Route path={`${path}/description`}>

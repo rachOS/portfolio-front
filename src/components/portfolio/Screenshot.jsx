@@ -8,8 +8,7 @@ import { Card, Box } from "@material-ui/core";
 // import data
 
 // import style
-import "../style/portfolio.css";
-
+import "../../App.css"
 function Screenshot() {
     const { id } = useParams();
     const { path, url } = useRouteMatch();
@@ -26,7 +25,7 @@ function Screenshot() {
         getOneProject(id);
     }, [id]);
     return (
-        <Card>
+        <Card className="preview">
             Screenshot du projet :
             <img src={project && project.screenshot} alt={project && project.name} />
         </Card>

@@ -1,10 +1,11 @@
 .container {
     display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr ;
-    grid-template-rows: 0.1fr 1fr 0.125fr;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.2fr 1fr 0.125fr;
     grid-template-areas:
         "leftMenu header header header header"
-        "leftMenu main main main main"
+        "leftMenu nav-project nav-project infos infos"
+        "leftMenu preview preview infos infos"
         "leftMenu footer footer footer footer";
     row-gap: 5px;
     column-gap: 5px;
@@ -14,23 +15,33 @@
     height: 100vh;
 }
 
+.preview {
+    grid-area: preview;
+}
+.nav-project {
+    grid-area: nav-project;
+}
+.infos {
+    grid-area: infos;
+}
+
 .left-menu {
     grid-area: leftMenu;
 }
 .header {
     grid-area: header;
 }
+
+.footer {
+    margin: 0;
+    grid-area: footer;
+}
+
 .MuiList-root.MuiList-padding {
     display: flex;
     margin: 1.4rem;
 }
-.main-content {
-    grid-area: main;
-}
+
 .contact {
     background-color: #4ec044;
-}
-.footer {
-    margin: 0;
-    grid-area: footer;
 }
