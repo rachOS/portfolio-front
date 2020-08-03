@@ -9,6 +9,7 @@ import { Card, Box } from "@material-ui/core";
 
 // import style
 import "../../App.css"
+
 function Screenshot() {
     const { id } = useParams();
     const { path, url } = useRouteMatch();

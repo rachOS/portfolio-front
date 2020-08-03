@@ -1,12 +1,20 @@
-.left-container {
+.accordions {
     display: grid;
-    justify-content: stretch;
 }
 
-#accordion-summary1,
-#accordion-summary2,
-#accordion-summary3 {
-    display: grid;
+.MuiAccordionSummary-content {
     flex-wrap: wrap;
+    align-items: center;
     flex-direction: column;
 }
+
+.MuiPaper-root.MuiAccordion-root.MuiAccordion-rounded.MuiPaper-elevation1.MuiPaper-rounded {
+    display: grid;
+    align-content: center;
+}
+
+/* Accordion
+AccordionSummary
+Avatar
+Typography
+Button */

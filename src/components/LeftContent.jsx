@@ -3,6 +3,7 @@ import React from "react";
 import {
     Paper,
     Avatar,
+    Box,
     Button,
     Card,
     CardActions,
@@ -15,14 +16,14 @@ import {
 
 //import style
 import "../App.css";
-import "./style/left-menu.css"
+import "./style/left-menu.css";
 
 // init component
 const LeftContent = () => {
     return (
-        <Paper className="left-menu left-container">
+        <Box className="left-menu accordions">
             <Accordion>
-                <AccordionSummary id="accordion-summary1">
+                <AccordionSummary>
                     <Avatar
                         alt="Grégory chamekh"
                         src="../static/image/linkedin _avatar.jpeg"
@@ -75,9 +76,9 @@ const LeftContent = () => {
                 </AccordionDetails>
             </Accordion>
             <Accordion>
-                <AccordionSummary id="accordion-summary2">
+                <AccordionSummary>
                     <Typography variant="h1">C.V.</Typography>
-                    <Button>Afficher</Button>
+                    <Button classes="">Afficher</Button>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography variant="body2" gutterBottom>
@@ -89,8 +90,8 @@ const LeftContent = () => {
                     <Button>Télécharger</Button>
                 </AccordionDetails>
             </Accordion>
-            <Accordion id="accordion-summary3">
-                <AccordionSummary className="accordion-summary">
+            <Accordion>
+                <AccordionSummary>
                     <Typography variant="h1">Dispo</Typography>
                     <Typography variant="subtitle2">
                         Disponible immédiatement
@@ -104,7 +105,7 @@ const LeftContent = () => {
                     iusto sit totam fuga saepe illum deserunt iure!
                 </AccordionDetails>
             </Accordion>
-        </Paper>
+        </Box>
     );
 };
 
