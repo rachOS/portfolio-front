@@ -41,7 +41,7 @@ function Portfolio() {
     const [project, setProject] = useState([{}]);
 
     const getProjects = () => {
-        const projectsURL = `${process.env.REACT_APP_HOST}/projects`;
+        const projectsURL = `${process.env.REACT_APP_HOST}/projects?sort=true`;
         Axios.get(projectsURL)
             .then((response) => response.data)
             .then((data) => setProjects(data));
