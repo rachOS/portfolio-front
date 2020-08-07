@@ -8,6 +8,7 @@ import {
     Typography,
     Card,
     Container,
+    Link,
 } from "@material-ui/core";
 
 // import components
@@ -17,13 +18,33 @@ import {
 // import style
 import "../style/portfolio.css";
 
-function Description({ project }) {
+function Description({ projectName, url }) {
+    const { id } = useParams();
+    const [description, SetDescription] = useState(null);
+
+    const getDescription = (idProject) => {
+        const projectURL = `${process.env.REACT_APP_HOST}/projects/${idProject}/description`;
+        Axios.get(projectURL)
+            .then((response) => response.data)
+            .then((data) => SetDescription(data));
+    };
+    useEffect(() => {
+        getDescription(id);
+    }, [id]);
+
+    const checkDescription = description
+        ? description
+        : "Description du projet";
     return (
-        <Typography>
-            {project.description
-                ? project.description
-                : "Description du projet"}
-        </Typography>
+        <React.Fragment>
+            <Typography variant="h3">{projectName}</Typography>
+            <Typography
+                paragraph
+                variant="body1"
+                dangerouslySetInnerHTML={{ __html: checkDescription }}
+            />
+            <Link href={url}> Lien du site</Link>
+        </React.Fragment>
     );
 }
 

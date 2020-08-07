@@ -18,7 +18,7 @@ import "./style/details.css";
 
 function Details() {
     return (
-        <Box className="main-content">
+        <Box className="main">
             <Paper className="details-container">
                 <Card className="cv">
                     CV

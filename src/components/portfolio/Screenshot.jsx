@@ -8,27 +8,31 @@ import { Card, Box } from "@material-ui/core";
 // import data
 
 // import style
-import "../../App.css"
+import "../../App.css";
+import "../style/portfolio.css";
 
-function Screenshot() {
+function Screenshot({ project }) {
     const { id } = useParams();
     const { path, url } = useRouteMatch();
-    const [project, setProject] = useState([{}]);
+    // const [project, setProject] = useState([{}]);
 
-    const getOneProject = (idProject) => {
-        const projectURL = `${process.env.REACT_APP_HOST}/projects/${idProject}`;
-        Axios.get(projectURL)
-            .then((response) => response.data)
-            .then((data) => setProject(data[0]));
-    };
+    // const getOneProject = (idProject) => {
+    //     const projectURL = `${process.env.REACT_APP_HOST}/projects/${idProject}`;
+    //     Axios.get(projectURL)
+    //         .then((response) => response.data)
+    //         .then((data) => setProject(data[0]));
+    // };
 
-    useEffect(() => {
-        getOneProject(id);
-    }, [id]);
+    // useEffect(() => {
+    //     getOneProject(id);
+    // }, [id]);
     return (
-        <Card className="preview">
+        <Card className="screenshot">
             Screenshot du projet :
-            <img src={project && project.screenshot} alt={project && project.name} />
+            <img
+                src={project && project.screenshot}
+                alt={project && project.name}
+            />
         </Card>
     );
 }

@@ -29,8 +29,8 @@ function NavBar() {
             url: `${url}/team`
         },
         {
-            label: "Les stacks",
-            url: `${url}/stacks`
+            label: "Les technos et les outils",
+            url: `${url}/stacks-tools`
         },
         {
             label: "Les fonctionnalités",

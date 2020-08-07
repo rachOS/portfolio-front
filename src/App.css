@@ -4,8 +4,8 @@
     grid-template-rows: 0.1fr 0.2fr 1fr 0.125fr;
     grid-template-areas:
         "leftMenu header header header header"
-        "leftMenu nav-project nav-project infos infos"
-        "leftMenu preview preview infos infos"
+        "leftMenu main main main main"
+        "leftMenu main main main main"
         "leftMenu footer footer footer footer";
     row-gap: 5px;
     column-gap: 5px;
@@ -32,9 +32,16 @@
     grid-area: header;
 }
 
+.main{
+    grid-area: main;
+}
 .footer {
     margin: 0;
     grid-area: footer;
+}
+.test {
+    margin: 0;
+    grid-area: test;
 }
 
 .MuiList-root.MuiList-padding {

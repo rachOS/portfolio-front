@@ -25,8 +25,9 @@ const LeftContent = () => {
             <Accordion>
                 <AccordionSummary>
                     <Avatar
+                        object
                         alt="Grégory chamekh"
-                        src="../static/image/linkedin _avatar.jpeg"
+                        src="public/static/linkedin _avatar.jpeg"
                     />
                     <Typography variant="subtitle2">
                         Bonjour, je suis développeur web fullstack junior

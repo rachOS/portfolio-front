@@ -9,7 +9,7 @@ import {
 import { CssBaseline, Card, Paper, Container, Box } from "@material-ui/core";
 
 // import components
-import MainContent from "./components/MainContent";
+import Home from "./components/Home";
 import Portfolio from "./components/Portfolio";
 import Details from "./components/Details";
 import Contact from "./components/Contact";
@@ -18,6 +18,7 @@ import LeftContent from "./components/LeftContent";
 import Footer from "./components/Footer";
 import Screenshot from "./components/portfolio/Screenshot";
 import Informations from "./components/portfolio/Informations";
+import Project from "./components/portfolio/Project";
 
 // import style
 import "./App.css";
@@ -30,16 +31,24 @@ function App() {
                     <LeftContent />
                     <Header />
                     <Switch>
-                        <Route exact path="/" component={MainContent} />
+                        <Route exact path="/" component={Home} />
                         <Route path="/portfolio">
                             <Portfolio />
-                            <Route
+                            {/* <Route
+                                path={`/portfolio/:id`}
+                                component={Carousel}
+                            /> */}
+                            {/* <Route
                                 path={`/portfolio/:id`}
                                 component={Screenshot}
-                            />
-                            <Route
+                            /> */}
+                            {/* <Route
                                 path={`/portfolio/:id`}
                                 component={Informations}
+                            /> */}
+                            <Route
+                                path="/portfolio/:id"
+                                component={Project}
                             />
                         </Route>
                         <Route path="/details" component={Details} />

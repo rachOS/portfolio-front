@@ -16,9 +16,11 @@ import Screenshot from "./Screenshot";
 
 // import style
 import "../../App.css";
+import "../style/portfolio.css";
 
-function Informations() {
-    const { id } = useParams();
+function Informations({ project, projects }) {
+    const { path, url } = useRouteMatch();
+    /* const { id } = useParams();
     const { path, url } = useRouteMatch();
     const [project, setProject] = useState([{}]);
 
@@ -31,19 +33,24 @@ function Informations() {
 
     useEffect(() => {
         getOneProject(id);
-    }, [id]);
+    }, [id, oneProject]);
 
+    console.log("ONE", oneProject);
+ */
     return (
-        <Card className="infos">
+        <Card className="form">
             <NavBar />
-            <Switch>
+            {/* <Switch>
                 <Route path={`${path}/description`}>
-                    <Description project={project} />
+                    <Description
+                        projectName={project.name}
+                        url={project.site_link}
+                    />
                 </Route>
                 <Route path={`${path}/team`}>
                     <Team project={project} />
                 </Route>
-                <Route path={`${path}/stacks`}>
+                <Route path={`${path}/stacks-tools`}>
                     <Stacks project={project} />
                 </Route>
                 <Route path={`${path}/features`}>
@@ -52,7 +59,7 @@ function Informations() {
                 <Route path={`${path}/share`}>
                     <Share project={project} />
                 </Route>
-            </Switch>
+            </Switch> */}
         </Card>
     );
 }

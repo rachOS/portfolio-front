@@ -1,41 +1,23 @@
 import React, { useState, useEffect } from "react";
-import {
-    Link,
-    Switch,
-    Route,
-    useRouteMatch,
-    useParams,
-} from "react-router-dom";
 import Axios from "axios";
+import { Route, Switch, useRouteMatch, useParams } from "react-router-dom";
 
 // import Material UI
-import {
-    Paper,
-    IconButton,
-    Box,
-    Tabs,
-    Tab,
-    Card,
-    CardContent,
-    MobileStepper,
-    Typography,
-    Avatar,
-} from "@material-ui/core";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import AvatarGroup from "@material-ui/lab/AvatarGroup";
+import { Container } from "@material-ui/core";
 
 // import components
-import Description from "./portfolio/Description";
-import Informations from "./portfolio/Informations";
-import Screenshot from "./portfolio/Screenshot";
+import Carousel from "./portfolio/Carousel";
 
 // import style
 import "../App.css";
+import "./style/portfolio.css";
+import Screenshot from "./portfolio/Screenshot";
+import Informations from "./portfolio/Informations";
+import NavBar from "./portfolio/NavBar";
 
 function Portfolio() {
     const { id } = useParams();
-    let { path, url } = useRouteMatch();
+    const { path, url } = useRouteMatch();
 
     const [projects, setProjects] = useState([{}]);
     const [project, setProject] = useState([{}]);
@@ -51,41 +33,25 @@ function Portfolio() {
         getProjects();
     }, []);
 
-    const getProject = (idProject) => {
-        const projectsURL = `${process.env.REACT_APP_HOST}/projects/${idProject}`;
-        Axios.get(projectsURL)
+    const getOneProject = (idProject) => {
+        const projectURL = `${url}/${idProject}`;
+        Axios.get(projectURL)
             .then((response) => response.data)
-            .then((data) => setProject(data));
+            .then((data) => setProject(data[0]));
     };
 
     useEffect(() => {
-        getProject(id);
+        getOneProject(id);
     }, [id]);
 
-    console.log(
-        "PROJECT",
-        projects
-            .map((i) => i)
-            .sort((a, b) => (a < b ? -1 : a > b ? 1 : 0))
-    );
-
-    const avatar = projects.map((project) => (
-        <Avatar variant="square" alt={project.name} src="#">
-            <Link to={`${url}/${project.id}/description`}>{project.name}</Link>
-        </Avatar>
-    ));
+console.log('LOG', id);
 
     return (
-        <Card className="nav-project">
-            <IconButton>
-                <ArrowBackIosIcon />{" "}
-            </IconButton>
-            <AvatarGroup id="avatargroup1">{avatar}</AvatarGroup>
-            <IconButton>
-                <ArrowForwardIosIcon />
-            </IconButton>
-            {/* TODO NavProject.jsx */}
-        </Card>
+        <Container className="main portfolio-container" maxWidth="xl">
+            <Carousel projects={projects}/>
+            <Screenshot project={project} getOneProject={getOneProject}/>
+            <Informations project={project} projects={projects}/>
+        </Container>
     );
 }
 

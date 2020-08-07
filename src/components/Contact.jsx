@@ -18,7 +18,7 @@ import "./style/contact.css";
 
 function Contact() {
     return (
-        <Box className="main-content contact">
+        <Box className="main contact">
             <Paper className="contact-container">
                 <Card className="title">
                     <Typography variant="h1">Contactez moi!</Typography>

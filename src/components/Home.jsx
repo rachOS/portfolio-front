@@ -7,9 +7,9 @@ import "../App.css";
 import "./style/maint-content.css";
 
 // init component
-function MainContent() {
+function Home() {
     return (
-        <Paper className="main-content preview-container">
+        <Paper className="main main-content preview-container">
             <Typography variant="h1">Projets récents</Typography>
             <Card className="content">content 1</Card>
             <Card className="content">content 2</Card>
@@ -19,4 +19,4 @@ function MainContent() {
 }
 
 // export component
-export default MainContent;
+export default Home;
