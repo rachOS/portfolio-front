@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Axios from "axios";
 
-
 // import components
 import Carousel from "./Carousel";
 import Informations from "./Informations";

@@ -14,9 +14,11 @@ function Carousel({ projects }) {
     let { path, url } = useRouteMatch();
     const avatar = projects.map((project) => (
         <Avatar variant="square" alt={project.name} src="#">
-            <Link to={`${url}/${project.id}/description`}>{project.name}</Link>
+            <Link to={`/portfolio/${project.id}/description`}>{project.name}</Link>
         </Avatar>
     ));
+    console.log('URL', url);
+
     return (
         <Box className="carousel">
             <IconButton>
