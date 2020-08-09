@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch, useRouteMatch, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Axios from "axios";
 
 // import components
-
-// import data
+import Carousel from "./Carousel";
+import Informations from "./Informations";
+import Screenshot from "./Screenshot";
 
 // import Material UI
 import { Container } from "@material-ui/core";
@@ -14,9 +15,20 @@ import "../style/portfolio.css";
 
 function Project() {
     const { id } = useParams();
-    const { path, url } = useRouteMatch();
 
+    const [projects, setProjects] = useState([{}]);
     const [project, setProject] = useState([{}]);
+
+    const getProjects = () => {
+        const projectsURL = `${process.env.REACT_APP_HOST}/projects?sort=true`;
+        Axios.get(projectsURL)
+            .then((response) => response.data)
+            .then((data) => setProjects(data));
+    };
+
+    useEffect(() => {
+        getProjects();
+    }, []);
 
     const getOneProject = (idProject) => {
         const projectURL = `${process.env.REACT_APP_HOST}/projects/${idProject}`;
@@ -29,12 +41,13 @@ function Project() {
         getOneProject(id);
     }, [id]);
 
-    console.log('ID',id);
+    console.log("ID", id);
 
     return (
-        <Container className="">
-        {/* importer le carousel screenshot ici et faire passer projet en props */}
-            <h1>{project.name}</h1>
+        <Container className="main portfolio-container" maxWidth="xl">
+            <Screenshot project={project} />
+            <Informations project={project} />
+            <Carousel projects={projects} />
         </Container>
     );
 }
