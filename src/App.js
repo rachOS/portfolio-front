@@ -38,8 +38,6 @@ function App() {
         getLastProjectByDate();
     }, [projects]);
 
-    console.log("LAST", projects[0]);
-
     return (
         <Router>
             <CssBaseline>
@@ -51,7 +49,7 @@ function App() {
                         <Route path="/portfolio/:lastProject">
                             <Portfolio />
                             <Route path="/portfolio/:id">
-                                <Project projects={projects}/>
+                                <Project projects={projects} />
                             </Route>
                         </Route>
                         <Route path="/details" component={Details} />
