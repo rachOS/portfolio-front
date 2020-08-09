@@ -18,7 +18,7 @@ function Carousel({ projects }) {
         dotsClass: "slick-dots slick-thumb",
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 7,
         slidesToScroll: 1,
     };
 
