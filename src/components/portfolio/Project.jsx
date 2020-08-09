@@ -13,22 +13,10 @@ import { Box } from "@material-ui/core";
 // import style
 import "../style/portfolio.css";
 
-function Project() {
+function Project({ projects }) {
     const { id } = useParams();
 
-    const [projects, setProjects] = useState([{}]);
     const [project, setProject] = useState([{}]);
-
-    const getProjects = () => {
-        const projectsURL = `${process.env.REACT_APP_HOST}/projects?sort=true`;
-        Axios.get(projectsURL)
-            .then((response) => response.data)
-            .then((data) => setProjects(data));
-    };
-
-    useEffect(() => {
-        getProjects();
-    }, []);
 
     const getOneProject = (idProject) => {
         const projectURL = `${process.env.REACT_APP_HOST}/projects/${idProject}`;

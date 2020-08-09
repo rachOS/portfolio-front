@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Axios from "axios";
-import { Route, Switch, useRouteMatch, useParams } from "react-router-dom";
+import React from "react";
+import { Route, Switch, useRouteMatch } from "react-router-dom";
 import { Card } from "@material-ui/core";
 
 // import components
@@ -10,33 +9,13 @@ import Share from "./Share";
 import Stacks from "./Stacks";
 import Team from "./Team";
 import NavBar from "./NavBar";
-import Screenshot from "./Screenshot";
-
-// import data
 
 // import style
 import "../../App.css";
 import "../style/portfolio.css";
 
-function Informations({ project, projects }) {
-    const { path, url } = useRouteMatch();
-    /* const { id } = useParams();
-    const { path, url } = useRouteMatch();
-    const [project, setProject] = useState([{}]);
-
-    const getOneProject = (idProject) => {
-        const projectURL = `${process.env.REACT_APP_HOST}/projects/${idProject}`;
-        Axios.get(projectURL)
-            .then((response) => response.data)
-            .then((data) => setProject(data[0]));
-    };
-
-    useEffect(() => {
-        getOneProject(id);
-    }, [id, oneProject]);
-
-    console.log("ONE", oneProject);
- */
+function Informations({ project }) {
+    const { path } = useRouteMatch();
     return (
         <Card className="form">
             <NavBar />
