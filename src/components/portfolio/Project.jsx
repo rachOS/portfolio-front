@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Axios from "axios";
 
+
 // import components
 import Carousel from "./Carousel";
 import Informations from "./Informations";
 import Screenshot from "./Screenshot";
 
 // import Material UI
-import { Container } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 
 // import style
 import "../style/portfolio.css";
@@ -44,11 +45,11 @@ function Project() {
     console.log("ID", id);
 
     return (
-        <Container className="main portfolio-container" maxWidth="xl">
+        <Box className="main portfolio-container" maxWidth="xl">
             <Screenshot project={project} />
             <Informations project={project} />
             <Carousel projects={projects} />
-        </Container>
+        </Box>
     );
 }
 
