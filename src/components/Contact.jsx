@@ -1,31 +1,25 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import { Form, Field } from "react-final-form";
-import {
-    Paper,
-    Box,
-    Card,
-    InputLabel,
-    CardContent,
-    Button,
-    TextField,
-    CardActions,
-    Typography,
-} from "@material-ui/core";
-// import components
-
-// import data
+import { Form } from "react-advanced-form";
+import { Card, InputLabel, Button, Typography, Input } from "@material-ui/core";
 
 // import style
 import "../App.css";
 import "./style/contact.css";
 
 function Contact() {
-    const [value, setValue] = useState({
-        user_email: "mon@email.com",
-        subject: "coucou",
-        text: "lorem ipsum",
-    });
+    const initialUserState = {
+        user_email: "",
+        fullname: "",
+        text: "",
+        subject: "",
+    };
+    const [user, setUser] = useState(initialUserState);
+    const [input, setInput] = useState("");
+
+    useEffect(() => {
+        setUser(input);
+    }, [input]);
 
     const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     const onSubmit = async (values) => {
@@ -37,51 +31,68 @@ function Contact() {
 
     const handleChange = (event) => {
         event.preventDefault();
-        console.log("VALUE TARGET", event.target.value);
+        const { value, name } = event.target;
+        setInput({ ...input, [name]: value });
     };
+    const handleReset = () => {
+        return setInput(initialUserState);
+    };
+
     const handleSubmit = () => {
-        const sendURL = `${process.env.REACT_APP_HOST}/contact`;
-        const formDatas = value;
-        Axios.post(sendURL, formDatas);
+        // const sendURL = `${process.env.REACT_APP_HOST}/contact`;
+        // const formDatas = user;
+        // Axios.post(sendURL, formDatas);
+        onSubmit();
+        handleReset()
     };
+
     return (
         <Card className="main contact">
             <Form
-                onSubmit={onSubmit}
-                render={({ handleSubmit, handleChange }) => (
-                    <form method="POST" className="contact-container">
-                        <Typography variant="h1">Contactez moi!</Typography>
-                        <InputLabel>Email</InputLabel>
-                        <Field
-                            name="user_email"
-                            component="input"
-                            type="email"
-                            value={handleChange}
-                            placeholder="mon@email.com"
-                        />
-                        <InputLabel>Nom complet</InputLabel>
-                        <Field
-                            name="Nom complet"
-                            component="input"
-                            type="text"
-                            placeholder="Mr John DOE"
-                        />
-                        <InputLabel>Message</InputLabel>
-                        <Field
-                            name="Message"
-                            component="input"
-                            type="textarea"
-                            placeholder=""
-                        />
-                        <Button
-                            component="submit"
-                            onClick={() => handleSubmit()}
-                        >
-                            Envoyer
-                        </Button>
-                    </form>
-                )}
-            />
+                // method="POST"
+                ref={(form) => (form = form)}
+                className="contact-container"
+                onReset={() => handleReset()}
+            >
+                <Typography variant="h2">Contactez moi!</Typography>
+                <InputLabel>Nom complet</InputLabel>
+                <input
+                    name="fullname"
+                    type="text"
+                    value={user.fullname}
+                    onChange={(event) => handleChange(event)}
+                    placeholder="Mr John DOE / Miss Jane DOE"
+                />
+                <InputLabel>Email</InputLabel>
+                <input
+                    name="user_email"
+                    type="email"
+                    value={user.user_email}
+                    onChange={(event) => handleChange(event)}
+                    placeholder="mon@email.com"
+                />
+                <InputLabel>Sujet</InputLabel>
+                <input
+                    name="subject"
+                    type="text"
+                    value={user.subject}
+                    onChange={(event) => handleChange(event)}
+                />
+                <InputLabel>Message</InputLabel>
+                <input
+                    name="text"
+                    type="textarea"
+                    value={user.text}
+                    onChange={(event) => handleChange(event)}
+                />
+                <Button
+                    component="submit"
+                    onClick={(event) => handleSubmit(event)}
+                    onSubmit={(event) => handleReset(event)}
+                >
+                    Envoyer
+                </Button>
+            </Form>
         </Card>
     );
 }

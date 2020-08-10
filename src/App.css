@@ -9,6 +9,7 @@
         "leftMenu footer footer footer footer";
     row-gap: 5px;
     column-gap: 5px;
+    background-color: #4ec044;
     justify-items: stretch;
     align-items: stretch;
     padding: 5px;
@@ -32,7 +33,7 @@
     grid-area: header;
 }
 
-.main{
+.main {
     grid-area: main;
 }
 .footer {
