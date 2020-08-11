@@ -7,6 +7,7 @@ import Cv from "./CV";
 // import library
 import Axios from "axios";
 import { Document, Page, pdfjs } from "react-pdf";
+import { Frame, Scroll, Stack } from "framer";
 
 // import Material UI
 import {
