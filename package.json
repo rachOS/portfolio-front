@@ -16,6 +16,7 @@
     "express-favicon": "^2.0.1",
     "final-form": "^4.20.1",
     "fontsource-roboto": "^2.2.6",
+    "framer": "^1.2.5",
     "jquery": "^3.5.1",
     "path": "^0.12.7",
     "react": "^16.13.1",

@@ -32,3 +32,10 @@
 }
 .react-pdf__Page {
 }
+
+.MuiCardContent-root {
+    background-color: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}

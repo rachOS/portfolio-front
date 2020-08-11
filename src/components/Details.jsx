@@ -1,4 +1,10 @@
+// import core
 import React, { useState, useEffect } from "react";
+
+// import Components
+import Cv from "./CV";
+
+// import library
 import Axios from "axios";
 import { Document, Page, pdfjs } from "react-pdf";
 
@@ -10,14 +16,13 @@ import {
     CardContent,
     Button,
     CardActions,
-    Typography,
-    Container,
 } from "@material-ui/core";
 
 // import style
 import "../App.css";
 import "./style/details.css";
 
+// import files
 import pdf from "../static/CV/Grégory_Chamekh_DéveloppeurWebFullstack-junior-v10b.pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -47,18 +52,17 @@ function Details() {
             <Paper className="details-container">
                 <Card className="cv">
                     <CardContent>
+                        <Cv />
+                        {/* <CardMedia>
                         <Document
-                            className="cv"
-                            file={pdf}
-                            onLoadSuccess={onDocumentLoadSuccess}
-                            onLoadError={onLoadError}
+                        className="cv"
+                        file={pdf}
+                        onLoadSuccess={onDocumentLoadSuccess}
+                        onLoadError={onLoadError}
                         >
-                            <Page pageNumber={1} />
+                        <Page pageNumber={1} />
                         </Document>
-
-                        <CardActions>
-                            <Button onClick={() => getCV()}>Télécharger</Button>
-                        </CardActions>
+                        </CardMedia> */}
                     </CardContent>
                 </Card>
                 <Card className="infos">Disponibilités et infos</Card>
