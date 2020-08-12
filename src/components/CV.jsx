@@ -26,6 +26,7 @@ import CakeSharpIcon from "@material-ui/icons/CakeSharp";
 // import data
 
 // import style
+import "./style/cv.css";
 
 function CV() {
     return (
@@ -43,12 +44,16 @@ function CV() {
                         width={"100%"}
                     >
                         <Container>
-                            <Typography variant="h2" align="center">
+                            <Typography
+                                className="section"
+                                variant="h2"
+                                align="center"
+                            >
                                 Développeur web fullstack
-                            </Typography>
-                            <Typography align="center">
-                                JavaScript | ReactJS | NodeJS | Versionning |
-                                Clean code | Veille techno | Anglais
+                                <Typography align="center">
+                                    JavaScript | ReactJS | NodeJS | Versionning
+                                    | Clean code | Veille techno | Anglais
+                                </Typography>
                             </Typography>
                         </Container>
                         <Container>
@@ -63,7 +68,7 @@ function CV() {
                             </Typography>
                             <Typography>
                                 Grégory Chamekh : 43 ans |
-                                <CakeSharpIcon /> né le 19 juin 1977| Bordeaux
+                                <CakeSharpIcon /> 19 juin 1977 | Bordeaux
                                 <PhoneInTalkSharpIcon />
                                 06.349.349.63 |
                                 <EmailSharpIcon />
@@ -73,7 +78,11 @@ function CV() {
                         </Container>
                         <Container>
                             <Box>
-                                <Typography variant="h3" align="center">
+                                <Typography
+                                    className="section"
+                                    variant="h3"
+                                    align="center"
+                                >
                                     Parcours professionnel
                                 </Typography>
                             </Box>
@@ -87,8 +96,11 @@ function CV() {
                                 <Typography paragraph>
                                     <List disablePadding>
                                         <ListItem>
-                                            Stacks : JavaScript / ReactJS /
-                                            NodeJS / Redux Site
+                                            Stacks :{" "}
+                                            <p className="javascript">
+                                                JavaScript
+                                            </p>{" "}
+                                            / ReactJS / NodeJS / Redux Site
                                         </ListItem>
                                         <ListItem>
                                             e-commerce de vente de cartes
@@ -163,7 +175,13 @@ function CV() {
                         </Container>
                         <Container>
                             <Box>
-                                <Typography variant="h3">Formations</Typography>
+                                <Typography
+                                    className="section"
+                                    variant="h3"
+                                    align="center"
+                                >
+                                    Formations
+                                </Typography>
                             </Box>
                             <Typography>
                                 Méthodologie, clean-code, fondamentaux :
@@ -200,7 +218,11 @@ function CV() {
                         </Container>
                         <Container>
                             <Box>
-                                <Typography variant="h3">
+                                <Typography
+                                    className="section"
+                                    variant="h3"
+                                    align="center"
+                                >
                                     Loisirs et intérêts
                                 </Typography>
                                 <Typography>
