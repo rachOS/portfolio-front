@@ -20,13 +20,13 @@ import "./App.css";
 function App() {
     const [projects, setProjects] = useState([{}]);
     const [lastProject, setLastProject] = useState([{}]);
+
     const getProjects = () => {
         const projectsURL = `${process.env.REACT_APP_HOST}/projects?sort=true`;
         Axios.get(projectsURL)
             .then((response) => response.data)
             .then((data) => setProjects(data));
     };
-
     useEffect(() => {
         getProjects();
     }, []);
@@ -45,7 +45,9 @@ function App() {
                     <LeftContent />
                     <Header lastProject={lastProject} />
                     <Switch>
-                        <Route exact path="/" component={Home} />
+                        <Route exact path="/">
+                            <Home projects={projects} />
+                        </Route>
                         <Route path="/portfolio/:lastProject">
                             <Portfolio />
                             <Route path="/portfolio/:id">
