@@ -11,10 +11,6 @@ import {
     Link,
 } from "@material-ui/core";
 
-// import components
-
-// import data
-
 // import style
 import "../style/portfolio.css";
 
@@ -36,7 +32,7 @@ function Description({ projectName, url }) {
         ? description
         : "Description du projet";
     return (
-        <React.Fragment>
+        <Container>
             <Typography variant="h3">{projectName}</Typography>
             <Typography
                 paragraph
@@ -44,7 +40,7 @@ function Description({ projectName, url }) {
                 dangerouslySetInnerHTML={{ __html: checkDescription }}
             />
             <Link href={url}> Lien du site</Link>
-        </React.Fragment>
+        </Container>
     );
 }
 

@@ -39,7 +39,7 @@ function CV() {
                     padding={0}
                 >
                     <Frame
-                        backgroundColor={"noce"}
+                        backgroundColor={"none"}
                         height={"100%"}
                         width={"100%"}
                     >

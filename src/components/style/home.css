@@ -1,0 +1,37 @@
+.content {
+    height: 200px;
+    max-height: 100%;
+    width: auto;
+    max-width: 100%;
+    padding: 0px;
+}
+
+.preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px;
+}
+
+.title {
+    font: bold 200px arial, sans-serif;
+    background-color: #a3a3a3;
+    color: transparent;
+    text-shadow: 4px 3px 1px rgba(255, 255, 255, 0.1),
+        4px 3px 1px rgba(255, 255, 255, 0.1),
+        4px 3px 1px rgba(255, 255, 255, 0.1),
+        4px 3px 1px rgba(255, 255, 255, 0.1);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    letter-spacing: -4px;
+    margin: 0 auto;
+    position: relative;
+    top: 30px;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}

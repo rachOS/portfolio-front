@@ -1,23 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import { Route, Switch, useRouteMatch, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 // import Material UI Components
 import {
-    Container,
+    Box,
     Card,
-    List,
-    ListItem,
-    ListItemIcon,
-    ListItemAvatar,
-    ListSubheader,
-    ListItemText,
     Link,
     Avatar,
-    Box,
     Typography,
     CardContent,
-    Divider,
+    CardHeader,
+    Paper,
+    Container,
 } from "@material-ui/core";
 
 // import Material UI icons
@@ -26,10 +21,6 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import EmailIcon from "@material-ui/icons/Email";
 import FacebookIcon from "@material-ui/icons/Facebook";
 
-// import components
-
-// import data
-
 // import style
 import "../style/portfolio.css";
 import { makeStyles } from "@material-ui/core/styles";
@@ -37,23 +28,25 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
-        flexWrap: "no_wrap",
-        width: "100%",
-        maxWidth: "auto",
-        backgroundColor: theme.palette.background.paper,
+        flexWrap: "wrap",
+        justifyContent: "start",
+        padding: "5px",
     },
-    listItemsText: {
-        display: "inline",
+    cards: {
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "space-evenly",
+        width: "auto",
+        minWidth: "100%",
     },
-    nested: {
-        paddingLeft: theme.spacing(4),
+    card: {
+        margin: "5px",
     },
 }));
 function Team() {
     const classes = useStyles();
 
     const { id } = useParams();
-    const { path, url } = useRouteMatch();
     const [nbrOfDevsByTeam, setNbrOfDevsByTeam] = useState([{}]);
     const [developpers, setDeveloppers] = useState([{}]);
 
@@ -77,83 +70,51 @@ function Team() {
     }, [id]);
 
     const listOfDeveloppers = developpers.map((developper) => (
-        <List component="nav">
-            <ListItem>
-                <ListItemAvatar>
+        <Card className={classes.card}>
+            <CardHeader
+                title={`${developper.firstname} ${developper.lastname}`}
+                subheader={
+                    developper.available
+                        ? "disponible actuellement"
+                        : `disponible à partir du ${developper.availability_date}`
+                }
+                avatar={
                     <Avatar
-                        alt={(developper.firstname, developper.ladtname)}
-                        src="/static/images/avatar/1.jpg"
+                        alt={(developper.firstname, developper.lastname)}
+                        src="../../static/image/avatar/linkedin _avatar.jpeg"
                     />
-                </ListItemAvatar>
-                <ListItemText
-                    primary="Infos"
-                    secondary={
-                        <React.Fragment>
-                            <Typography
-                                component="span"
-                                variant="body2"
-                                className={classes.listItemsText}
-                                color="textPrimary"
-                            >
-                                {developper.firstname} {developper.lastname}
-                            </Typography>
-                            <Typography>
-                                {developper.biography}{" "}
-                                {developper.available
-                                    ? "disponible actuellement"
-                                    : `disponible à partir du ${developper.availability_date}`}{" "}
-                                <ListItemIcon>
-                                    <Link href={developper.email}>
-                                        <EmailIcon />
-                                    </Link>
-                                </ListItemIcon>
-                                <ListItemIcon>
-                                    <Link href={developper.linkedIn}>
-                                        <LinkedInIcon />
-                                    </Link>
-                                </ListItemIcon>
-                                <ListItemIcon>
-                                    <Link href={developper.github}>
-                                        <GitHubIcon />
-                                    </Link>
-                                </ListItemIcon>
-                                <ListItemIcon>
-                                    <Link href={developper.facebook}>
-                                        <FacebookIcon />
-                                    </Link>
-                                </ListItemIcon>
-                                <ListItemIcon>
-                                    <Link href={developper.medium}>Medium</Link>
-                                </ListItemIcon>
-                                <ListItemIcon>
-                                    <Link href={developper.stack_overflow}>
-                                        Stack Overflow
-                                    </Link>
-                                </ListItemIcon>
-                                <ListItemIcon>
-                                    <Link href={developper.website}>
-                                        website
-                                    </Link>
-                                </ListItemIcon>
-                            </Typography>
-                            <Divider component="li" />
-                        </React.Fragment>
-                    }
-                />
-            </ListItem>
-        </List>
-    ));
-    return (
-        <Card>
+                }
+            />
             <CardContent>
                 <Typography>
-                    Ces {nbrOfDevsByTeam.Nbr_devs} développeurs.ses ont réalisés le
-                    projet {nbrOfDevsByTeam.name} :
-                    <List>{listOfDeveloppers}</List>
+                    {developper.biography}{" "}
+                    <Link href={developper.email}>
+                        <EmailIcon />
+                    </Link>
+                    <Link href={developper.linkedIn}>
+                        <LinkedInIcon />
+                    </Link>
+                    <Link href={developper.github}>
+                        <GitHubIcon />
+                    </Link>
+                    <Link href={developper.facebook}>
+                        <FacebookIcon />
+                    </Link>
+                    <Link href={developper.medium}>Medium</Link>
+                    <Link href={developper.stack_overflow}>Stack Overflow</Link>
+                    <Link href={developper.website}>website</Link>
                 </Typography>
             </CardContent>
-            <Divider />
         </Card>
+    ));
+    return (
+        <Container className={classes.root}>
+            <Typography>
+                Ces {nbrOfDevsByTeam.Nbr_devs} développeurs.ses ont réalisés le
+                projet {nbrOfDevsByTeam.name} :
+            </Typography>
+            <Box className={classes.cards}>{listOfDeveloppers}</Box>
+        </Container>
     );
 }
 

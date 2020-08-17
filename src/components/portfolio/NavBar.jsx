@@ -7,7 +7,7 @@ import {
     useRouteMatch,
     useParams,
 } from "react-router-dom";
-import { Tabs, Tab, Card } from "@material-ui/core";
+import { Tabs, Tab, Card, Container, Paper } from "@material-ui/core";
 
 // import components
 
@@ -15,8 +15,24 @@ import { Tabs, Tab, Card } from "@material-ui/core";
 
 // import style
 import "../style/portfolio.css";
+import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles((theme) => ({
+    root: {
+        display: "flex",
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        margin: "5px",
+        backgroundColor: theme.palette.background.paper,
+    },
+    content: {
+        margin: "5px",
+        padding: "10px",
+        maxWidth: "50%",
+    },
+}));
 function NavBar() {
+    const classes = useStyles();
     let { path, url } = useRouteMatch();
 
     const tabLabel = [
@@ -50,9 +66,9 @@ function NavBar() {
     ));
 
     return (
-        <Card>
+        <Container className={classes.root}>
             <Tabs>{links}</Tabs>
-        </Card>
+        </Container>
     );
 }
 

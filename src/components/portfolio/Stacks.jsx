@@ -6,14 +6,9 @@ import { Route, Switch, useRouteMatch, useParams } from "react-router-dom";
 import {
     Container,
     Card,
-    List,
-    ListItem,
-    ListItemIcon,
-    ListItemAvatar,
-    ListSubheader,
-    ListItemText,
+    CardHeader,
     Link,
-    Avatar,
+    CardActions,
     Box,
     Typography,
     CardContent,
@@ -26,8 +21,31 @@ import {
 
 // import style
 import "../style/portfolio.css";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "start",
+        padding: "5px",
+    },
+    cards: {
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "space-evenly",
+        width: "auto",
+        minWidth: "100%",
+        // border: "1px solid red",
+    },
+    card: {
+        margin: "5px",
+        // border: "1px solid green",
+    },
+}));
 
 function Stacks() {
+    const classes = useStyles();
     const { id } = useParams();
     const [stacks, setStacks] = useState([{}]);
     const [tools, setTools] = useState([{}]);
@@ -51,42 +69,30 @@ function Stacks() {
     }, [id]);
 
     const listOfStacks = stacks.map((stack) => (
-        <React.Fragment>
-            <ListItem>
-                <ListItemText
-                    inset
-                    primary={stack.name}
-                    secondary={stack.version_used}
-                />
-                <ListItemText inset button>
-                    <Link href={stack.site}>site officiel</Link>
-                </ListItemText>
-            </ListItem>
-        </React.Fragment>
+        <Card className={classes.card}>
+            <CardHeader title={stack.name} subheader={stack.version_used} />
+            <CardActions>
+                <Link href={stack.site}>site officiel</Link>
+            </CardActions>
+        </Card>
     ));
 
     const listOfTools = tools.map((tool) => (
-        <React.Fragment>
-            <ListItem>
-                <ListItemText
-                    inset
-                    primary={tool.name}
-                    secondary={tool.version_used}
-                />
-                <ListItemText inset button>
-                    <Link href={tool.site}>site officiel</Link>
-                </ListItemText>
-            </ListItem>
-        </React.Fragment>
+        <Card className={classes.card}>
+            <CardHeader title={tool.name} subheader={tool.version_used} />
+            <CardActions>
+                <Link href={tool.site}>site officiel</Link>
+            </CardActions>
+        </Card>
     ));
     return (
-        <React.Fragment>
+        <Container className={classes.root}>
             <Typography variant="h3">Les technos</Typography>
-            <List>{listOfStacks}</List>
+            <Box className={classes.cards}>{listOfStacks}</Box>
             <Divider />
             <Typography variant="h3">Les outils</Typography>
-            <List >{listOfTools}</List>
-        </React.Fragment>
+            <Box className={classes.cards}>{listOfTools}</Box>
+        </Container>
     );
 }
 
