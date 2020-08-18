@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { CssBaseline, Box } from "@material-ui/core";
 
 // import components
 import Home from "./components/Home";
@@ -14,10 +13,30 @@ import LeftContent from "./components/LeftContent";
 import Footer from "./components/Footer";
 import Project from "./components/portfolio/Project";
 
-// import style
-import "./App.css";
+// import Material Ui
+import { Container, CssBaseline, makeStyles } from "@material-ui/core";
+
+const useStyle = makeStyles((theme) => ({
+    root: {
+        height: "98.9vh",
+        width:"auto",
+        display: "grid",
+        gridTemplateColumns: " 0.70fr 1fr 1fr 1fr 1fr",
+        gridTemplateRows: "0.1fr 0.2fr 1fr 0.125fr",
+        gridTemplateAreas:
+            '  "leftMenu header header header header" \
+            "leftMenu main main main main" \
+            "leftMenu main main main main" \
+            "leftMenu footer footer footer footer"',
+        rowGap: "5px",
+        columnGap: "5px",
+        padding:"0px",
+        margin:"5px"
+    },
+}));
 
 function App() {
+    const classes = useStyle()
     const [projects, setProjects] = useState([{}]);
     const [lastProject, setLastProject] = useState([{}]);
 
@@ -40,8 +59,8 @@ function App() {
 
     return (
         <Router>
-            <CssBaseline>
-                <Box className="container">
+            <Container className={classes.root} maxWidth="fluid">
+                <CssBaseline>
                     <LeftContent />
                     <Header lastProject={lastProject} />
                     <Switch>
@@ -58,8 +77,8 @@ function App() {
                         <Route path="/contact" component={Contact} />
                     </Switch>
                     <Footer className="footer" />
-                </Box>
-            </CssBaseline>
+                </CssBaseline>
+            </Container>
         </Router>
     );
 }

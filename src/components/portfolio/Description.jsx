@@ -1,20 +1,25 @@
+// import core
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
-import { useParams, useRouteMatch } from "react-router-dom";
-import {
-    Box,
-    Avatar,
-    Paper,
-    Typography,
-    Card,
-    Container,
-    Link,
-} from "@material-ui/core";
+import { useParams } from "react-router-dom";
 
-// import style
-import "../style/portfolio.css";
+// import Material UI
+import { Container, makeStyles, Link, Typography } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+    content: {
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        height: "calc(652.8px - 48px - 10px)",
+        width: "100%",
+        margin: "5px",
+        backgroundColor: theme.palette.background.paper,
+    },
+}));
 
 function Description({ projectName, url }) {
+    const classes = useStyles();
+
     const { id } = useParams();
     const [description, SetDescription] = useState(null);
 
@@ -39,7 +44,11 @@ function Description({ projectName, url }) {
                 variant="body1"
                 dangerouslySetInnerHTML={{ __html: checkDescription }}
             />
-            <Link href={url}> Lien du site</Link>
+            {url ? (
+                <Link href={url}> Lien du site</Link>
+            ) : (
+                "site en cours de déploiement"
+            )}
         </Container>
     );
 }

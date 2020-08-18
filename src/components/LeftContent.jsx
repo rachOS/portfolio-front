@@ -25,7 +25,6 @@ import {
 } from "@material-ui/core";
 
 //import style
-import "../App.css";
 import "./style/left-menu.css";
 
 // import files
@@ -34,6 +33,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        gridArea: "leftMenu",
         display: "flex",
         flexDirection: "column",
         width: "auto",
@@ -41,8 +41,9 @@ const useStyles = makeStyles((theme) => ({
         height: "auto",
     },
     accordion_container: {
+        display: "grid",
+        alignContent: "center",
         height: "100%",
-        border: "1px solid red",
     },
     large: {
         width: theme.spacing(10),
@@ -53,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
     },
 }));
-// init component
+
 const LeftContent = () => {
     const classes = useStyles();
     const [numPages, setNumPages] = useState(null);
@@ -64,7 +65,7 @@ const LeftContent = () => {
         return error.message;
     };
     return (
-        <Box className={`left-menu accordions ${classes.root}`}>
+        <Box className={`${classes.root}`}>
             <Accordion className={classes.accordion_container}>
                 <AccordionSummary>
                     <Typography variant="h2">A propos</Typography>
@@ -144,5 +145,4 @@ const LeftContent = () => {
     );
 };
 
-// export component
 export default LeftContent;

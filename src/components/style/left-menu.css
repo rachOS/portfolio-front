@@ -1,14 +1,6 @@
-.accordions {
-    display: grid;
-}
-
 .MuiAccordionSummary-content {
     flex-wrap: wrap;
-    align-items: center;
-    flex-direction: column;
+    justify-content: center;
+    align-content:space-between;
 }
 
-.MuiPaper-root.MuiAccordion-root.MuiAccordion-rounded.MuiPaper-elevation1.MuiPaper-rounded {
-    display: grid;
-    align-content: center;
-}

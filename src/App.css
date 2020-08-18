@@ -1,6 +1,6 @@
 .container {
     display: grid;
-    grid-template-columns: 0.70fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.7fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 0.1fr 0.2fr 1fr 0.125fr;
     grid-template-areas:
         "leftMenu header header header header"
@@ -26,24 +26,21 @@
     grid-area: infos;
 }
 
-.left-menu {
+/* .left-menu {
     grid-area: leftMenu;
-}
-.header {
+} */
+/* .header {
     grid-area: header;
-}
+} */
 
-.main {
+/* .main {
     grid-area: main;
-}
-.footer {
+} */
+/* .footer {
     margin: 0;
     grid-area: footer;
-}
-.test {
-    margin: 0;
-    grid-area: test;
-}
+} */
+
 
 .MuiList-root.MuiList-padding {
     display: flex;

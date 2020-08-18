@@ -1,45 +1,54 @@
 // import core
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 // import Components
 import Cv from "./CV";
 
-// import library
-import Axios from "axios";
-
 // import Material UI
-import { Paper, Box, Card, CardContent } from "@material-ui/core";
+import { Card, CardContent, makeStyles, Paper } from "@material-ui/core";
 
-// import style
-import "../App.css";
-import "./style/details.css";
+const useStyle = makeStyles((theme) => ({
+    root: {
+        gridArea: "main",
+        display: "grid",
+        ggridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",
+        ggridTemplateRows: " 1fr 1fr 1fr 1fr",
+        gridTemplateAreas:
+            ' "cv cv cv infos infos" \
+        "cv cv cv infos infos" \
+        "cv cv cv form form" \
+        "cv cv cv form form"',
+        height: "100%",
+        rowGap: "5px",
+        columnGap: "5px",
+        justifyItems: "stretch",
+        alignItems: "stretch",
+        padding: "50px",
+    },
+    form: {
+        gridArea: "form",
+    },
+    infos: {
+        gridArea: "infos",
+    },
+    cv: {
+        gridArea: "cv",
+    },
+}));
 
 function Details() {
-    const [cv, setCv] = useState();
-
-    const getCV = async () => {
-        const cvURL = `${process.env.REACT_APP_HOST}/infos/download`;
-        await Axios.get(cvURL)
-            .then((response) => response.data)
-            .then((data) => setCv(data));
-    };
-
-    useEffect(() => {
-        getCV();
-    }, []);
+    const classes = useStyle();
 
     return (
-        <Box className="main">
-            <Paper className="details-container">
-                <Card className="cv">
-                    <CardContent>
-                        <Cv />
-                    </CardContent>
-                </Card>
-                <Card className="infos">Disponibilités et infos</Card>
-                <Card className="form">Une question?</Card>
-            </Paper>
-        </Box>
+        <Paper className={classes.root} maxWidth="fluid">
+            <Card className={classes.cv}>
+                <CardContent>
+                    <Cv />
+                </CardContent>
+            </Card>
+            <Card className={classes.infos}>Disponibilités et infos</Card>
+            <Card className={classes.form}>Une question?</Card>
+        </Paper>
     );
 }
 

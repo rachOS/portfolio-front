@@ -1,6 +1,6 @@
+// import core
 import React from "react";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
-import { Card, Container, Box } from "@material-ui/core";
 
 // import components
 import Description from "./Description";
@@ -10,33 +10,33 @@ import Stacks from "./Stacks";
 import Team from "./Team";
 import NavBar from "./NavBar";
 
-// import style
-import { makeStyles } from "@material-ui/core/styles";
-import "../../App.css";
-import "../style/portfolio.css";
+// import Material UI
+import { Container, makeStyles, Paper, Divider } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        gridArea: "form",
+    },
     content: {
         display: "flex",
         justifyContent: "space-evenly",
         alignItems: "center",
-        height: "calc(652.8px - 48px - 10px)",
+        padding: "10px",
         width: "100%",
-        margin: "5px",
         backgroundColor: theme.palette.background.paper,
     },
-
 }));
 
 function Informations({ project }) {
     const classes = useStyles();
     const { path } = useRouteMatch();
     return (
-        <Container className="form">
+        <Paper className={classes.root}>
             <NavBar />
+            <Divider />
             <Switch>
                 <Route path={`${path}/description`}>
-                    <Container className={classes.content}>
+                    <Container>
                         <Description
                             projectName={project.name}
                             url={project.site_link}
@@ -64,7 +64,7 @@ function Informations({ project }) {
                     </Container>
                 </Route>
             </Switch>
-        </Container>
+        </Paper>
     );
 }
 

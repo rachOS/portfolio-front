@@ -1,18 +1,30 @@
+// import core
 import React from "react";
 import { Link } from "react-router-dom";
 
-// import Material UI
-import { Avatar, Container } from "@material-ui/core";
-
-// import react-click
+// import library
 import Slider from "react-slick";
 
+// import Material UI
+import { Avatar, Container, makeStyles } from "@material-ui/core";
+
 // import style
-import "../style/portfolio.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+const useStyle = makeStyles((theme) => ({
+    root: {
+        gridArea: "carousel",
+    },
+    slider: {
+        top: "33%",
+        left:"2%"
+    },
+    links: {
+    },
+}));
 function Carousel({ projects }) {
+    const classes = useStyle();
     const settings = {
         dots: true,
         dotsClass: "slick-dots slick-thumb",
@@ -23,13 +35,17 @@ function Carousel({ projects }) {
     };
 
     return (
-        <Container className="carousel">
-            <Slider {...settings}>
+        <Container className={classes.root} component="fluid">
+            <Slider {...settings} className={classes.slider}>
                 {projects.map((project, index) => (
-                    <Link to={`/portfolio/${project.id}/description`}>
+                    <Link
+                        className={classes.links}
+                        to={`/portfolio/${project.id}/description`}
+                    >
                         <Avatar
+                            variant="rounded"
                             key={index}
-                            src="src/static/image/avatar/linkedin _avatar.jpeg"
+                            src={`${process.env.REACT_APP_HOST}/logos/${project.id}`}
                             alt={project.name}
                         />
                     </Link>

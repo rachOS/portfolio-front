@@ -1,19 +1,15 @@
-import React from 'react';
-import { Container } from '@material-ui/core';
+// import core
+import React from "react";
 
-// import components
-
-// import data
-
-// import style
-import "../style/portfolio.css";
+// import Material UI
+import { Container } from "@material-ui/core";
 
 function Features() {
-  return (
-    <Container>
-      <h1>Features Component</h1>
-    </Container>
-  );
+    return (
+        <Container>
+            <h1>Features Component</h1>
+        </Container>
+    );
 }
 
 export default Features;

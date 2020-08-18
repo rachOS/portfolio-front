@@ -1,20 +1,23 @@
 // import core
 import React from "react";
 
-// import library
-import Axios from "axios";
-
 // import Material UI
-import { Card, Box } from "@material-ui/core";
+import { Card, makeStyles } from "@material-ui/core";
 
-// import style
-import "../../App.css";
-import "../style/portfolio.css";
-
+const useStyle = makeStyles((theme) => ({
+    root: {
+        gridArea: "screenshot",
+        display: "flex",
+        alignItems: "center",
+        padding: "5%",
+        backgroundColor: theme.palette.background.paper,
+    },
+}));
 function Screenshot({ project }) {
+    const classes = useStyle();
     return (
-        <Card className="screenshot">
-            <img id="screenshot"
+        <Card className={classes.root} component="fluid">
+            <img
                 src={`${process.env.REACT_APP_HOST}/latest/${project.id}`}
                 alt={`screenshot ${project.name} : ${project.id} `}
             />

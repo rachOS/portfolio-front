@@ -4,15 +4,14 @@ import { useParams } from "react-router-dom";
 
 // import Material UI Components
 import {
+    Avatar,
     Box,
     Card,
-    Link,
-    Avatar,
-    Typography,
     CardContent,
     CardHeader,
-    Paper,
     Container,
+    Link,
+    Typography,
 } from "@material-ui/core";
 
 // import Material UI icons
@@ -22,7 +21,6 @@ import EmailIcon from "@material-ui/icons/Email";
 import FacebookIcon from "@material-ui/icons/Facebook";
 
 // import style
-import "../style/portfolio.css";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({

@@ -8,14 +8,28 @@ import Informations from "./Informations";
 import Screenshot from "./Screenshot";
 
 // import Material UI
-import { Box } from "@material-ui/core";
+import { makeStyles, Paper } from "@material-ui/core";
 
-// import style
-import "../style/portfolio.css";
+const useStyle = makeStyles((theme) => ({
+    root: {
+        gridArea: "main",
+        display: "grid",
+        gridTemplateColumns: "0.5fr 0.5fr 1fr 1fr",
+        gridTemplateRows: "0.5fr 1fr 1fr",
+        gridTemplateAreas:
+            ' "carousel carousel form form form" \
+        "screenshot screenshot form form form" \
+        "screenshot screenshot form form form"',
+        padding: "50px",
+        rowGap: "5px",
+        columnGap: "5px",
+    },
+}));
 
 function Project({ projects }) {
-    const { id } = useParams();
+    const classes = useStyle();
 
+    const { id } = useParams();
     const [project, setProject] = useState([{}]);
 
     const getOneProject = (idProject) => {
@@ -32,11 +46,11 @@ function Project({ projects }) {
     console.log("ID", id);
 
     return (
-        <Box className="main portfolio-container" maxWidth="xl">
+        <Paper className={`main ${classes.root}`} maxWidth="fluid">
             <Screenshot project={project} />
             <Informations project={project} />
             <Carousel projects={projects} />
-        </Box>
+        </Paper>
     );
 }
 

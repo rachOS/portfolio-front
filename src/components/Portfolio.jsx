@@ -1,8 +1,5 @@
+// import core
 import React, { Fragment } from "react";
-
-// import style
-import "../App.css";
-import "./style/portfolio.css";
 
 function Portfolio() {
     return <Fragment />;

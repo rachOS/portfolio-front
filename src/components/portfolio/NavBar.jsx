@@ -1,28 +1,12 @@
-import React, { useState, useEffect } from "react";
-import Axios from "axios";
-import {
-    Link,
-    Switch,
-    Route,
-    useRouteMatch,
-    useParams,
-} from "react-router-dom";
-import { Tabs, Tab, Card, Container, Paper } from "@material-ui/core";
-
-// import components
-
-// import data
-
-// import style
-import "../style/portfolio.css";
-import { makeStyles } from "@material-ui/core/styles";
+import React from "react";
+import { Link, useRouteMatch } from "react-router-dom";
+import { Container, makeStyles, Tabs, Tab } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
         justifyContent: "space-evenly",
         alignItems: "center",
-        margin: "5px",
         backgroundColor: theme.palette.background.paper,
     },
     content: {
@@ -33,28 +17,24 @@ const useStyles = makeStyles((theme) => ({
 }));
 function NavBar() {
     const classes = useStyles();
-    let { path, url } = useRouteMatch();
+    let { url } = useRouteMatch();
 
     const tabLabel = [
         {
             label: "La description",
-            url: `${url}/description`
+            url: `${url}/description`,
         },
         {
             label: "L'équipe",
-            url: `${url}/team`
+            url: `${url}/team`,
         },
         {
             label: "Les technos et les outils",
-            url: `${url}/stacks-tools`
+            url: `${url}/stacks-tools`,
         },
         {
             label: "Les fonctionnalités",
-            url: `${url}/features`
-        },
-        {
-            label: "Le partage",
-            url: `${url}/share`
+            url: `${url}/features`,
         },
     ];
 

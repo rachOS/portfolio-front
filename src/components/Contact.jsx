@@ -1,13 +1,52 @@
+// import core
 import React, { useState, useEffect } from "react";
-import Axios from "axios";
-import { Form } from "react-advanced-form";
-import { Card, InputLabel, Button, Typography, Input } from "@material-ui/core";
 
-// import style
-import "../App.css";
-import "./style/contact.css";
+// import library
+import { Form } from "react-advanced-form";
+
+// import Material UI
+import {
+    Box,
+    Button,
+    InputLabel,
+    makeStyles,
+    Paper,
+    Typography,
+} from "@material-ui/core";
+
+const useStyle = makeStyles((theme) => ({
+    root: {
+        gridArea: "main",
+    },
+    form: {
+        height: "100%",
+        padding: "50px",
+    },
+    text: {
+        gridArea: "text",
+        height: "30vh",
+        width: "70vh",
+    },
+    title: {
+        gridArea: "title",
+    },
+    email: {
+        gridArea: "email",
+    },
+    fullname: {
+        gridArea: "fullname",
+    },
+    subject: {
+        gridArea: "subject",
+    },
+    button: {
+        gridArea: "button",
+    },
+}));
 
 function Contact() {
+    const classes = useStyle();
+
     const initialUserState = {
         user_email: "",
         fullname: "",
@@ -43,49 +82,64 @@ function Contact() {
         // const formDatas = user;
         // Axios.post(sendURL, formDatas);
         onSubmit();
-        handleReset()
+        handleReset();
     };
 
     return (
-        <Card className="main contact">
+        <Paper className={classes.root}>
             <Form
                 // method="POST"
+                className={classes.form}
                 ref={(form) => (form = form)}
-                className="contact-container"
                 onReset={() => handleReset()}
             >
-                <Typography variant="h2">Contactez moi!</Typography>
-                <InputLabel>Nom complet</InputLabel>
-                <input
-                    name="fullname"
-                    type="text"
-                    value={user.fullname}
-                    onChange={(event) => handleChange(event)}
-                    placeholder="Mr John DOE / Miss Jane DOE"
-                />
-                <InputLabel>Email</InputLabel>
-                <input
-                    name="user_email"
-                    type="email"
-                    value={user.user_email}
-                    onChange={(event) => handleChange(event)}
-                    placeholder="mon@email.com"
-                />
-                <InputLabel>Sujet</InputLabel>
-                <input
-                    name="subject"
-                    type="text"
-                    value={user.subject}
-                    onChange={(event) => handleChange(event)}
-                />
-                <InputLabel>Message</InputLabel>
-                <input
-                    name="text"
-                    type="textarea"
-                    value={user.text}
-                    onChange={(event) => handleChange(event)}
-                />
+                <Typography className={classes.title} variant="h2">
+                    Contactez moi!
+                </Typography>
+                <Box>
+                    <InputLabel>Nom complet</InputLabel>
+                    <input
+                        className={classes.fullname}
+                        name="fullname"
+                        type="text"
+                        value={user.fullname}
+                        onChange={(event) => handleChange(event)}
+                        placeholder="Mr John DOE / Miss Jane DOE"
+                    />
+                </Box>
+                <Box>
+                    <InputLabel>Email</InputLabel>
+                    <input
+                        className={classes.email}
+                        name="user_email"
+                        type="email"
+                        value={user.user_email}
+                        onChange={(event) => handleChange(event)}
+                        placeholder="mon@email.com"
+                    />
+                </Box>
+                <Box>
+                    <InputLabel>Sujet</InputLabel>
+                    <input
+                        className={classes.subject}
+                        name="subject"
+                        type="text"
+                        value={user.subject}
+                        onChange={(event) => handleChange(event)}
+                    />
+                </Box>
+                <Box>
+                    <InputLabel>Message</InputLabel>
+                    <input
+                        className={classes.text}
+                        name="text"
+                        type="textarea"
+                        value={user.text}
+                        onChange={(event) => handleChange(event)}
+                    />
+                </Box>
                 <Button
+                    className={classes.button}
                     component="submit"
                     onClick={(event) => handleSubmit(event)}
                     onSubmit={(event) => handleReset(event)}
@@ -93,7 +147,7 @@ function Contact() {
                     Envoyer
                 </Button>
             </Form>
-        </Card>
+        </Paper>
     );
 }
 

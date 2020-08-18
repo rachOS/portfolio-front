@@ -1,27 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import { Route, Switch, useRouteMatch, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 // import Material UI Components
 import {
-    Container,
-    Card,
-    CardHeader,
-    Link,
-    CardActions,
     Box,
-    Typography,
-    CardContent,
+    Card,
+    CardActions,
+    CardHeader,
+    Container,
     Divider,
+    Link,
+    makeStyles,
+    Typography,
 } from "@material-ui/core";
-
-// import components
-
-// import data
-
-// import style
-import "../style/portfolio.css";
-import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,11 +28,9 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "space-evenly",
         width: "auto",
         minWidth: "100%",
-        // border: "1px solid red",
     },
     card: {
         margin: "5px",
-        // border: "1px solid green",
     },
 }));
 
