@@ -22,6 +22,8 @@ import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import PhoneInTalkSharpIcon from "@material-ui/icons/PhoneInTalkSharp";
 import EmailSharpIcon from "@material-ui/icons/EmailSharp";
 import CakeSharpIcon from "@material-ui/icons/CakeSharp";
+import MyLocationIcon from "@material-ui/icons/MyLocation";
+import FaceIcon from "@material-ui/icons/Face";
 
 const useStyle = makeStyles((theme) => ({
     root: {
@@ -40,13 +42,17 @@ const useStyle = makeStyles((theme) => ({
         justifyContent: "center",
     },
     spec: {
-        fontSize: "0.25em",
+        fontSize: "0.30em",
     },
     skills: {
         margin: "10px 0px",
     },
     infos: {
-        margin: "10px 0px",
+        display: "flex",
+        justifyContent: "start",
+    },
+    icon: {
+        marginRight: "15px",
     },
     section: {
         backgroundColor: "rgb(20, 20, 20)",
@@ -78,17 +84,17 @@ const useStyle = makeStyles((theme) => ({
         display: "flex",
         flexWrap: "wrap",
     },
-    download_button:{
-        margin:"20px",
-        backgroundColor:"orange"
-    }
+    download_button: {
+        margin: "20px",
+        backgroundColor: "orange",
+    },
 }));
 
 function CV() {
     const classes = useStyle();
     return (
         <Fragment>
-            <Scroll height={"65%"} width={"35%"}>
+            <Scroll height={"60%"} width={"30%"}>
                 <Stack height={"100%"}>
                     <Frame
                         backgroundColor={"none"}
@@ -105,25 +111,8 @@ function CV() {
                             Développeur web fullstack
                             <div className={[classes.subtitle]}>
                                 <Typography className={[classes.spec]}>
-                                    JavaScript
-                                </Typography>
-                                <Typography className={[classes.spec]}>
-                                    ReactJS
-                                </Typography>
-                                <Typography className={[classes.spec]}>
-                                    NodeJS
-                                </Typography>
-                                <Typography className={[classes.spec]}>
-                                    Versionning
-                                </Typography>
-                                <Typography className={[classes.spec]}>
-                                    Clean code
-                                </Typography>
-                                <Typography className={[classes.spec]}>
-                                    Veille techno constante |
-                                </Typography>
-                                <Typography className={[classes.spec]}>
-                                    Anglais
+                                    JavaScript | ReactJS | NodeJS | Versionning
+                                    | Clean code | Veille techno | Anglais
                                 </Typography>
                             </div>
                         </Typography>
@@ -135,16 +124,31 @@ function CV() {
                                 Motivé / Créatif / Curieux
                             </Typography>
                             <Typography variant="body2" align="left">
-                                Polyvalent Rigoureux / Perséverent / Autonome
+                                Polyvalent / Rigoureux / Perséverent / Autonome
                             </Typography>
                         </div>
-                        <div>
+                        <Divider className={[classes.divider]} />
+                        <div  className={[classes.skills]}>
                             <Typography className={[classes.infos]}>
-                                Grégory Chamekh : 43 ans |
-                                <CakeSharpIcon /> 19 juin 1977 | Bordeaux
-                                <PhoneInTalkSharpIcon />
+                                <FaceIcon className={[classes.icon]} />
+                                Grégory Chamekh:
+                            </Typography>
+                            <Typography className={[classes.infos]}>
+                                <CakeSharpIcon className={[classes.icon]} /> 19
+                                juin 1977 / 43 ans
+                            </Typography>
+                            <Typography className={[classes.infos]}>
+                                <MyLocationIcon className={[classes.icon]} />
+                                Bordeaux
+                            </Typography>
+                            <Typography className={[classes.infos]}>
+                                <PhoneInTalkSharpIcon
+                                    className={[classes.icon]}
+                                />
                                 06.349.349.63 |
-                                <EmailSharpIcon />
+                            </Typography>
+                            <Typography className={[classes.infos]}>
+                                <EmailSharpIcon className={[classes.icon]} />
                                 g.chamekh@e-nautia.com | disponible
                             </Typography>
                         </div>
@@ -233,7 +237,7 @@ function CV() {
                                 </List>
                             </Typography>
                         </div>
-                        <Divider className={[classes.divider]} />
+
                         <div className={[classes.jobs]}>
                             <Typography
                                 className={[classes.job_title]}
@@ -321,7 +325,6 @@ function CV() {
                                 Formations
                             </Typography>
                         </div>
-
                         <div className={[classes.jobs]}>
                             <Typography
                                 className={[classes.job_title]}
@@ -408,7 +411,7 @@ function CV() {
                                             Sport
                                         </Typography>
                                         <Typography>
-                                            1er Dan World Taekwondo Fédération
+                                            : 1er Dan World Taekwondo Fédération
                                             (élève de Maître Han Chun Tec),
                                             souplesse quotidienne, musculation
                                             au poid du corps.
@@ -421,7 +424,7 @@ function CV() {
                                             Jardinage
                                         </Typography>{" "}
                                         <Typography>
-                                            système self-watering, semis et
+                                            : système self-watering, semis et
                                             bouturages en tout genre
                                         </Typography>
                                     </ListItem>
@@ -431,12 +434,8 @@ function CV() {
                                         >
                                             Gaming
                                         </Typography>{" "}
-                                        <Typography
-                                            variant="body2"
-                                            display="block"
-                                            gutterBottom
-                                        >
-                                            EVE online, LoL, KI 3, SF V,
+                                        <Typography>
+                                            : EVE online, LoL, KI 3, SF V,
                                             participation à des tournois de Vs
                                             fighting
                                         </Typography>
@@ -447,11 +446,7 @@ function CV() {
                                         >
                                             Wachting
                                         </Typography>
-                                        <Typography
-                                            variant="body2"
-                                            display="block"
-                                            gutterBottom
-                                        >
+                                        <Typography>
                                             : sérievore, cinémavore,
                                             documentavore
                                         </Typography>
@@ -459,7 +454,9 @@ function CV() {
                                 </List>
                             </Typography>
                         </Box>
-                        <Button className={classes.download_button} onClick="">Télécharger</Button>
+                        <Button className={classes.download_button} onClick="">
+                            Télécharger
+                        </Button>
                     </Frame>
                 </Stack>
             </Scroll>

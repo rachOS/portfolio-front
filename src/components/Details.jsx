@@ -2,22 +2,23 @@
 import React from "react";
 
 // import Components
+import Contact from "./Contact";
 import Cv from "./CV";
+import Availability from "./Availability";
 
 // import Material UI
-import { Card, CardContent, makeStyles, Paper } from "@material-ui/core";
+import { Card, makeStyles, Paper } from "@material-ui/core";
 
 const useStyle = makeStyles((theme) => ({
     root: {
         gridArea: "main",
         display: "grid",
-        ggridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",
-        ggridTemplateRows: " 1fr 1fr 1fr 1fr",
+        ggridTemplateColumns: "auto",
+        ggridTemplateRows: "auto",
         gridTemplateAreas:
-            ' "cv cv cv infos infos" \
-        "cv cv cv infos infos" \
-        "cv cv cv form form" \
-        "cv cv cv form form"',
+            ' "cv cv cv cv infos" \
+        "cv cv cv cv infos" \
+        "cv cv cv cv infos"  ',
         height: "100%",
         rowGap: "5px",
         columnGap: "5px",
@@ -33,9 +34,9 @@ const useStyle = makeStyles((theme) => ({
     },
     cv: {
         gridArea: "cv",
-        display:"flex",
-        justifyContent:"center",
-        padding:"5%"
+        display: "flex",
+        justifyContent: "center",
+        padding: "5%",
     },
 }));
 
@@ -47,8 +48,12 @@ function Details() {
             <Card className={classes.cv}>
                 <Cv />
             </Card>
-            <Card className={classes.infos}>Disponibilités et infos</Card>
-            <Card className={classes.form}>Une question?</Card>
+            <Card className={classes.infos}>
+                <Availability />
+            </Card>
+            {/* <Card className={classes.form}>
+                <Contact />
+            </Card> */}
         </Paper>
     );
 }
