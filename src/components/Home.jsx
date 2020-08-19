@@ -6,29 +6,32 @@ import { Link } from "react-router-dom";
 import { Frame } from "framer";
 
 // import Material UI
-import { Card, makeStyles, Paper, Typography } from "@material-ui/core";
+import { Box, Card, makeStyles, Paper, Typography } from "@material-ui/core";
 
 const useStyle = makeStyles((theme) => ({
     root: {
         gridArea: "main",
         display: "flex",
         flexWrap: "wrap",
+        alignContent: "flex-start",
         padding: "5%",
     },
-    preview_container: {
+    preview: {
         width: "30%",
         padding: "1%",
     },
-    content: {
-        width: "auto",
-        maxWidth: "80%",
+    previews_container: {
+        display: "flex",
+        justifyContent: "space-around",
+        alignItems: "center",
+        marginTop: "80px",
     },
     image: {
         margin: "1%",
         maxWidth: "100%",
     },
     title: {
-        font: "bold 100px arial, sans-serif",
+        font: "bold 128px arial, sans-serif",
         backgroundColor: "#a3a3a3",
         color: "transparent",
         textShadow:
@@ -40,7 +43,7 @@ const useStyle = makeStyles((theme) => ({
         backgroundClip: "text",
         top: "30px",
         letterSpacing: "-4px",
-        margin: "0 auto",
+        margin: "0",
         position: "relative",
         MozBackgroundClip: "text",
     },
@@ -50,7 +53,7 @@ function Home({ projects }) {
     const classes = useStyle();
 
     const lastProjects = projects.map((project) => (
-        <Card className={classes.preview_container}>
+        <Card className={classes.preview}>
             <Link to={`/portfolio/${project.id}/description`}>
                 <img
                     className={classes.image}
@@ -66,23 +69,9 @@ function Home({ projects }) {
             <Typography className={classes.title} variant="h1">
                 Projets récents
             </Typography>
-            <Frame
-                backgroundColor={"none"}
-                size={"auto"}
-                center
-                position={"relative"}
-                style={{
-                    display: "flex",
-                    top: "15%",
-                    width: "100%",
-                    height: "min-content",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    justifySelf: "flex-start",
-                }}
-            >
+            <Box className={classes.previews_container}>
                 {lastProjects.slice(0, 3)}
-            </Frame>
+            </Box>
         </Paper>
     );
 }

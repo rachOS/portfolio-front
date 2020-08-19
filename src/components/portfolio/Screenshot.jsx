@@ -12,12 +12,16 @@ const useStyle = makeStyles((theme) => ({
         padding: "5%",
         backgroundColor: theme.palette.background.paper,
     },
+    screenshot: {
+        width: "100%",
+    },
 }));
 function Screenshot({ project }) {
     const classes = useStyle();
     return (
         <Card className={classes.root} component="fluid">
             <img
+                className={classes.screenshot}
                 src={`${process.env.REACT_APP_HOST}/latest/${project.id}`}
                 alt={`screenshot ${project.name} : ${project.id} `}
             />

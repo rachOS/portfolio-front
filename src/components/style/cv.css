@@ -1,10 +1,40 @@
-.javascript{
+.javascript {
     background-color: #f7e018;
     padding: 0 5px;
-    margin: 0 5px;
+}
+.react {
+    background-color: #62daee;
+    padding: 0 5px;
+}
+.node {
+    background-color: #2fa44f;
+    padding: 0 5px;
+}
+.redux {
+    background-color: #9875cd;
+    padding: 0 5px;
+}
+.sql {
+    background-color: #01618b;
+    padding: 0 5px;
+}
+.spec {
+    background-color: #ffffff;
+    width: max-content;
+    color: #000000;
+    padding: 0 5px;
 }
 
-.section{
+.subtitle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.title{
+    font-size: 50px;
+    color: red;
+}
+.section {
     background-color: rgb(20, 20, 20);
     color: rgb(255, 255, 255);
     padding: 5px;

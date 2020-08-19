@@ -4,59 +4,130 @@ import React, { Fragment } from "react";
 // import library
 import { Frame, Scroll, Stack } from "framer";
 
-// import Material UI
-import {
-    Container,
-    Typography,
-    Button,
-    Box,
-    Avatar,
-    List,
-    ListItem,
-    ListItemIcon,
-    ListItemText,
-    Divider,
-} from "@material-ui/core";
-import InboxIcon from "@material-ui/icons/Inbox";
-import PhoneInTalkSharpIcon from "@material-ui/icons/PhoneInTalkSharp";
-import EmailSharpIcon from "@material-ui/icons/EmailSharp";
-import CakeSharpIcon from "@material-ui/icons/CakeSharp";
-// import components
-
-// import data
-
 // import style
 import "./style/cv.css";
 
+// import Material UI
+import {
+    Box,
+    Button,
+    Divider,
+    Grid,
+    List,
+    ListItem,
+    makeStyles,
+    Typography,
+} from "@material-ui/core";
+import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
+import PhoneInTalkSharpIcon from "@material-ui/icons/PhoneInTalkSharp";
+import EmailSharpIcon from "@material-ui/icons/EmailSharp";
+import CakeSharpIcon from "@material-ui/icons/CakeSharp";
+
+const useStyle = makeStyles((theme) => ({
+    root: {
+        gridArea: "screenshot",
+        display: "flex",
+        alignItems: "center",
+        padding: "5%",
+        backgroundColor: theme.palette.background.paper,
+    },
+    title: {
+        fontSize: "3em",
+    },
+    subtitle: {
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+    },
+    spec: {
+        fontSize: "0.25em",
+    },
+    skills: {
+        margin: "10px 0px",
+    },
+    infos: {
+        margin: "10px 0px",
+    },
+    section: {
+        backgroundColor: "rgb(20, 20, 20)",
+        color: "rgb(255, 255, 255)",
+        padding: "5px",
+        margin: "10px 0px",
+    },
+    title_section: {
+        fontSize: "1.5em",
+    },
+    jobs: {
+        display: "flex",
+        flexWrap: "nowrap",
+        justifyContent: "space-between",
+        alignItems: "baseline",
+        padding: "10px",
+    },
+    divider: {
+        backgroundColor: "orange",
+    },
+    job_title: {
+        fontWeight: "800",
+    },
+    dot_icon: {
+        width: "10px",
+        margin: "10px",
+    },
+    list_item: {
+        display: "flex",
+        flexWrap: "wrap",
+    },
+    download_button:{
+        margin:"20px",
+        backgroundColor:"orange"
+    }
+}));
+
 function CV() {
+    const classes = useStyle();
     return (
         <Fragment>
-            <Scroll height={560} width={"42%"}>
-                <Stack
-                    height={"100%"}
-                    direction="vertical"
-                    distribution="space-arround"
-                    padding={0}
-                >
+            <Scroll height={"65%"} width={"35%"}>
+                <Stack height={"100%"}>
                     <Frame
                         backgroundColor={"none"}
-                        height={"100%"}
-                        width={"100%"}
+                        height={"auto"}
+                        width={"auto"}
+                        maxWidth={"100%"}
+                        padding={"0px"}
                     >
-                        <Container>
-                            <Typography
-                                className="section"
-                                variant="h2"
-                                align="center"
-                            >
-                                Développeur web fullstack
-                                <Typography align="center">
-                                    JavaScript | ReactJS | NodeJS | Versionning
-                                    | Clean code | Veille techno | Anglais
+                        <Typography
+                            className={[classes.title, classes.section]}
+                            variant="h1"
+                            align="center"
+                        >
+                            Développeur web fullstack
+                            <div className={[classes.subtitle]}>
+                                <Typography className={[classes.spec]}>
+                                    JavaScript
                                 </Typography>
-                            </Typography>
-                        </Container>
-                        <Container>
+                                <Typography className={[classes.spec]}>
+                                    ReactJS
+                                </Typography>
+                                <Typography className={[classes.spec]}>
+                                    NodeJS
+                                </Typography>
+                                <Typography className={[classes.spec]}>
+                                    Versionning
+                                </Typography>
+                                <Typography className={[classes.spec]}>
+                                    Clean code
+                                </Typography>
+                                <Typography className={[classes.spec]}>
+                                    Veille techno constante |
+                                </Typography>
+                                <Typography className={[classes.spec]}>
+                                    Anglais
+                                </Typography>
+                            </div>
+                        </Typography>
+                        <div className={[classes.skills]}>
                             <Typography variant="body2" align="left">
                                 Communicant / Dynamique / Bienveillant
                             </Typography>
@@ -66,7 +137,9 @@ function CV() {
                             <Typography variant="body2" align="left">
                                 Polyvalent Rigoureux / Perséverent / Autonome
                             </Typography>
-                            <Typography>
+                        </div>
+                        <div>
+                            <Typography className={[classes.infos]}>
                                 Grégory Chamekh : 43 ans |
                                 <CakeSharpIcon /> 19 juin 1977 | Bordeaux
                                 <PhoneInTalkSharpIcon />
@@ -74,183 +147,319 @@ function CV() {
                                 <EmailSharpIcon />
                                 g.chamekh@e-nautia.com | disponible
                             </Typography>
-                            <Avatar />
-                        </Container>
-                        <Container>
-                            <Box>
-                                <Typography
-                                    className="section"
-                                    variant="h3"
-                                    align="center"
-                                >
-                                    Parcours professionnel
-                                </Typography>
-                            </Box>
-                            <Box>
-                                <Typography variant="subtitle1" align="left">
-                                    Développeur web fullstack
-                                </Typography>
-                                <Typography variant="caption" align="right">
-                                    WILD CODE SCHOOL de mars 2020 à juillet 2020
-                                </Typography>
-                                <Typography paragraph>
-                                    <List disablePadding>
-                                        <ListItem>
-                                            Stacks :{" "}
-                                            <p className="javascript">
-                                                JavaScript
-                                            </p>{" "}
-                                            / ReactJS / NodeJS / Redux Site
-                                        </ListItem>
-                                        <ListItem>
-                                            e-commerce de vente de cartes
-                                            cadeaux en ligne.
-                                        </ListItem>{" "}
-                                        <ListItem>
-                                            Jeu tour par tour multijoueurs.
-                                        </ListItem>{" "}
-                                        <ListItem>Hackathons.</ListItem>
-                                        <ListItem>
-                                            Découpage d’une application web en
-                                            composants.
-                                        </ListItem>
-                                        <ListItem>
-                                            Création et consommation d’API.
-                                            Modélisation de bases de données
-                                            (MCD, MLD)
-                                        </ListItem>
-                                    </List>
-                                </Typography>
-                            </Box>
-                            <Divider />
-                            <Box>
-                                <Typography variant="subtitle1" align="left">
-                                    Photographe
-                                </Typography>
-                                <Typography variant="caption" align="right">
-                                    HANS LUCAS de mars 2019 à ce jour
-                                </Typography>
-                                <Typography paragraph>
-                                    <List disablePadding>
-                                        <ListItem>
-                                            Edition des métadonnées selon les
-                                            normes des métiers de l’information
-                                            avec Exiftool en CLI.
-                                        </ListItem>
-                                        <ListItem>
-                                            Prises de vues photographique sur
-                                            des sujets de société.
-                                        </ListItem>{" "}
-                                        <ListItem>
-                                            Rédaction d’un tutoriel sur
-                                            l’édition des métadonnées pour les
-                                            utilisateurs Linux
-                                        </ListItem>{" "}
-                                    </List>
-                                </Typography>
-                            </Box>
-                            <Divider />
-                            <Box>
-                                <Typography variant="subtitle1" align="left">
-                                    Agent de quai
-                                </Typography>
-                                <Typography variant="caption" align="right">
-                                    ENVIE 2E AQUITAINE de juillet 2018 à février
-                                    2020
-                                </Typography>
-                                <Typography paragraph>
-                                    <List disablePadding>
-                                        <ListItem>
-                                            Elaboration d’un projet
-                                            professionnel en tant que
-                                            développeur web.
-                                        </ListItem>
-                                        <ListItem>
-                                            Réception de colis postaux, tri
-                                            selectif des produits...
-                                        </ListItem>
-                                    </List>
-                                </Typography>
-                            </Box>
-                        </Container>
-                        <Container>
-                            <Box>
-                                <Typography
-                                    className="section"
-                                    variant="h3"
-                                    align="center"
-                                >
-                                    Formations
-                                </Typography>
-                            </Box>
+                        </div>
+                        <div>
+                            <Typography
+                                className={[
+                                    classes.section,
+                                    classes.title_section,
+                                ]}
+                                variant="h3"
+                                align="center"
+                            >
+                                Parcours professionnel
+                            </Typography>
+                        </div>
+                        <div className={[classes.jobs]}>
+                            <Typography
+                                className={[classes.job_title]}
+                                variant="subtitle1"
+                                align="left"
+                            >
+                                Développeur web fullstack
+                            </Typography>
+                            <Typography variant="caption" align="right">
+                                WILD CODE SCHOOL de mars 2020 à juillet 2020
+                            </Typography>
+                        </div>
+                        <div>
+                            <Typography paragraph>
+                                <List disablePadding>
+                                    <ListItem>
+                                        <FiberManualRecordIcon
+                                            className={classes.dot_icon}
+                                        />{" "}
+                                        Stacks :{" "}
+                                        <Typography className="javascript">
+                                            JavaScript
+                                        </Typography>{" "}
+                                        /
+                                        <Typography className="react">
+                                            ReactJS
+                                        </Typography>
+                                        /{" "}
+                                        <Typography className="node">
+                                            NodeJS
+                                        </Typography>{" "}
+                                        /{" "}
+                                        <Typography className="redux">
+                                            Redux
+                                        </Typography>{" "}
+                                    </ListItem>
+                                    <ListItem>
+                                        <FiberManualRecordIcon
+                                            className={classes.dot_icon}
+                                        />
+                                        Site e-commerce de vente de cartes
+                                        cadeaux en ligne.
+                                    </ListItem>{" "}
+                                    <ListItem>
+                                        <FiberManualRecordIcon
+                                            className={classes.dot_icon}
+                                        />{" "}
+                                        Jeu tour par tour multijoueurs.
+                                    </ListItem>{" "}
+                                    <ListItem>
+                                        <FiberManualRecordIcon
+                                            className={classes.dot_icon}
+                                        />
+                                        Hackathons.
+                                    </ListItem>
+                                    <ListItem>
+                                        <FiberManualRecordIcon
+                                            className={classes.dot_icon}
+                                        />{" "}
+                                        Découpage d’une application web en
+                                        composants.
+                                    </ListItem>
+                                    <ListItem>
+                                        <FiberManualRecordIcon
+                                            className={classes.dot_icon}
+                                        />{" "}
+                                        Création et consommation d’API.
+                                        Modélisation de bases de données (MCD,
+                                        MLD)
+                                    </ListItem>
+                                </List>
+                            </Typography>
+                        </div>
+                        <Divider className={[classes.divider]} />
+                        <div className={[classes.jobs]}>
+                            <Typography
+                                className={[classes.job_title]}
+                                variant="subtitle1"
+                                align="left"
+                            >
+                                Photographe
+                            </Typography>
+                            <Typography variant="caption" align="right">
+                                HANS LUCAS de mars 2019 à ce jour
+                            </Typography>
+                        </div>
+                        <div className={[classes.paragraph]}>
+                            <Typography paragraph>
+                                <List disablePadding>
+                                    <ListItem>
+                                        <FiberManualRecordIcon
+                                            className={classes.dot_icon}
+                                        />{" "}
+                                        Edition des métadonnées selon les normes
+                                        des métiers de l’information avec
+                                        Exiftool en CLI.
+                                    </ListItem>
+                                    <ListItem>
+                                        <FiberManualRecordIcon
+                                            className={classes.dot_icon}
+                                        />{" "}
+                                        Prises de vues photographique sur des
+                                        sujets de société.
+                                    </ListItem>{" "}
+                                    <ListItem>
+                                        <FiberManualRecordIcon
+                                            className={classes.dot_icon}
+                                        />{" "}
+                                        Rédaction d’un tutoriel sur l’édition
+                                        des métadonnées pour les utilisateurs
+                                        Linux
+                                    </ListItem>{" "}
+                                </List>
+                            </Typography>
+                        </div>
+                        <Divider className={[classes.divider]} />
+                        <div className={[classes.jobs]}>
+                            <Typography
+                                className={[classes.job_title]}
+                                variant="subtitle1"
+                                align="left"
+                            >
+                                Agent de quai
+                            </Typography>
+                            <Typography variant="caption" align="right">
+                                ENVIE 2E AQUITAINE de juillet 2018 à février
+                                2020
+                            </Typography>
+                        </div>
+                        <div className={[classes.paragraph]}>
+                            <Typography paragraph>
+                                <List disablePadding>
+                                    <ListItem>
+                                        <FiberManualRecordIcon
+                                            className={classes.dot_icon}
+                                        />{" "}
+                                        Elaboration d’un projet professionnel en
+                                        tant que développeur web.
+                                    </ListItem>
+                                    <ListItem>
+                                        <FiberManualRecordIcon
+                                            className={classes.dot_icon}
+                                        />{" "}
+                                        Réception de colis postaux, tri selectif
+                                        des produits...
+                                    </ListItem>
+                                </List>
+                            </Typography>
+                        </div>
+                        <div>
+                            <Typography
+                                className={[
+                                    classes.section,
+                                    classes.title_section,
+                                ]}
+                                variant="h3"
+                                align="center"
+                            >
+                                Formations
+                            </Typography>
+                        </div>
+
+                        <div className={[classes.jobs]}>
+                            <Typography
+                                className={[classes.job_title]}
+                                variant="subtitle1"
+                                align="left"
+                            >
+                                Développeur web fullstack
+                            </Typography>
+                            <Typography variant="caption" align="right">
+                                WILD CODE SCHOOL mars 2020 à juillet 2020
+                            </Typography>
+                        </div>
+                        <div lassName={[classes.paragraph]}>
                             <Typography>
                                 Méthodologie, clean-code, fondamentaux :
                             </Typography>
-                            <Box>
-                                <Typography variant="subtitle1" align="left">
-                                    Développeur web fullstack
-                                </Typography>
-                                <Typography variant="caption" align="right">
-                                    WILD CODE SCHOOL mars 2020 à juillet 2020
-                                </Typography>
-                                <Typography paragraph>
-                                    <List disablePadding>
-                                        <ListItem>
-                                            Vanilla JavaScript / ReactJS /
-                                            NodeJS / Redux / SQL
-                                        </ListItem>
-                                        <ListItem>
-                                            Git / UNIX SCRUM / Agile /
-                                            Télétravail / veille technologique
-                                        </ListItem>
-                                        <ListItem>
-                                            SCRUM / Agile / Télétravail / veille
-                                            technologique
-                                        </ListItem>
-                                        <ListItem>
-                                            modélisation de BDD (MCD, MLD),
-                                            cryptage password, JSON web
-                                            tokens...
-                                        </ListItem>
-                                    </List>
-                                </Typography>
-                            </Box>
-                        </Container>
-                        <Container>
-                            <Box>
-                                <Typography
-                                    className="section"
-                                    variant="h3"
-                                    align="center"
-                                >
-                                    Loisirs et intérêts
-                                </Typography>
-                                <Typography>
-                                    <List disablePadding>
-                                        <ListItem dense>
-                                            Sport : 1er Dan World Taekwondo
-                                            Fédération (élève de Maître Han Chun
-                                            Tec), souplesse quotidienne,
-                                            musculation au poid du corps.
-                                        </ListItem>
-                                        <ListItem>
-                                            Jardinage : système self-watering,
-                                            semis et bouturages en tout genre
-                                        </ListItem>
-                                        <ListItem>
-                                            Gaming : EVE online, LoL, KI 3, SF
-                                            V, participation à des tournois de
-                                            Vs fighting
-                                        </ListItem>
-                                        <ListItem>
-                                            Wachting : sérievore, cinémavore,
+                            <Typography paragraph>
+                                <List disablePadding>
+                                    <ListItem>
+                                        <FiberManualRecordIcon
+                                            className={classes.dot_icon}
+                                        />
+                                        <Typography className="javascript">
+                                            Vanilla JavaScript
+                                        </Typography>
+                                        /{" "}
+                                        <Typography className="react">
+                                            ReactJS
+                                        </Typography>{" "}
+                                        /
+                                        <Typography className="node">
+                                            NodeJS
+                                        </Typography>{" "}
+                                        /{" "}
+                                        <Typography className="redux">
+                                            Redux
+                                        </Typography>{" "}
+                                        /{" "}
+                                        <Typography className="sql">
+                                            SQL
+                                        </Typography>
+                                    </ListItem>
+                                    <ListItem>
+                                        <FiberManualRecordIcon
+                                            className={classes.dot_icon}
+                                        />{" "}
+                                        Git / UNIX SCRUM / Agile / Télétravail /
+                                        veille technologique
+                                    </ListItem>
+                                    <ListItem>
+                                        <FiberManualRecordIcon
+                                            className={classes.dot_icon}
+                                        />{" "}
+                                        SCRUM / Agile / Télétravail / veille
+                                        technologique
+                                    </ListItem>
+                                    <ListItem>
+                                        <FiberManualRecordIcon
+                                            className={classes.dot_icon}
+                                        />
+                                        modélisation de BDD (MCD, MLD), cryptage
+                                        password, JSON web tokens...
+                                    </ListItem>
+                                </List>
+                            </Typography>
+                        </div>
+                        <Box>
+                            <Typography
+                                className={[
+                                    classes.section,
+                                    classes.title_section,
+                                ]}
+                                variant="h3"
+                                align="center"
+                            >
+                                Loisirs et intérêts
+                            </Typography>
+                            <Typography>
+                                <List disablePadding>
+                                    <ListItem className={classes.list_item}>
+                                        <Typography
+                                            className={[classes.job_title]}
+                                        >
+                                            Sport
+                                        </Typography>
+                                        <Typography>
+                                            1er Dan World Taekwondo Fédération
+                                            (élève de Maître Han Chun Tec),
+                                            souplesse quotidienne, musculation
+                                            au poid du corps.
+                                        </Typography>
+                                    </ListItem>
+                                    <ListItem className={classes.list_item}>
+                                        <Typography
+                                            className={[classes.job_title]}
+                                        >
+                                            Jardinage
+                                        </Typography>{" "}
+                                        <Typography>
+                                            système self-watering, semis et
+                                            bouturages en tout genre
+                                        </Typography>
+                                    </ListItem>
+                                    <ListItem className={classes.list_item}>
+                                        <Typography
+                                            className={[classes.job_title]}
+                                        >
+                                            Gaming
+                                        </Typography>{" "}
+                                        <Typography
+                                            variant="body2"
+                                            display="block"
+                                            gutterBottom
+                                        >
+                                            EVE online, LoL, KI 3, SF V,
+                                            participation à des tournois de Vs
+                                            fighting
+                                        </Typography>
+                                    </ListItem>
+                                    <ListItem className={classes.list_item}>
+                                        <Typography
+                                            className={[classes.job_title]}
+                                        >
+                                            Wachting
+                                        </Typography>
+                                        <Typography
+                                            variant="body2"
+                                            display="block"
+                                            gutterBottom
+                                        >
+                                            : sérievore, cinémavore,
                                             documentavore
-                                        </ListItem>
-                                    </List>
-                                </Typography>
-                            </Box>
-                        </Container>
-                        <Button onClick="">Télécharger</Button>
+                                        </Typography>
+                                    </ListItem>
+                                </List>
+                            </Typography>
+                        </Box>
+                        <Button className={classes.download_button} onClick="">Télécharger</Button>
                     </Frame>
                 </Stack>
             </Scroll>

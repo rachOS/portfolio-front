@@ -33,6 +33,9 @@ const useStyle = makeStyles((theme) => ({
     },
     cv: {
         gridArea: "cv",
+        display:"flex",
+        justifyContent:"center",
+        padding:"5%"
     },
 }));
 
@@ -42,9 +45,7 @@ function Details() {
     return (
         <Paper className={classes.root} maxWidth="fluid">
             <Card className={classes.cv}>
-                <CardContent>
-                    <Cv />
-                </CardContent>
+                <Cv />
             </Card>
             <Card className={classes.infos}>Disponibilités et infos</Card>
             <Card className={classes.form}>Une question?</Card>
