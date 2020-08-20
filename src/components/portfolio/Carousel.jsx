@@ -1,6 +1,6 @@
 // import core
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // import library
 import Slider from "react-slick";
@@ -9,6 +9,7 @@ import Slider from "react-slick";
 import { Avatar, Container, makeStyles } from "@material-ui/core";
 
 // import style
+import "../style/carousel.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -18,9 +19,10 @@ const useStyle = makeStyles((theme) => ({
     },
     slider: {
         top: "33%",
-        left:"2%"
+        left: "2%",
     },
-    links: {
+    avatar: {
+        boder: "5px solid",
     },
 }));
 function Carousel({ projects }) {
@@ -38,17 +40,18 @@ function Carousel({ projects }) {
         <Container className={classes.root} component="fluid">
             <Slider {...settings} className={classes.slider}>
                 {projects.map((project, index) => (
-                    <Link
-                        className={classes.links}
+                    <NavLink
+                        className="links"
                         to={`/portfolio/${project.id}/description`}
                     >
                         <Avatar
+                            className={classes.avatar}
                             variant="rounded"
                             key={index}
                             src={`${process.env.REACT_APP_HOST}/logos/${project.id}`}
                             alt={project.name}
                         />
-                    </Link>
+                    </NavLink>
                 ))}
             </Slider>
         </Container>

@@ -84,23 +84,7 @@ const LeftContent = () => {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography variant="caption" gutterBottom>
-                        D'une reconversion professionnelle en tant develloppeur
-                        web fullstack, c'est à la Wild Code School de Bordeaux
-                        que j'ai suivi la formation professionnelle de
-                        Développeur Web et Web Mobile cursus ReactJS / NodeJS.
-                        De part mon implication et ma participation active
-                        durant cette formation, le status d'ambassadeur m'a été
-                        proposé, représentant les éléves les plus engagés ayant
-                        pour but de co-construire la communauté. En ce moment je
-                        prépare le passage du titre professionnel qui aura lieu
-                        à la fin de l'année 2020, en parallèle avec le
-                        développement de quelques projets personnels. Par la
-                        suite, je compte entreprendre une formation dans un
-                        domaine qui m'attire depuis quelques temps pour
-                        apprendre le métier de data analyste. C'est un autre
-                        domaine qui m'attire depuis longtemps et j'apprécie
-                        l'éventuelle complémentarité qu'il peut y avoir avec le
-                        métier de développeur web.
+                        Touche à tout blablabal
                     </Typography>
                 </AccordionDetails>
             </Accordion>
