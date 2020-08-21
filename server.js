@@ -11,6 +11,8 @@ app.use(favicon(__dirname + "/build/favicon.ico"));
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, "build")));
 app.get("/*", function (req, res) {
+    console.log(__dirname);
+    res.send(__dirname)
     const index = path.join(__dirname, 'build', 'index.html');
     res.sendFile(index);
 });
