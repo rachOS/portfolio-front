@@ -9,7 +9,7 @@ app.use(favicon(__dirname + "/build/favicon.ico"));
 
 // the __dirname is the current directory from the script is running
 app.use(express.static(__dirname));
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "build","index.html")));
 app.get("/*", function (req, res) {
     console.log(__dirname);
     res.send(__dirname)
