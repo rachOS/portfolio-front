@@ -1,0 +1,12 @@
+{
+    "name": "portfolio-front",
+    "repository": "https://github.com/rachOS/portfolio-front",
+    "buildpacks": [
+      {
+        "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+      }
+    ],
+    "env": {
+      "NPM_CONFIG_PRODUCTION": false
+    }
+  }
