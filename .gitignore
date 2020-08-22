@@ -6,3 +6,6 @@
 
 # environment varriables
 .env
+
+# production #
+/build

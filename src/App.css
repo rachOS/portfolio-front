@@ -47,6 +47,10 @@
     margin: 1.4rem;
 }
 
-.contact {
+/* .contact {
     background-color: #4ec044;
+} */
+
+.MuiPaper-root {
+    background-color: #F0F0F0;
 }

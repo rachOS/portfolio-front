@@ -18,25 +18,27 @@ import { Container, CssBaseline, makeStyles } from "@material-ui/core";
 
 const useStyle = makeStyles((theme) => ({
     root: {
-        height: "98.9vh",
-        width:"auto",
+        height: "100vh",
+        width: "auto",
         display: "grid",
-        gridTemplateColumns: " 0.70fr 1fr 1fr 1fr 1fr",
-        gridTemplateRows: "0.1fr 0.2fr 1fr 0.125fr",
+        gridTemplateColumns: "0.7fr 1fr 1fr 1fr 1fr ",
+        gridTemplateRows: "0.5fr 1fr 1fr 1fr 0.5fr",
         gridTemplateAreas:
             '  "leftMenu header header header header" \
             "leftMenu main main main main" \
             "leftMenu main main main main" \
+            "leftMenu main main main main" \
             "leftMenu footer footer footer footer"',
-        rowGap: "5px",
-        columnGap: "5px",
-        padding:"0px",
-        margin:"5px"
+        rowGap: "12px",
+        columnGap: "12px",
+        padding: "12px",
+        margin: "0 auto",
+        backgroundColor: "#60afe7",
     },
 }));
 
 function App() {
-    const classes = useStyle()
+    const classes = useStyle();
     const [projects, setProjects] = useState([{}]);
     const [lastProject, setLastProject] = useState([{}]);
 
@@ -83,5 +85,4 @@ function App() {
     );
 }
 
-// export component
 export default App;
