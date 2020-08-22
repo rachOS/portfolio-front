@@ -8,4 +8,4 @@
 .env
 
 # production #
-/build
+# /build
