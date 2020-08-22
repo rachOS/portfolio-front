@@ -2,6 +2,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// import css
+import "./style/header.css"
+
 // import Material UI
 import { Button, makeStyles, MenuList, Paper } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
@@ -9,42 +12,61 @@ import ContactMailIcon from "@material-ui/icons/ContactMail";
 import InfoIcon from "@material-ui/icons/Info";
 import CollectionsIcon from "@material-ui/icons/Collections";
 
-const useStyle = makeStyles(theme => ({
-    root:{
-        gridArea:"header"
-    }
-}))
+const useStyle = makeStyles((theme) => ({
+    root: {
+        gridArea: "header",
+        backgroundColor: "#F0F0F0",
+        display: "flex",
+        alignItems: "center",
+        padding: "0 1%",
+        borderRadius: "0px 10px 0px 0px",
+    },
+    button: {
+        borderRadius: "1px",
+        fontSize:"0.8em",
+        padding: "12px",
+        margin: "12px",
+        height: "64px",
+    },
+    home: {
+        backgroundColor: "#c3cad5",
+    },
+    portfolio: {
+        backgroundColor: "#F57F17",
+    },
+    details: {
+        backgroundColor: "#2196F3",
+    },
+    contact: {
+        backgroundColor: "#4EC044",
+    },
+}));
 
 const Header = ({ lastProject }) => {
-    const classes = useStyle()
+    const classes = useStyle();
     return (
         <Paper className={classes.root}>
             <MenuList>
                 <Link to="/">
-                    <Button>
-                        {" "}
-                        Acceuil <HomeIcon />{" "}
+                    <Button className={[classes.button, classes.home]}>
+                        <HomeIcon /> Accueil
                     </Button>
                 </Link>
                 <Link to={`/portfolio/${lastProject.id}/description`}>
-                    <Button>
-                        {" "}
-                        Portfolio
-                        <CollectionsIcon />
+                    <Button className={[classes.button, classes.portfolio]}>
+                        <CollectionsIcon /> Portfolio
                     </Button>
                 </Link>
 
                 <Link to="/details">
-                    <Button>
-                        {" "}
-                        Détails <InfoIcon />{" "}
+                    <Button className={[classes.button, classes.details]}>
+                        <InfoIcon /> Détails
                     </Button>
                 </Link>
 
                 <Link to="/contact">
-                    <Button>
-                        {" "}
-                        Contact <ContactMailIcon />{" "}
+                    <Button className={[classes.button, classes.contact]}>
+                        <ContactMailIcon /> Contact
                     </Button>
                 </Link>
             </MenuList>

@@ -44,14 +44,51 @@ const useStyles = makeStyles((theme) => ({
         display: "grid",
         alignContent: "center",
         height: "100%",
+        backgroundColor: "#F0F0F0",
+    },
+    accordion_summary: {
+        display: "flex",
+        flexWrap: "wrap",
+    },
+    accordion_top: {
+        borderTopLeftRadius: "10px",
+    },
+    accordion_bottom: {
+        borderBottomLeftRadius: "10px",
     },
     large: {
-        width: theme.spacing(10),
-        height: theme.spacing(10),
+        width: "100%",
+        height: "auto",
+        margin:" 12px 0px",
+    },
+    accordion_details_about: {
+        flexWrap: "wrap",
+        justifyContent: "center",
     },
     accordion_details_cv: {
         flexWrap: "wrap",
         justifyContent: "center",
+    },
+    text_shadow: {
+        textAlign: "center",
+        width: "100%",
+        fontSize: "41px",
+        fontWeight: "600",
+        color: "transparent",
+        textShadow:
+            "3px 3px 0px rgb(96,175,231), \
+            -4.6px 5px 0px rgb(240,240,240,0.5), \
+            3.6px 2.2px 0px rgb(0,0,0,0.1), \
+            3.1px 2.6px 0.3px rgb(12, 34, 164), \
+            4.2px 3.9px 2px rgb(255,255,255,0.5)",
+    },
+    bio: {
+        fontSize:"0.9rem",
+        textAlign: "justify",
+    },
+    bio_detail: {
+        fontSize:"0.9rem",
+        margin:" 12px 0px",
     },
 }));
 
@@ -66,31 +103,42 @@ const LeftContent = () => {
     };
     return (
         <Box className={`${classes.root}`}>
-            <Accordion className={classes.accordion_container}>
+            <Accordion
+                square
+                className={[classes.accordion_container, classes.accordion_top]}
+            >
                 <AccordionSummary>
-                    <Typography variant="h2">A propos</Typography>
-                    <Avatar
-                        className={classes.large}
-                        variant="rounded"
-                        alt="Grégory chamekh"
-                        src={portrait}
-                    />
-                    <Typography variant="subtitle2">
-                        Grégory Chamekh, né le 19 juin 1977 à Talence,
-                        développeur web fullstacks ReactJS / NodeJS, ambassadeur
-                        Wild Code School.
+                    <Typography variant="h2" className={classes.text_shadow}>
+                        A propos
                     </Typography>
+
                     <Button>plus d'infos</Button>
                 </AccordionSummary>
-                <AccordionDetails>
-                    <Typography variant="caption" gutterBottom>
-                        Touche à tout blablabal
+                <AccordionDetails className={classes.accordion_details_about}>
+                    <Typography className={classes.bio}>
+                        <Avatar
+                            className={classes.large}
+                            variant="rounded"
+                            alt="Grégory chamekh"
+                            src={portrait}
+                        />
+                        Grégory Chamekh, développeur web fullstacks ReactJS /
+                        NodeJS, ambassadeur Wild Code School.
+                    </Typography>
+                    <Typography className={classes.bio_detail}variant="caption" gutterBottom>
+                        Touche à tout et bienveillant, ces deux qualités me
+                        permettent de m'adapater facilement. Et grâce à naturel
+                        curieux et observateur, le soucis du détails et
+                        l'optimisation me fascinent. Aussi, tout cela font de
+                        moi un personne force de proposition.
                     </Typography>
                 </AccordionDetails>
             </Accordion>
-            <Accordion className={classes.accordion_container}>
-                <AccordionSummary>
-                    <Typography variant="h2">C.V.</Typography>
+            <Accordion square className={classes.accordion_container}>
+                <AccordionSummary className={classes.accordion_summary}>
+                    <Typography className={classes.text_shadow} variant="h2">
+                        C.V.
+                    </Typography>
                     <Button classes="">Afficher</Button>
                 </AccordionSummary>
                 <AccordionDetails className={classes.accordion_details_cv}>
@@ -108,11 +156,16 @@ const LeftContent = () => {
                     </Link>
                 </AccordionDetails>
             </Accordion>
-            <Accordion className={classes.accordion_container}>
+            <Accordion
+                square
+                className={[
+                    classes.accordion_container,
+                    classes.accordion_bottom,
+                ]}
+            >
                 <AccordionSummary>
-                    <Typography variant="h2">Dispos</Typography>
-                    <Typography variant="subtitle2">
-                        Je suis disponible immédiatement.
+                    <Typography className={classes.text_shadow} variant="h2">
+                        Dispos
                     </Typography>
                     <Button>Plus d'infos</Button>
                 </AccordionSummary>

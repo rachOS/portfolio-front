@@ -14,7 +14,9 @@ const useStyle = makeStyles((theme) => ({
         display: "flex",
         flexWrap: "wrap",
         alignContent: "flex-start",
-        padding: "5%",
+        padding: "12px",
+        backgroundColor: "#F0F0F0",
+        borderRadius: "0px",
     },
     preview: {
         width: "30%",
@@ -32,20 +34,17 @@ const useStyle = makeStyles((theme) => ({
     },
     title: {
         font: "bold 128px arial, sans-serif",
-        backgroundColor: "#a3a3a3",
         color: "transparent",
         textShadow:
-            "4px 3px 1px rgba(255, 255, 255, 0.1), \
-        4px 3px 1px rgba(255, 255, 255, 0.1), \
-        4px 3px 1px rgba(255, 255, 255, 0.1), \
-        4px 3px 1px rgba(255, 255, 255, 0.1)",
-        webkitBackgroundClip: "text",
-        backgroundClip: "text",
+            "3px 3px 0px rgb(96,175,231), \
+             1.4px 4px 5px rgb(240,240,240,0.5), \
+             3.7px 3.4px 1px rgb(0,0,0), \
+             4.1px 0.9px 1.5px rgb(12, 34, 164), \
+             1.2px 2.9px 0.3px rgb(255,255,255)",
         top: "30px",
         letterSpacing: "-4px",
         margin: "0",
         position: "relative",
-        MozBackgroundClip: "text",
     },
 }));
 
