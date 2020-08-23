@@ -25,6 +25,8 @@ const useStyle = makeStyles((theme) => ({
         justifyItems: "stretch",
         alignItems: "stretch",
         padding: "50px",
+        borderRadius:"0px",
+        backgroundColor: "#F0F0F0",
     },
     form: {
         gridArea: "form",

@@ -23,6 +23,8 @@ const useStyle = makeStyles((theme) => ({
         padding: "50px",
         rowGap: "5px",
         columnGap: "5px",
+        borderRadius:"0px",
+        backgroundColor: "#F0F0F0",
     },
 }));
 

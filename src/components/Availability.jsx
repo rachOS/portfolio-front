@@ -22,6 +22,18 @@ const useStyle = makeStyles((theme) => ({
     title: {
         textAlign: "center",
         padding: "25px",
+        font: "bold 4rem arial, sans-serif",
+        color: "transparent",
+        textShadow:
+            "3px 3px 0px rgb(96,175,231), \
+             1.4px 4px 5px rgb(240,240,240,0.5), \
+             3.7px 3.4px 1px rgb(0,0,0), \
+             4.1px 0.9px 1.5px rgb(12, 34, 164), \
+             1.2px 2.9px 0.3px rgb(255,255,255)",
+        top: "30px",
+        letterSpacing: "-4px",
+        margin: "0",
+        position: "relative",
     },
     link: {
         padding: "0px 5px",
