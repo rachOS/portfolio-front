@@ -13,30 +13,36 @@ const useStyle = makeStyles((theme) => ({
     root: {
         gridArea: "main",
         display: "grid",
-        ggridTemplateColumns: "auto",
-        ggridTemplateRows: "auto",
+        gridTemplateColumns: "1.5fr 1fr 1fr",
+        gridTemplateRows: "1fr 1fr 1.2fr",
         gridTemplateAreas:
-            ' "cv cv cv cv infos" \
-        "cv cv cv cv infos" \
-        "cv cv cv cv infos"  ',
+            ' "cv infos infos" \
+        "cv  infos infos" \
+        "cv  infos infos"  ',
         height: "100%",
         rowGap: "5px",
         columnGap: "5px",
         justifyItems: "stretch",
         alignItems: "stretch",
-        padding: "50px",
+        padding: "12px",
+        borderRadius:"0px",
+        backgroundColor: "#F0F0F0",
     },
     form: {
         gridArea: "form",
     },
     infos: {
         gridArea: "infos",
+        borderRadius:"0",
+        textAlign:"justify",
+        fontSize:"unset"
     },
     cv: {
         gridArea: "cv",
         display: "flex",
         justifyContent: "center",
         padding: "5%",
+        borderRadius:"0",
     },
 }));
 

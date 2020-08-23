@@ -2,11 +2,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// import library
-import { Frame } from "framer";
-
 // import Material UI
-import { Box, Card, makeStyles, Paper, Typography } from "@material-ui/core";
+import { Box, makeStyles, Typography } from "@material-ui/core";
 
 const useStyle = makeStyles((theme) => ({
     root: {
@@ -18,18 +15,32 @@ const useStyle = makeStyles((theme) => ({
         backgroundColor: "#F0F0F0",
         borderRadius: "0px",
     },
-    preview: {
-        width: "30%",
-        padding: "1%",
-    },
     previews_container: {
+        width: "100%",
         display: "flex",
         justifyContent: "space-around",
         alignItems: "center",
         marginTop: "80px",
+        backgroundColor: "transparent",
+    },
+    cards_container: {
+        width: "auto",
+        maxWidth: "512px",
+        margin: "12px",
+        padding: "2px",
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "flex-start",
+        alignItems: "center",
+    },
+    link: {
+        padding: "6px",
+        display: "flex",
+        justifyContent: "center",
+        backfaceVisibility: "hidden",
     },
     image: {
-        margin: "1%",
+        width: "auto",
         maxWidth: "100%",
     },
     title: {
@@ -46,32 +57,40 @@ const useStyle = makeStyles((theme) => ({
         margin: "0",
         position: "relative",
     },
+    subtitle: {
+        color: "rgb(96,175,231)",
+        marginLeft: "12px",
+    },
 }));
 
 function Home({ projects }) {
     const classes = useStyle();
 
     const lastProjects = projects.map((project) => (
-        <Card className={classes.preview}>
-            <Link to={`/portfolio/${project.id}/description`}>
+        <Box className={classes.cards_container}>
+            <Link
+                className={classes.link}
+                to={`/portfolio/${project.id}/description`}
+            >
                 <img
                     className={classes.image}
                     src={`${process.env.REACT_APP_HOST}/latest/${project.id}`}
                     alt={`screenshot ${project.name} : ${project.id} `}
                 />
             </Link>
-        </Card>
+            <Typography className={classes.subtitle}>{project.name}</Typography>
+        </Box>
     ));
 
     return (
-        <Paper className={classes.root}>
+        <Box className={classes.root}>
             <Typography className={classes.title} variant="h1">
                 Projets récents
             </Typography>
             <Box className={classes.previews_container}>
                 {lastProjects.slice(0, 3)}
             </Box>
-        </Paper>
+        </Box>
     );
 }
 

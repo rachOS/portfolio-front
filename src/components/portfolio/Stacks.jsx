@@ -25,12 +25,19 @@ const useStyles = makeStyles((theme) => ({
     cards: {
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "space-evenly",
+        justifyContent: "center",
         width: "auto",
         minWidth: "100%",
+        margin: "12px",
     },
     card: {
+        display: "flex",
+        alignItems: "center",
+        padding: "6px",
         margin: "5px",
+    },
+    text: {
+        margin: "0 5px",
     },
 }));
 
@@ -60,19 +67,25 @@ function Stacks() {
 
     const listOfStacks = stacks.map((stack) => (
         <Card className={classes.card}>
-            <CardHeader title={stack.name} subheader={stack.version_used} />
-            <CardActions>
-                <Link href={stack.site}>site officiel</Link>
-            </CardActions>
+            <Typography className={classes.text}>{stack.name}</Typography>
+            <Typography className={classes.text} variant="caption">
+                {stack.version_used}
+            </Typography>
+            <Link className={classes.text} href={stack.site}>
+                site officiel
+            </Link>
         </Card>
     ));
 
     const listOfTools = tools.map((tool) => (
         <Card className={classes.card}>
-            <CardHeader title={tool.name} subheader={tool.version_used} />
-            <CardActions>
-                <Link href={tool.site}>site officiel</Link>
-            </CardActions>
+            <Typography className={classes.text}>{tool.name}</Typography>
+            <Typography className={classes.text} variant="caption">
+                {tool.version_used}
+            </Typography>
+            <Link className={classes.text} href={tool.site}>
+                site officiel
+            </Link>
         </Card>
     ));
     return (

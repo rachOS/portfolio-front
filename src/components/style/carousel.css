@@ -1,4 +1,12 @@
-a.links{
+a.links {
     width: auto;
     max-width: max-content;
+}
+
+.slick-list {
+    transform: translate3d(0, 0, 0);
+    width: auto;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }

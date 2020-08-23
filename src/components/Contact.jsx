@@ -17,10 +17,16 @@ import {
 const useStyle = makeStyles((theme) => ({
     root: {
         gridArea: "main",
+        borderRadius: "0px",
+        backgroundColor: "#F0F0F0",
     },
     form: {
         height: "100%",
-        padding: "50px",
+        padding: "12px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "space-evenly",
     },
     text: {
         gridArea: "text",
@@ -29,6 +35,16 @@ const useStyle = makeStyles((theme) => ({
     },
     title: {
         gridArea: "title",
+        font: "bold 5rem arial, sans-serif",
+        color: "transparent",
+        textShadow:
+            "3px 3px 0px rgb(96,175,231), \
+             1.4px 4px 5px rgb(240,240,240,0.5), \
+             3.7px 3.4px 1px rgb(0,0,0), \
+             4.1px 0.9px 1.5px rgb(12, 34, 164), \
+             1.2px 2.9px 0.3px rgb(255,255,255)",
+        letterSpacing: "-1px",
+        margin: "0",
     },
     email: {
         gridArea: "email",
