@@ -454,9 +454,9 @@ function CV() {
                                 </List>
                             </Typography>
                         </Box>
-                        <Button className={classes.download_button} onClick="">
+                        {/* <Button className={classes.download_button} onClick="">
                             Télécharger
-                        </Button>
+                        </Button> */}
                     </Frame>
                 </Stack>
             </Scroll>
