@@ -4,16 +4,19 @@ import Axios from "axios";
 import { useParams } from "react-router-dom";
 
 // import Material UI
-import { Container, makeStyles, Link, Typography } from "@material-ui/core";
+import { Box, makeStyles, Link, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     content: {
         justifyContent: "space-evenly",
         alignItems: "center",
-        height: "calc(652.8px - 48px - 10px)",
         width: "100%",
         margin: "5px",
-        backgroundColor: theme.palette.background.paper,
+    },
+    description: {
+        textAlign: "justify",
+        color: "#2e2e33",
+        fontSize: "unset",
     },
 }));
 
@@ -37,11 +40,10 @@ function Description({ projectName, url }) {
         ? description
         : "Description du projet";
     return (
-        <Container>
+        <Box className={classes.content}>
             <Typography variant="h3">{projectName}</Typography>
             <Typography
-                paragraph
-                variant="body1"
+                className={classes.description}
                 dangerouslySetInnerHTML={{ __html: checkDescription }}
             />
             {url ? (
@@ -49,7 +51,7 @@ function Description({ projectName, url }) {
             ) : (
                 "site en cours de déploiement"
             )}
-        </Container>
+        </Box>
     );
 }
 

@@ -7,7 +7,8 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         justifyContent: "space-evenly",
         alignItems: "center",
-        backgroundColor: theme.palette.background.paper,
+        backgroundColor: "transparent",
+
     },
     content: {
         margin: "5px",

@@ -16,6 +16,9 @@ import { Container, makeStyles, Paper, Divider } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
     root: {
         gridArea: "form",
+        backgroundColor: "transparent",
+        borderRadius: "0",
+
     },
     content: {
         display: "flex",
