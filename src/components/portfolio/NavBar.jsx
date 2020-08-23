@@ -8,7 +8,6 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "space-evenly",
         alignItems: "center",
         backgroundColor: "transparent",
-
     },
     content: {
         margin: "5px",

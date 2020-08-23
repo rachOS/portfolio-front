@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         padding: "10px",
         width: "100%",
-        backgroundColor: theme.palette.background.paper,
+        backgroundColor: "transparent",
     },
 }));
 
