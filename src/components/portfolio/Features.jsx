@@ -7,7 +7,7 @@ import { Container } from "@material-ui/core";
 function Features() {
     return (
         <Container>
-            <h1>Features Component</h1>
+            <h1>Rédaction en cours</h1>
         </Container>
     );
 }

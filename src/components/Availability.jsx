@@ -8,20 +8,31 @@ import { Link } from "react-router-dom";
 // import style
 
 // import Material UI
-import { makeStyles, Typography } from "@material-ui/core";
+import { makeStyles, Typography, Box } from "@material-ui/core";
 
 const useStyle = makeStyles((theme) => ({
     paragraph: {
-        display: "flex",
-        width: "auto",
-        maxWidth: "fit-content",
-        padding: "1px",
-        margin: "20px",
+        // display: "flex",
+        // width: "auto",
+        // maxWidth: "fit-content",
+        fontSize:"1em",
+        padding: "6px",
+        margin: "6px",
         textAlign: "justify",
+
     },
     title: {
         textAlign: "center",
-        padding: "25px",
+        font: " 4rem arial, sans-serif",
+        color: "transparent",
+        textShadow:
+            "3px 3px 0px rgb(96,175,231), \
+             1.4px 4px 5px rgb(240,240,240,0.5), \
+             3.7px 3.4px 1px rgb(0,0,0), \
+             4.1px 0.9px 1.5px rgb(12, 34, 164), \
+             1.2px 2.9px 0.3px rgb(255,255,255)",
+        letterSpacing: "-1px",
+        margin: "6px auto",
     },
     link: {
         padding: "0px 5px",
@@ -30,7 +41,7 @@ const useStyle = makeStyles((theme) => ({
 function Availability() {
     const classes = useStyle();
     return (
-        <>
+        <Box>
             <Typography className={classes.title} variant="h2">
                 Disponibilités et infos
             </Typography>
@@ -74,7 +85,7 @@ function Availability() {
                     me contacter
                 </Link>
             </Typography>
-        </>
+        </Box>
     );
 }
 

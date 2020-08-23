@@ -33,12 +33,16 @@ const useStyles = makeStyles((theme) => ({
     cards: {
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "space-evenly",
+        justifyContent: "center",
         width: "auto",
         minWidth: "100%",
     },
     card: {
         margin: "5px",
+    },
+    social: {
+        display: "flex",
+        justifyContent: "space-evenly",
     },
 }));
 function Team() {
@@ -70,39 +74,41 @@ function Team() {
     const listOfDeveloppers = developpers.map((developper) => (
         <Card className={classes.card}>
             <CardHeader
-                title={`${developper.firstname} ${developper.lastname}`}
-                subheader={
-                    developper.available
-                        ? "disponible actuellement"
-                        : `disponible à partir du ${developper.availability_date}`
-                }
-                avatar={
-                    <Avatar
-                        alt={(developper.firstname, developper.lastname)}
-                        src="../../static/image/avatar/linkedin _avatar.jpeg"
-                    />
-                }
+                title={`${developper.firstname} `}
+                subheader={`${developper.lastname} `}
+                // avatar={
+                //     <Avatar
+                //         alt={(developper.firstname, developper.lastname)}
+                //         src="../../static/image/avatar/linkedin _avatar.jpeg"
+                //     />
+                // }
             />
-            <CardContent>
-                <Typography>
-                    {developper.biography}{" "}
+            <Box className={classes.social}>
+                <Link href={developper.linkedIn}>
+                    <LinkedInIcon />
+                </Link>
+                <Link href={developper.github}>
+                    <GitHubIcon />
+                </Link>
+            </Box>
+            {/* <CardContent>
+                {developper.biography}{" "}
                     <Link href={developper.email}>
                         <EmailIcon />
                     </Link>
-                    <Link href={developper.linkedIn}>
-                        <LinkedInIcon />
-                    </Link>
-                    <Link href={developper.github}>
-                        <GitHubIcon />
-                    </Link>
-                    <Link href={developper.facebook}>
+                <Link href={developper.linkedIn}>
+                    <LinkedInIcon />
+                </Link>
+                <Link href={developper.github}>
+                    <GitHubIcon />
+                </Link>
+                <Link href={developper.facebook}>
                         <FacebookIcon />
                     </Link>
                     <Link href={developper.medium}>Medium</Link>
                     <Link href={developper.stack_overflow}>Stack Overflow</Link>
                     <Link href={developper.website}>website</Link>
-                </Typography>
-            </CardContent>
+            </CardContent> */}
         </Card>
     ));
     return (
