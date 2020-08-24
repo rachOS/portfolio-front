@@ -16,11 +16,12 @@ import "slick-carousel/slick/slick-theme.css";
 const useStyle = makeStyles((theme) => ({
     root: {
         gridArea: "carousel",
+        display:"flex",
+        alignItems:"center"
+
     },
     slider: {
-        top: "33%",
         left: "2%",
-        display:"flex",
         width:"100%"
     },
     avatar: {
@@ -40,7 +41,7 @@ function Carousel({ projects }) {
         dotsClass: "slick-dots slick-thumb",
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 7,
         slidesToScroll: 1,
     };
 
