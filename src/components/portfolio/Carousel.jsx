@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 import Slider from "react-slick";
 
 // import Material UI
-import { Avatar, Container, makeStyles } from "@material-ui/core";
+import { Avatar, Container, makeStyles, Typography } from "@material-ui/core";
 
 // import style
 import "../style/carousel.css";
@@ -17,12 +17,18 @@ const useStyle = makeStyles((theme) => ({
     root: {
         gridArea: "carousel",
         display:"flex",
-        alignItems:"center"
+        alignItems:"center",
+        boxShadow:
+        "0px 2px 1px -1px rgba(0,0,0,0.2), \
+    0px 1px 1px 0px rgba(0,0,0,0.14), \
+    0px 1px 3px 0px rgba(0,0,0,0.12)",
 
     },
     slider: {
         left: "2%",
-        width:"100%"
+        display: "flex",
+        margin: "0 auto",
+        width: "50vw",
     },
     avatar: {
         width:"64px",
@@ -33,6 +39,11 @@ const useStyle = makeStyles((theme) => ({
         0px 1px 1px 0px rgba(0,0,0,0.14), \
         0px 1px 3px 0px rgba(0,0,0,0.12)",
     },
+    title:{
+        textDecoration:"none",
+        fontVariant: "petite-caps",
+        fontSize: "1.5em"
+    }
 }));
 function Carousel({ projects }) {
     const classes = useStyle();
@@ -41,7 +52,7 @@ function Carousel({ projects }) {
         dotsClass: "slick-dots slick-thumb",
         infinite: true,
         speed: 500,
-        slidesToShow: 7,
+        slidesToShow: 3,
         slidesToScroll: 1,
     };
 
@@ -53,13 +64,14 @@ function Carousel({ projects }) {
                         className="links"
                         to={`/portfolio/${project.id}/description`}
                     >
-                        <Avatar
+                        {/* <Avatar
                             className={classes.avatar}
                             variant="rounded"
                             key={index}
                             src={`${process.env.REACT_APP_HOST}/logos/${project.id}`}
                             alt={project.name}
-                        />
+                        /> */}
+                        <Typography className={classes.title} variant="caption">{project.name}</Typography>
                     </NavLink>
                 ))}
             </Slider>
