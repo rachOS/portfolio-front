@@ -38,11 +38,10 @@ const useStyle = makeStyles((theme) => ({
         font: "bold 5rem arial, sans-serif",
         color: "transparent",
         textShadow:
-            "3px 3px 0px rgb(96,175,231), \
-             1.4px 4px 5px rgb(240,240,240,0.5), \
-             3.7px 3.4px 1px rgb(0,0,0), \
-             4.1px 0.9px 1.5px rgb(12, 34, 164), \
-             1.2px 2.9px 0.3px rgb(255,255,255)",
+        "3px 3px 0px #e0e0e0, \
+        3.7px 3.4px 3px rgb(255, 255, 255), \
+        4.1px 0.9px 1.5px rgb(77, 77, 77), \
+        5.1px 0.5px 0.3px rgb(255,255,255)",
         letterSpacing: "-1px",
         margin: "0",
     },
@@ -110,7 +109,7 @@ function Contact() {
                 onReset={() => handleReset()}
             >
                 <Typography className={classes.title} variant="h2">
-                    Contactez moi!
+                    Contactez-moi!
                 </Typography>
                 <Box>
                     <InputLabel>Nom complet</InputLabel>
