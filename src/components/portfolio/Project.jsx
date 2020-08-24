@@ -14,13 +14,13 @@ const useStyle = makeStyles((theme) => ({
     root: {
         gridArea: "main",
         display: "grid",
-        gridTemplateColumns: "0.5fr 0.5fr 1fr 1fr",
-        gridTemplateRows: "0.5fr 1fr 1fr",
+        gridTemplateColumns: "0.5fr 0.5fr 1fr",
+        gridTemplateRows: "0.3fr 1fr 1fr",
         gridTemplateAreas:
-            ' "carousel carousel form form form" \
-        "screenshot screenshot form form form" \
-        "screenshot screenshot form form form"',
-        padding: "50px",
+            ' "carousel carousel carousel " \
+        "form  form form " \
+        "form  form form "',
+        padding: "12px",
         rowGap: "5px",
         columnGap: "5px",
         borderRadius:"0px",
@@ -49,7 +49,7 @@ function Project({ projects }) {
 
     return (
         <Paper className={`main ${classes.root}`} maxWidth="fluid">
-            <Screenshot project={project} />
+            {/* <Screenshot project={project} /> */}
             <Informations project={project} />
             <Carousel projects={projects} />
         </Paper>

@@ -5,6 +5,7 @@ import { Route, Switch, useRouteMatch } from "react-router-dom";
 // import components
 import Description from "./Description";
 import Features from "./Features";
+import Screenshot from "./Screenshot";
 import Share from "./Share";
 import Stacks from "./Stacks";
 import Team from "./Team";
@@ -39,11 +40,12 @@ function Informations({ project }) {
             <Divider />
             <Switch>
                 <Route path={`${path}/description`}>
-                    <Container>
+                    <Container className={classes.content}>
                         <Description
                             projectName={project.name}
                             url={project.site_link}
                         />
+                        <Screenshot project={project}/>
                     </Container>
                 </Route>
                 <Route path={`${path}/team`}>

@@ -8,8 +8,7 @@ import { Box, makeStyles, Link, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     content: {
-        justifyContent: "space-evenly",
-        alignItems: "center",
+        alignSelf: "flex-start",
         width: "100%",
         margin: "5px",
     },
