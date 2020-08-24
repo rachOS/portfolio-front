@@ -29,16 +29,16 @@ const useStyle = makeStyles((theme) => ({
         height: "64px",
     },
     home: {
-        backgroundColor: "#c3cad5",
+        backgroundColor: "#16a62e",
     },
     portfolio: {
-        backgroundColor: "#F57F17",
+        backgroundColor: "#f36e20",
     },
     details: {
-        backgroundColor: "#2196F3",
+        backgroundColor: "#f3d720",
     },
     contact: {
-        backgroundColor: "#4EC044",
+        backgroundColor: "#b720f3",
     },
 }));
 

@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
     large: {
         width: "100%",
         height: "auto",
-        margin:" 12px 0px",
+        margin: " 12px 0px",
     },
     accordion_details_about: {
         flexWrap: "wrap",
@@ -76,19 +76,17 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "600",
         color: "transparent",
         textShadow:
-            "3px 3px 0px rgb(96,175,231), \
-            -4.6px 5px 0px rgb(240,240,240,0.5), \
-            3.6px 2.2px 0px rgb(0,0,0,0.1), \
-            3.1px 2.6px 0.3px rgb(12, 34, 164), \
-            4.2px 3.9px 2px rgb(255,255,255,0.5)",
+            "3px 3px 0px rgb(224, 224, 224), \
+             3.6px 2.2px 0px rgba(176, 176, 176, 0.1), \
+             2.9px 2.6px 0.3px rgb(110, 110, 110), \
+             4.2px 3.9px 2px rgba(255, 255, 255, 0.78)",
     },
     bio: {
-        fontSize:"0.9rem",
-        textAlign: "justify",
+        fontSize: "0.9rem",
     },
     bio_detail: {
-        fontSize:"0.9rem",
-        margin:" 12px 0px",
+        fontSize: "0.9rem",
+        margin: " 12px 0px",
     },
 }));
 
@@ -125,12 +123,22 @@ const LeftContent = () => {
                         Grégory Chamekh, développeur web fullstacks ReactJS /
                         NodeJS, ambassadeur Wild Code School.
                     </Typography>
-                    <Typography className={classes.bio_detail}variant="caption" gutterBottom>
+                    <Typography
+                        className={classes.bio_detail}
+                        variant="caption"
+                        gutterBottom
+                    >
                         Touche à tout et bienveillant, ces deux qualités me
-                        permettent de m'adapater facilement. Et grâce à naturel
+                        permettent de m'adapater facilement. De nature
                         curieux et observateur, le soucis du détails et
-                        l'optimisation me fascinent. Aussi, tout cela font de
-                        moi un personne force de proposition.
+                        l'optimisation me fascinent. En effet en dehors du
+                        développement web, je pratique la photographie, la
+                        musique, la culture automatisée, la nutrition ... Le
+                        point commun entre ces activités se rejoint dans
+                        l'informatique qui est pour moi une passion de longue
+                        date. Depuis mars 2020 j'ai eu la chance d'effectuer une
+                        reconvertion professionnelle dans le développement web et ce
+                        nouveau métier me permet de m'épanouir complètement.
                     </Typography>
                 </AccordionDetails>
             </Accordion>
