@@ -33,7 +33,7 @@ const useStyle = makeStyles((theme) => ({
         columnGap: "12px",
         padding: "12px",
         margin: "0 auto",
-        backgroundColor: "#60afe7",
+        backgroundColor: "#FFFFFF",
     },
 }));
 
