@@ -10,6 +10,7 @@ const useStyle = makeStyles((theme) => ({
         display: "flex",
         alignItems: "center",
         padding: "6px",
+        margin:"0 12px"
     },
     screenshot: {
         width: "100%",

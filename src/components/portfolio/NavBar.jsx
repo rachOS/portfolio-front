@@ -14,6 +14,10 @@ const useStyles = makeStyles((theme) => ({
         padding: "10px",
         maxWidth: "50%",
     },
+    tabs:{
+        textDecoration:"none",
+        color:"#000000"
+    }
 }));
 function NavBar() {
     const classes = useStyles();
@@ -39,7 +43,7 @@ function NavBar() {
     ];
 
     const links = tabLabel.map((tab) => (
-        <Link to={`${tab.url}`}>
+        <Link className={classes.tabs} to={`${tab.url}`}>
             {" "}
             <Tab label={tab.label} />
         </Link>
@@ -47,7 +51,7 @@ function NavBar() {
 
     return (
         <Container className={classes.root}>
-            <Tabs>{links}</Tabs>
+            <Tabs >{links}</Tabs>
         </Container>
     );
 }
