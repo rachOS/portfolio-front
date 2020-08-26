@@ -10,18 +10,18 @@ import { Box, Link, makeStyles, Paper, Typography } from "@material-ui/core";
 const useStyle = makeStyles((theme) => ({
     root: {
         gridArea: "footer",
-        backgroundColor: "#F0F0F0",
+        backgroundColor: "#fbfbfb",
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-end",
         alignItems: "flex-end",
         padding: "12px 15px",
-        borderRadius: "0px 0px 10px 0px",
+        borderRadius: "0",
     },
     icon: {
-        width: "64px",
-        height: "64px",
-        color: "rgb(96,175,231)",
+        width: "32px",
+        height: "32px",
+        color: "#000000",
     },
 }));
 

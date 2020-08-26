@@ -1,32 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// import components
-
-// import data
-
-// import style
-
 // import Material UI
 import { makeStyles, Typography, Box } from "@material-ui/core";
 
 const useStyle = makeStyles((theme) => ({
     paragraph: {
-        // display: "flex",
-        // width: "auto",
-        // maxWidth: "fit-content",
-        fontSize:"1em",
+        fontSize: "1em",
         padding: "6px",
         margin: "6px",
         textAlign: "justify",
-
+        fontFamily: "'Sora', sans-serif",
     },
     title: {
         textAlign: "center",
-        font: " 4rem arial, sans-serif",
+        font: "4em arial, sans-serif",
+        fontFamily: "'Poiret One', cursive",
         color: "transparent",
         textShadow:
-            "3px 3px 0px #e0e0e0, \
+            "4px 2px 0px #e0e0e0, \
             3.7px 3.4px 3px rgb(255, 255, 255), \
             4.1px 0.9px 1.5px rgb(77, 77, 77), \
             5.1px 0.5px 0.3px rgb(255,255,255)",

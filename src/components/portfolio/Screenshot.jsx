@@ -2,19 +2,16 @@
 import React from "react";
 
 // import Material UI
-import { Avatar, Box, makeStyles } from "@material-ui/core";
+import { Avatar, makeStyles } from "@material-ui/core";
 
 const useStyle = makeStyles((theme) => ({
-    root: {
-        gridArea: "screenshot",
-        display: "flex",
-        alignItems: "center",
-        padding: "6px",
-        margin:"0 12px"
-    },
     screenshot: {
-        width: "100%",
-        height:"auto",
+        margin: "12px",
+        alignSelf: "center",
+        width: "auto",
+        height: "auto",
+        maxWidth: "40%",
+        display: "flex",
         boxShadow:
             "0px 2px 1px -1px rgba(0,0,0,0.2), \
         0px 1px 1px 0px rgba(0,0,0,0.14), \
@@ -24,14 +21,12 @@ const useStyle = makeStyles((theme) => ({
 function Screenshot({ project }) {
     const classes = useStyle();
     return (
-        <Box className={classes.root} component="fluid">
-            <Avatar
-                variant="square"
-                className={classes.screenshot}
-                src={`${process.env.REACT_APP_HOST}/latest/${project.id}`}
-                alt={`screenshot ${project.name} : ${project.id} `}
-            />
-        </Box>
+        <Avatar
+            variant="square"
+            className={classes.screenshot}
+            src={`${process.env.REACT_APP_HOST}/latest/${project.id}`}
+            alt={`screenshot ${project.name} : ${project.id} `}
+        />
     );
 }
 

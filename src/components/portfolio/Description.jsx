@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "justify",
         color: "#2e2e33",
         fontSize: "unset",
+        fontFamily: "'Sora', sans-serif",
     },
 }));
 
@@ -40,7 +41,7 @@ function Description({ projectName, url }) {
         : "Description du projet";
     return (
         <Box className={classes.content}>
-            <Typography variant="h3">{projectName}</Typography>
+            {/* <Typography variant="h3">{projectName}</Typography> */}
             <Typography
                 className={classes.description}
                 dangerouslySetInnerHTML={{ __html: checkDescription }}

@@ -18,7 +18,7 @@ const useStyle = makeStyles((theme) => ({
     root: {
         gridArea: "main",
         borderRadius: "0px",
-        backgroundColor: "#F0F0F0",
+        backgroundColor: "#fbfbfb",
     },
     form: {
         height: "100%",
@@ -35,7 +35,8 @@ const useStyle = makeStyles((theme) => ({
     },
     title: {
         gridArea: "title",
-        font: "bold 5rem arial, sans-serif",
+        font: "5em arial, sans-serif",
+        fontFamily: "'Poiret One', cursive",
         color: "transparent",
         textShadow:
         "3px 3px 0px #e0e0e0, \
@@ -109,7 +110,7 @@ function Contact() {
                 onReset={() => handleReset()}
             >
                 <Typography className={classes.title} variant="h2">
-                    Contactez-moi!
+                    Me contacter
                 </Typography>
                 <Box>
                     <InputLabel>Nom complet</InputLabel>

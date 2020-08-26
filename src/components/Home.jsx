@@ -10,27 +10,21 @@ const useStyle = makeStyles((theme) => ({
         gridArea: "main",
         display: "flex",
         flexWrap: "wrap",
-        alignContent: "flex-start",
-        padding: "12px",
-        backgroundColor: "#F0F0F0",
+        justifyContent:"center",
+        alignContent: "space-evenly",
+        backgroundColor: "#fbfbfb",
         borderRadius: "0px",
     },
     previews_container: {
         width: "100%",
         display: "flex",
-        justifyContent: "space-around",
-        alignItems: "center",
-        marginTop: "80px",
+        justifyContent: "center",
         backgroundColor: "transparent",
     },
     cards_container: {
-        width: "auto",
-        maxWidth: "512px",
-        margin: "12px",
         padding: "2px",
         display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "flex-start",
+        flexDirection: "column",
         alignItems: "center",
     },
     link: {
@@ -41,22 +35,21 @@ const useStyle = makeStyles((theme) => ({
     },
     image: {
         width: "auto",
-        maxWidth: "100%",
+        maxWidth:"90%",
+        height: "512px",
+        objectFit: "cover",
         boxShadow:
             "0px 2px 1px -1px rgba(0,0,0,0.2), \
         0px 1px 1px 0px rgba(0,0,0,0.14), \
         0px 1px 3px 0px rgba(0,0,0,0.12)",
     },
     title: {
-        font: "bold 128px arial, sans-serif",
+        font: "8em arial, sans-serif",
+        fontFamily: "'Poiret One', cursive",
         color: "transparent",
-        textShadow:
-            "3px 3px 0px #e0e0e0, \
-             3.7px 3.4px 3px rgb(255, 255, 255), \
-             4.1px 0.9px 1.5px rgb(184, 184, 184), \
-             5.1px 0.5px 0.3px rgb(255,255,255)",
-        top: "30px",
-        letterSpacing: "-4px",
+        textShadow:"3px 3px 0px #cccccc, 3.7px 3.4px 3px rgb(255, 255, 255), 4.1px 0.9px 1.5px rgb(77, 77, 77), 5.1px 0.5px 0.3px rgb(255,255,255)",
+        // top: "30px",
+        letterSpacing: "2px",
         margin: "0",
         position: "relative",
     },
