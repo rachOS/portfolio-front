@@ -4,10 +4,8 @@ import { useParams } from "react-router-dom";
 
 // import Material UI Components
 import {
-    Avatar,
     Box,
     Card,
-    CardContent,
     CardHeader,
     Container,
     Link,
@@ -17,8 +15,6 @@ import {
 // import Material UI icons
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import EmailIcon from "@material-ui/icons/Email";
-import FacebookIcon from "@material-ui/icons/Facebook";
 
 // import style
 import { makeStyles } from "@material-ui/core/styles";
@@ -26,9 +22,18 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "start",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
         padding: "5px",
+        height: "100%",
+    },
+    devs: {
+        fontFamily: "'Sora', sans-serif",
+        letterSpacing: "0.3em",
+        margin: "12px",
+        fontSize: "1.2em",
+        fontWeight: "200",
     },
     cards: {
         display: "flex",
@@ -39,10 +44,15 @@ const useStyles = makeStyles((theme) => ({
     },
     card: {
         margin: "5px",
+        backgroundColor: "#fbfbfb",
+        borderRadius: "1px",
     },
-    social: {
+    container_icon: {
         display: "flex",
         justifyContent: "space-evenly",
+    },
+    icon: {
+        color: "#000",
     },
 }));
 function Team() {
@@ -76,44 +86,20 @@ function Team() {
             <CardHeader
                 title={`${developper.firstname} `}
                 subheader={`${developper.lastname} `}
-                // avatar={
-                //     <Avatar
-                //         alt={(developper.firstname, developper.lastname)}
-                //         src="../../static/image/avatar/linkedin _avatar.jpeg"
-                //     />
-                // }
             />
-            <Box className={classes.social}>
+            <Box className={classes.container_icon}>
                 <Link href={developper.linkedIn}>
-                    <LinkedInIcon />
+                    <LinkedInIcon className={classes.icon} />
                 </Link>
                 <Link href={developper.github}>
-                    <GitHubIcon />
+                    <GitHubIcon className={classes.icon} />
                 </Link>
             </Box>
-            {/* <CardContent>
-                {developper.biography}{" "}
-                    <Link href={developper.email}>
-                        <EmailIcon />
-                    </Link>
-                <Link href={developper.linkedIn}>
-                    <LinkedInIcon />
-                </Link>
-                <Link href={developper.github}>
-                    <GitHubIcon />
-                </Link>
-                <Link href={developper.facebook}>
-                        <FacebookIcon />
-                    </Link>
-                    <Link href={developper.medium}>Medium</Link>
-                    <Link href={developper.stack_overflow}>Stack Overflow</Link>
-                    <Link href={developper.website}>website</Link>
-            </CardContent> */}
         </Card>
     ));
     return (
         <Container className={classes.root}>
-            <Typography>
+            <Typography className={classes.devs}>
                 Ces {nbrOfDevsByTeam.Nbr_devs} développeurs.ses ont réalisés le
                 projet {nbrOfDevsByTeam.name} :
             </Typography>

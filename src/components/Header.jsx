@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // import css
-import "./style/header.css"
+import "./style/header.css";
 
 // import Material UI
 import { Button, makeStyles, MenuList, Paper } from "@material-ui/core";
@@ -18,27 +18,38 @@ const useStyle = makeStyles((theme) => ({
         backgroundColor: "#F0F0F0",
         display: "flex",
         alignItems: "center",
-        padding: "0 1%",
-        borderRadius: "0px 10px 0px 0px",
+        borderRadius: "0",
+    },
+    menu_list: {
+        width: "100%",
+        display: "flex",
+        padding: "0",
+    },
+    links: {
+        width: "100%",
+        textDecoration: "none",
     },
     button: {
+        fontFamily: "'Sora', sans-serif",
+        color: "#000",
+        fontWeight: "400",
+        textTransform: "lowercase",
         borderRadius: "1px",
-        fontSize:"0.8em",
-        padding: "12px",
-        margin: "12px",
-        height: "64px",
+        padding: "5%",
+        width: "100%",
+        height: "100%",
     },
     home: {
-        backgroundColor: "#16a62e",
+        backgroundColor: "#0080ff",
     },
     portfolio: {
-        backgroundColor: "#f36e20",
+        backgroundColor: "#0080ff",
     },
     details: {
-        backgroundColor: "#f3d720",
+        backgroundColor: "#0080ff",
     },
     contact: {
-        backgroundColor: "#b720f3",
+        backgroundColor: "#0080ff",
     },
 }));
 
@@ -46,25 +57,28 @@ const Header = ({ lastProject }) => {
     const classes = useStyle();
     return (
         <Paper className={classes.root}>
-            <MenuList>
-                <Link to="/">
+            <MenuList className={classes.menu_list}>
+                <Link className={classes.links} to="/">
                     <Button className={[classes.button, classes.home]}>
                         <HomeIcon /> Accueil
                     </Button>
                 </Link>
-                <Link to={`/portfolio/${lastProject.id}/description`}>
+                <Link
+                    className={classes.links}
+                    to={`/portfolio/${lastProject.id}/description`}
+                >
                     <Button className={[classes.button, classes.portfolio]}>
                         <CollectionsIcon /> Portfolio
                     </Button>
                 </Link>
 
-                <Link to="/details">
+                <Link className={classes.links} to="/details">
                     <Button className={[classes.button, classes.details]}>
                         <InfoIcon /> Détails
                     </Button>
                 </Link>
 
-                <Link to="/contact">
+                <Link className={classes.links} to="/contact">
                     <Button className={[classes.button, classes.contact]}>
                         <ContactMailIcon /> Contact
                     </Button>

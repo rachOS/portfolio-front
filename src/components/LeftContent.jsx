@@ -43,43 +43,36 @@ const useStyles = makeStyles((theme) => ({
     accordion_container: {
         display: "grid",
         alignContent: "center",
+        justifyContent: "space-beetween",
         height: "100%",
-        backgroundColor: "#F0F0F0",
+        backgroundColor: "#fbfbfb",
     },
     accordion_summary: {
         display: "flex",
         flexWrap: "wrap",
     },
-    accordion_top: {
-        borderTopLeftRadius: "10px",
-    },
-    accordion_bottom: {
-        borderBottomLeftRadius: "10px",
-    },
     large: {
-        width: "100%",
+        width: "30%",
         height: "auto",
         margin: " 12px 0px",
     },
     accordion_details_about: {
+        display: "flex",
         flexWrap: "wrap",
-        justifyContent: "center",
+        backgroundColor: "transparent",
     },
     accordion_details_cv: {
-        flexWrap: "wrap",
-        justifyContent: "center",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
     },
     text_shadow: {
+        fontFamily: "'Sora', sans-serif",
+        fontWeight: "100",
         textAlign: "center",
         width: "100%",
         fontSize: "41px",
-        fontWeight: "600",
-        color: "transparent",
-        textShadow:
-            "3px 3px 0px rgb(224, 224, 224), \
-             3.6px 2.2px 0px rgba(176, 176, 176, 0.1), \
-             2.9px 2.6px 0.3px rgb(110, 110, 110), \
-             4.2px 3.9px 2px rgba(255, 255, 255, 0.78)",
+        color: "#888888",
     },
     bio: {
         fontSize: "0.9rem",
@@ -129,16 +122,16 @@ const LeftContent = () => {
                         gutterBottom
                     >
                         Touche à tout et bienveillant, ces deux qualités me
-                        permettent de m'adapater facilement. De nature
-                        curieux et observateur, le soucis du détails et
-                        l'optimisation me fascinent. En effet en dehors du
-                        développement web, je pratique la photographie, la
-                        musique, la culture automatisée, la nutrition ... Le
-                        point commun entre ces activités se rejoint dans
-                        l'informatique qui est pour moi une passion de longue
-                        date. Depuis mars 2020 j'ai eu la chance d'effectuer une
-                        reconvertion professionnelle dans le développement web et ce
-                        nouveau métier me permet de m'épanouir complètement.
+                        permettent de m'adapater facilement. De nature curieux
+                        et observateur, le soucis du détails et l'optimisation
+                        me fascinent. En effet en dehors du développement web,
+                        je pratique la photographie, la musique, la culture
+                        automatisée, la nutrition ... Le point commun entre ces
+                        activités se rejoint dans l'informatique qui est pour
+                        moi une passion de longue date. Depuis mars 2020 j'ai eu
+                        la chance d'effectuer une reconvertion professionnelle
+                        dans le développement web et ce nouveau métier me permet
+                        de m'épanouir complètement.
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -168,7 +161,6 @@ const LeftContent = () => {
                 square
                 className={[
                     classes.accordion_container,
-                    classes.accordion_bottom,
                 ]}
             >
                 <AccordionSummary>

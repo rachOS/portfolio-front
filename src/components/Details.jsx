@@ -26,7 +26,7 @@ const useStyle = makeStyles((theme) => ({
         alignItems: "stretch",
         padding: "12px",
         borderRadius:"0px",
-        backgroundColor: "#F0F0F0",
+        backgroundColor: "#fbfbfb",
     },
     form: {
         gridArea: "form",
@@ -35,7 +35,9 @@ const useStyle = makeStyles((theme) => ({
         gridArea: "infos",
         borderRadius:"0",
         textAlign:"justify",
-        fontSize:"unset"
+        fontSize:"unset",
+        backgroundColor: "#fbfbfb",
+        boxShadow:"none"
     },
     cv: {
         gridArea: "cv",
@@ -57,9 +59,6 @@ function Details() {
             <Card className={classes.infos}>
                 <Availability />
             </Card>
-            {/* <Card className={classes.form}>
-                <Contact />
-            </Card> */}
         </Paper>
     );
 }
