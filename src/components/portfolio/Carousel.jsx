@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 import Slider from "react-slick";
 
 // import Material UI
-import { Avatar, Container, makeStyles, Typography } from "@material-ui/core";
+import { Container, makeStyles, Typography } from "@material-ui/core";
 
 // import style
 import "../style/carousel.css";
@@ -54,13 +54,6 @@ function Carousel({ projects }) {
                         className="links"
                         to={`/portfolio/${project.id}/description`}
                     >
-                        {/* <Avatar
-                            className={classes.avatar}
-                            variant="rounded"
-                            key={index}
-                            src={`${process.env.REACT_APP_HOST}/logos/${project.id}`}
-                            alt={project.name}
-                        /> */}
                         <Typography className={classes.title} variant="caption">
                             {project.name}
                         </Typography>

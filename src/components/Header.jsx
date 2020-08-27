@@ -18,28 +18,26 @@ const useStyle = makeStyles((theme) => ({
         backgroundColor: "#F0F0F0",
         display: "flex",
         alignItems: "center",
-        // padding: "0 1%",
         borderRadius: "0",
     },
     menu_list: {
         width: "100%",
         display: "flex",
-        padding:"0"
+        padding: "0",
     },
     links: {
         width: "100%",
-        textDecoration: "none"
+        textDecoration: "none",
     },
     button: {
         fontFamily: "'Sora', sans-serif",
-        color:"#000",
+        color: "#000",
         fontWeight: "400",
-        textTransform:"lowercase",
+        textTransform: "lowercase",
         borderRadius: "1px",
-        padding:"5%",
+        padding: "5%",
         width: "100%",
-        height:"100%",
-
+        height: "100%",
     },
     home: {
         backgroundColor: "#0080ff",
@@ -51,12 +49,8 @@ const useStyle = makeStyles((theme) => ({
         backgroundColor: "#0080ff",
     },
     contact: {
-        // borderRadius: "0px 10px 0px 0px",
         backgroundColor: "#0080ff",
     },
-    icon:{
-        // color:"#fbfbfb"
-    }
 }));
 
 const Header = ({ lastProject }) => {
@@ -66,7 +60,7 @@ const Header = ({ lastProject }) => {
             <MenuList className={classes.menu_list}>
                 <Link className={classes.links} to="/">
                     <Button className={[classes.button, classes.home]}>
-                        <HomeIcon className={classes.icon} /> Accueil
+                        <HomeIcon /> Accueil
                     </Button>
                 </Link>
                 <Link
@@ -74,19 +68,19 @@ const Header = ({ lastProject }) => {
                     to={`/portfolio/${lastProject.id}/description`}
                 >
                     <Button className={[classes.button, classes.portfolio]}>
-                        <CollectionsIcon className={classes.icon}  /> Portfolio
+                        <CollectionsIcon /> Portfolio
                     </Button>
                 </Link>
 
                 <Link className={classes.links} to="/details">
                     <Button className={[classes.button, classes.details]}>
-                        <InfoIcon className={classes.icon}  /> Détails
+                        <InfoIcon /> Détails
                     </Button>
                 </Link>
 
                 <Link className={classes.links} to="/contact">
                     <Button className={[classes.button, classes.contact]}>
-                        <ContactMailIcon className={classes.icon}  /> Contact
+                        <ContactMailIcon /> Contact
                     </Button>
                 </Link>
             </MenuList>

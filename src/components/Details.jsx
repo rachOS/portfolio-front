@@ -59,9 +59,6 @@ function Details() {
             <Card className={classes.infos}>
                 <Availability />
             </Card>
-            {/* <Card className={classes.form}>
-                <Contact />
-            </Card> */}
         </Paper>
     );
 }

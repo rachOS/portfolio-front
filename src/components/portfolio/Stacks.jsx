@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 import {
     Box,
     Card,
-    CardActions,
     CardHeader,
     Container,
     Divider,
@@ -19,25 +18,31 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "start",
         padding: "5px",
+        alignItems: "center",
     },
     cards: {
+        width: "auto",
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "center",
-        width: "auto",
         minWidth: "100%",
-        margin: "12px",
+        justifyItems: "stretch",
+        justifyContent: "flex-end",
+        flexDirection: "row-reverse",
     },
     card: {
-        display: "flex",
-        alignItems: "center",
-        padding: "6px",
         margin: "5px",
+        backgroundColor: "#fbfbfb",
+        borderRadius: "1px",
     },
-    text: {
+    links: {
         margin: "0 5px",
+        padding: "16px",
+    },
+    title: {
+        fontFamily: "'Sora', sans-serif",
+        fontWeight: "100",
+        alignSelf: "center",
     },
 }));
 
@@ -67,11 +72,12 @@ function Stacks() {
 
     const listOfStacks = stacks.map((stack) => (
         <Card className={classes.card}>
-            <Typography className={classes.text}>{stack.name}</Typography>
-            <Typography className={classes.text} variant="caption">
-                {stack.version_used}
-            </Typography>
-            <Link className={classes.text} href={stack.site}>
+            <CardHeader
+                className={classes.card}
+                title={stack.name}
+                subheader={stack.version_used}
+            />
+            <Link className={classes.links} href={stack.site}>
                 site officiel
             </Link>
         </Card>
@@ -79,22 +85,32 @@ function Stacks() {
 
     const listOfTools = tools.map((tool) => (
         <Card className={classes.card}>
-            <Typography className={classes.text}>{tool.name}</Typography>
-            <Typography className={classes.text} variant="caption">
-                {tool.version_used}
-            </Typography>
-            <Link className={classes.text} href={tool.site}>
+            <CardHeader
+                className={classes.card}
+                title={tool.name}
+                subheader={tool.version_used}
+            />
+            <Link className={classes.links} href={tool.site}>
                 site officiel
             </Link>
         </Card>
     ));
     return (
         <Container className={classes.root}>
-            <Typography variant="h3">Les technos</Typography>
-            <Box className={classes.cards}>{listOfStacks}</Box>
+            <Box className={classes.cards}>
+                {listOfStacks}
+                <Typography className={classes.title} variant="h3">
+                    Les technos
+                </Typography>
+            </Box>
             <Divider />
-            <Typography variant="h3">Les outils</Typography>
-            <Box className={classes.cards}>{listOfTools}</Box>
+
+            <Box className={classes.cards}>
+                {listOfTools}
+                <Typography className={classes.title} variant="h3">
+                    Les outils
+                </Typography>
+            </Box>
         </Container>
     );
 }

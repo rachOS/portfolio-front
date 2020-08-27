@@ -1,5 +1,6 @@
 // import core
 import React, { useState, useEffect } from "react";
+import Axios from "axios";
 
 // import library
 import { Form } from "react-advanced-form";
@@ -8,9 +9,9 @@ import { Form } from "react-advanced-form";
 import {
     Box,
     Button,
-    InputLabel,
     makeStyles,
     Paper,
+    TextField,
     Typography,
 } from "@material-ui/core";
 
@@ -19,6 +20,19 @@ const useStyle = makeStyles((theme) => ({
         gridArea: "main",
         borderRadius: "0px",
         backgroundColor: "#fbfbfb",
+    },
+    title: {
+        gridArea: "title",
+        font: "5em arial, sans-serif",
+        fontFamily: "'Poiret One', cursive",
+        color: "transparent",
+        textShadow:
+            "3px 3px 0px #e0e0e0, \
+        3.7px 3.4px 3px rgb(255, 255, 255), \
+        4.1px 0.9px 1.5px rgb(77, 77, 77), \
+        5.1px 0.5px 0.3px rgb(255,255,255)",
+        letterSpacing: "-1px",
+        margin: "0",
     },
     form: {
         height: "100%",
@@ -29,31 +43,31 @@ const useStyle = makeStyles((theme) => ({
         justifyContent: "space-evenly",
     },
     text: {
+        fontFamily: "'Sora', sans-serif",
+        fontWeight: "100",
         gridArea: "text",
         height: "30vh",
         width: "70vh",
+        border: "none",
+        borderRadius: "4px",
+        background: "#f6f6f6",
+        boxShadow: " inset 0px 4px 5px #cfcfcf, inset -5px -5px 0px #fcfcfc",
     },
-    title: {
-        gridArea: "title",
-        font: "5em arial, sans-serif",
-        fontFamily: "'Poiret One', cursive",
-        color: "transparent",
-        textShadow:
-        "3px 3px 0px #e0e0e0, \
-        3.7px 3.4px 3px rgb(255, 255, 255), \
-        4.1px 0.9px 1.5px rgb(77, 77, 77), \
-        5.1px 0.5px 0.3px rgb(255,255,255)",
-        letterSpacing: "-1px",
-        margin: "0",
+    label: {
+        fontFamily: "'Sora', sans-serif",
+        fontWeight: "400",
+        margin: "12px",
     },
-    email: {
-        gridArea: "email",
-    },
-    fullname: {
-        gridArea: "fullname",
-    },
-    subject: {
+    input: {
+        fontFamily: "'Sora', sans-serif",
+        fontWeight: "100",
         gridArea: "subject",
+        height: "5vh",
+        width: "21vh",
+        border: "none",
+        borderRadius: "1px",
+        background: "#f6f6f6",
+        boxShadow: " inset 0px 4px 5px #cfcfcf, inset -5px -5px 0px #fcfcfc",
     },
     button: {
         gridArea: "button",
@@ -94,9 +108,9 @@ function Contact() {
     };
 
     const handleSubmit = () => {
-        // const sendURL = `${process.env.REACT_APP_HOST}/contact`;
-        // const formDatas = user;
-        // Axios.post(sendURL, formDatas);
+        const sendURL = `${process.env.REACT_APP_HOST}/contact`;
+        const formDatas = user;
+        Axios.post(sendURL, formDatas);
         onSubmit();
         handleReset();
     };
@@ -104,7 +118,6 @@ function Contact() {
     return (
         <Paper className={classes.root}>
             <Form
-                // method="POST"
                 className={classes.form}
                 ref={(form) => (form = form)}
                 onReset={() => handleReset()}
@@ -113,31 +126,35 @@ function Contact() {
                     Me contacter
                 </Typography>
                 <Box>
-                    <InputLabel>Nom complet</InputLabel>
-                    <input
-                        className={classes.fullname}
+                    <TextField
+                        className={classes.label}
+                        id="fullname"
+                        label="Nom et prénom"
                         name="fullname"
                         type="text"
                         value={user.fullname}
                         onChange={(event) => handleChange(event)}
-                        placeholder="Mr John DOE / Miss Jane DOE"
+                        required
                     />
                 </Box>
                 <Box>
-                    <InputLabel>Email</InputLabel>
-                    <input
-                        className={classes.email}
+                    <TextField
+                        className={classes.label}
+                        id="user_email"
+                        label="email"
                         name="user_email"
                         type="email"
                         value={user.user_email}
                         onChange={(event) => handleChange(event)}
                         placeholder="mon@email.com"
+                        required
                     />
                 </Box>
                 <Box>
-                    <InputLabel>Sujet</InputLabel>
-                    <input
-                        className={classes.subject}
+                    <TextField
+                        className={classes.label}
+                        id="subject"
+                        label="sujet"
                         name="subject"
                         type="text"
                         value={user.subject}
@@ -145,13 +162,18 @@ function Contact() {
                     />
                 </Box>
                 <Box>
-                    <InputLabel>Message</InputLabel>
-                    <input
-                        className={classes.text}
+                    <TextField
+                        className={[classes.label]}
+                        id="text"
+                        label="Message"
                         name="text"
                         type="textarea"
                         value={user.text}
                         onChange={(event) => handleChange(event)}
+                        variant="outlined"
+                        multiline
+                        rows={6}
+                        required
                     />
                 </Box>
                 <Button

@@ -50,26 +50,16 @@ const useStyles = makeStyles((theme) => ({
     accordion_summary: {
         display: "flex",
         flexWrap: "wrap",
-
-    },
-    accordion_top: {
-        // borderTopLeftRadius: "10px",
-    },
-    accordion_bottom: {
-        // borderBottomLeftRadius: "10px",
     },
     large: {
-        width: "100%",
+        width: "30%",
         height: "auto",
         margin: " 12px 0px",
     },
     accordion_details_about: {
         display: "flex",
         flexWrap: "wrap",
-        // justifyContent: "center",
-        // alignItems:"center"
-        backgroundColor:"transparent"
-
+        backgroundColor: "transparent",
     },
     accordion_details_cv: {
         display: "flex",
@@ -82,12 +72,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "center",
         width: "100%",
         fontSize: "41px",
-        color: "#000000",
-        // textShadow:
-        //     "3px 3px 0px rgb(224, 224, 224), \
-        //      3.6px 2.2px 0px rgba(176, 176, 176, 0.1), \
-        //      2.9px 2.6px 0.3px rgb(110, 110, 110), \
-        //      4.2px 3.9px 2px rgba(255, 255, 255, 0.78)",
+        color: "#888888",
     },
     bio: {
         fontSize: "0.9rem",
@@ -176,7 +161,6 @@ const LeftContent = () => {
                 square
                 className={[
                     classes.accordion_container,
-                    classes.accordion_bottom,
                 ]}
             >
                 <AccordionSummary>

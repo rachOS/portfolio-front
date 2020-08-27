@@ -48,7 +48,6 @@ const useStyle = makeStyles((theme) => ({
         fontFamily: "'Poiret One', cursive",
         color: "transparent",
         textShadow:"3px 3px 0px #cccccc, 3.7px 3.4px 3px rgb(255, 255, 255), 4.1px 0.9px 1.5px rgb(77, 77, 77), 5.1px 0.5px 0.3px rgb(255,255,255)",
-        // top: "30px",
         letterSpacing: "2px",
         margin: "0",
         position: "relative",

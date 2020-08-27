@@ -8,19 +8,33 @@ import { Box, makeStyles, Link, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     content: {
-        alignSelf: "flex-start",
-        width: "100%",
+        width: "auto",
         margin: "5px",
+        display: "flex",
     },
     description: {
         textAlign: "justify",
         color: "#2e2e33",
         fontSize: "unset",
         fontFamily: "'Sora', sans-serif",
+        width: "52%",
+    },
+    screenshot: {
+        width: "30%",
+        float: "right",
+        alignSelf: "center",
+        position: "absolute",
+        right: "2%",
+        top: "23.5%",
+    },
+    link: {
+        alignSelf: "center",
+        position: "absolute",
+        bottom: "12%",
     },
 }));
 
-function Description({ projectName, url }) {
+function Description({ project, projectName, url }) {
     const classes = useStyles();
 
     const { id } = useParams();
@@ -41,16 +55,22 @@ function Description({ projectName, url }) {
         : "Description du projet";
     return (
         <Box className={classes.content}>
-            {/* <Typography variant="h3">{projectName}</Typography> */}
             <Typography
                 className={classes.description}
                 dangerouslySetInnerHTML={{ __html: checkDescription }}
             />
-            {url ? (
-                <Link href={url}> Lien du site</Link>
-            ) : (
-                "site en cours de déploiement"
-            )}
+            <div className={classes.link}>
+                {url ? (
+                    <Link href={url}> Lien du site</Link>
+                ) : (
+                    "site en cours de déploiement"
+                )}
+            </div>
+            <img
+                className={classes.screenshot}
+                src={`${process.env.REACT_APP_HOST}/latest/${project.id}`}
+                alt={`screenshot ${project.name} : ${project.id} `}
+            />
         </Box>
     );
 }

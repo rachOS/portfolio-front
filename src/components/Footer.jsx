@@ -23,6 +23,11 @@ const useStyle = makeStyles((theme) => ({
         height: "32px",
         color: "#000000",
     },
+    text:{
+        fontFamily: "'Sora', sans-serif",
+        letterSpacing: "0.3em",
+        fontWeight: "200",
+    }
 }));
 
 const Footer = () => {
@@ -41,7 +46,7 @@ const Footer = () => {
                     <GitHubIcon className={classes.icon} />
                 </Link>
             </Box>
-            <Typography>Design et développement par Grégory Chamekh</Typography>
+            <Typography className={classes.text}>Design et développement par Grégory Chamekh</Typography>
         </Paper>
     );
 };

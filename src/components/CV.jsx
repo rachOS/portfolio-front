@@ -10,9 +10,7 @@ import "./style/cv.css";
 // import Material UI
 import {
     Box,
-    Button,
     Divider,
-    Grid,
     List,
     ListItem,
     makeStyles,
@@ -84,10 +82,6 @@ const useStyle = makeStyles((theme) => ({
         display: "flex",
         flexWrap: "wrap",
     },
-    download_button: {
-        margin: "20px",
-        backgroundColor: "orange",
-    },
 }));
 
 function CV() {
@@ -128,7 +122,7 @@ function CV() {
                             </Typography>
                         </div>
                         <Divider className={[classes.divider]} />
-                        <div  className={[classes.skills]}>
+                        <div className={[classes.skills]}>
                             <Typography className={[classes.infos]}>
                                 <FaceIcon className={[classes.icon]} />
                                 Grégory Chamekh:
@@ -454,9 +448,6 @@ function CV() {
                                 </List>
                             </Typography>
                         </Box>
-                        {/* <Button className={classes.download_button} onClick="">
-                            Télécharger
-                        </Button> */}
                     </Frame>
                 </Stack>
             </Scroll>
