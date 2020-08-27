@@ -100,8 +100,8 @@ function Team() {
     return (
         <Container className={classes.root}>
             <Typography className={classes.devs}>
-                Ces {nbrOfDevsByTeam.Nbr_devs} développeurs.ses ont réalisés le
-                projet {nbrOfDevsByTeam.name} :
+                {nbrOfDevsByTeam.Nbr_devs} développeur.s.ses a.ont réalisé.e.s
+                le projet <strong>{nbrOfDevsByTeam.name}</strong> :
             </Typography>
             <Box className={classes.cards}>{listOfDeveloppers}</Box>
         </Container>

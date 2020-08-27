@@ -125,8 +125,8 @@ const LeftContent = () => {
                         permettent de m'adapater facilement. De nature curieux
                         et observateur, le soucis du détails et l'optimisation
                         me fascinent. En effet en dehors du développement web,
-                        je pratique la photographie, la musique, la culture
-                        automatisée, la nutrition ... Le point commun entre ces
+                        je pratique la photographie, la musique assistée par ordinateur,
+                        des plans de nutrition  ... Le point commun entre ces
                         activités se rejoint dans l'informatique qui est pour
                         moi une passion de longue date. Depuis mars 2020 j'ai eu
                         la chance d'effectuer une reconvertion professionnelle
