@@ -8,6 +8,10 @@ function Features() {
     return (
         <Container>
             <h1>Rédaction en cours</h1>
+            <img
+                src="https://media.giphy.com/media/NHUONhmbo448/giphy.gif"
+                alt="work in progress"
+            />
         </Container>
     );
 }
