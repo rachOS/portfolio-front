@@ -34,9 +34,8 @@ const useStyle = makeStyles((theme) => ({
         backfaceVisibility: "hidden",
     },
     image: {
-        width: "auto",
-        maxWidth:"90%",
-        height: "512px",
+        width: "128px",
+        height: "384px",
         objectFit: "cover",
         boxShadow:
             "0px 2px 1px -1px rgba(0,0,0,0.2), \
