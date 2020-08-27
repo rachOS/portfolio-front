@@ -21,18 +21,14 @@ const useStyle = makeStyles((theme) => ({
         height: "100vh",
         width: "auto",
         display: "grid",
-        gridTemplateColumns: "0.7fr 1fr 1fr 1fr 1fr ",
-        gridTemplateRows: "0.5fr 1fr 1fr 1fr 0.5fr",
+        gridTemplateColumns: "0.665fr 1fr 1fr",
+        gridTemplateRows: "0.1fr 1fr 0.1fr  ",
         gridTemplateAreas:
-            '  "leftMenu header header header header" \
-            "leftMenu main main main main" \
-            "leftMenu main main main main" \
-            "leftMenu main main main main" \
-            "leftMenu footer footer footer footer"',
-        rowGap: "12px",
-        columnGap: "12px",
-        padding: "12px",
-        margin: "0 auto",
+            '  " header header header" \
+            "leftMenu main main" \
+            "leftMenu footer footer"',
+        padding: "0px",
+        margin: "0",
         backgroundColor: "#FFFFFF",
     },
 }));
