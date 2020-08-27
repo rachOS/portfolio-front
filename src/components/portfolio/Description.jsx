@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
         width: "auto",
         margin: "5px",
         display: "flex",
+        borderTop: "solid #ddd 0.01em"
     },
     description: {
         textAlign: "justify",
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
         float: "right",
         alignSelf: "center",
         position: "absolute",
-        right: "2%",
+        right: "3%",
         top: "23.5%",
     },
     link: {

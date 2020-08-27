@@ -39,17 +39,9 @@ const useStyle = makeStyles((theme) => ({
         width: "100%",
         height: "100%",
     },
-    home: {
-        backgroundColor: "#0080ff",
-    },
-    portfolio: {
-        backgroundColor: "#0080ff",
-    },
-    details: {
-        backgroundColor: "#0080ff",
-    },
-    contact: {
-        backgroundColor: "#0080ff",
+    icon: {
+        color:"#888",
+        backgroundColor: "#fbfbfb",
     },
 }));
 
@@ -59,7 +51,7 @@ const Header = ({ lastProject }) => {
         <Paper className={classes.root}>
             <MenuList className={classes.menu_list}>
                 <Link className={classes.links} to="/">
-                    <Button className={[classes.button, classes.home]}>
+                    <Button className={[classes.button, classes.icon]}>
                         <HomeIcon /> Accueil
                     </Button>
                 </Link>
@@ -67,19 +59,19 @@ const Header = ({ lastProject }) => {
                     className={classes.links}
                     to={`/portfolio/${lastProject.id}/description`}
                 >
-                    <Button className={[classes.button, classes.portfolio]}>
+                    <Button className={[classes.button, classes.icon]}>
                         <CollectionsIcon /> Portfolio
                     </Button>
                 </Link>
 
                 <Link className={classes.links} to="/details">
-                    <Button className={[classes.button, classes.details]}>
+                    <Button className={[classes.button, classes.icon]}>
                         <InfoIcon /> Détails
                     </Button>
                 </Link>
 
                 <Link className={classes.links} to="/contact">
-                    <Button className={[classes.button, classes.contact]}>
+                    <Button className={[classes.button, classes.icon]}>
                         <ContactMailIcon /> Contact
                     </Button>
                 </Link>

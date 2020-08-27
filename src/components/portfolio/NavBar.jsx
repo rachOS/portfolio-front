@@ -8,15 +8,25 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "space-evenly",
         alignItems: "center",
         backgroundColor: "transparent",
+
     },
     content: {
         margin: "5px",
         padding: "10px",
         maxWidth: "50%",
+
     },
     tabs:{
         textDecoration:"none",
         color:"#000000"
+    },
+    tab:{
+        textDecoration:"none",
+        textTransform:"none",
+        fontWeight:"200",
+        fontSize:"1em",
+        color:"#000000",
+        fontFamily: "'Sora', sans-serif",
     }
 }));
 function NavBar() {
@@ -45,7 +55,7 @@ function NavBar() {
     const links = tabLabel.map((tab) => (
         <Link className={classes.tabs} to={`${tab.url}`}>
             {" "}
-            <Tab label={tab.label} />
+            <Tab  className={classes.tab} label={tab.label} />
         </Link>
     ));
 
