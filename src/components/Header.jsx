@@ -40,7 +40,7 @@ const useStyle = makeStyles((theme) => ({
         height: "100%",
     },
     icon: {
-        color:"#888",
+        color:"#333",
         backgroundColor: "#fbfbfb",
     },
 }));
