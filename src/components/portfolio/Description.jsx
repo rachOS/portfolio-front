@@ -3,41 +3,7 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import { useParams } from "react-router-dom";
 
-// import Material UI
-import { Box, makeStyles, Link, Typography } from "@material-ui/core";
-
-const useStyles = makeStyles((theme) => ({
-    content: {
-        width: "auto",
-        margin: "5px",
-        display: "flex",
-        borderTop: "solid #ddd 0.01em"
-    },
-    description: {
-        textAlign: "justify",
-        color: "#2e2e33",
-        fontSize: "unset",
-        fontFamily: "'Sora', sans-serif",
-        width: "52%",
-    },
-    screenshot: {
-        width: "30%",
-        float: "right",
-        alignSelf: "center",
-        position: "absolute",
-        right: "3%",
-        top: "23.5%",
-    },
-    link: {
-        alignSelf: "center",
-        position: "absolute",
-        bottom: "12%",
-    },
-}));
-
 function Description({ project, projectName, url }) {
-    const classes = useStyles();
-
     const { id } = useParams();
     const [description, SetDescription] = useState(null);
 
@@ -55,24 +21,20 @@ function Description({ project, projectName, url }) {
         ? description
         : "Description du projet";
     return (
-        <Box className={classes.content}>
-            <Typography
-                className={classes.description}
-                dangerouslySetInnerHTML={{ __html: checkDescription }}
-            />
-            <div className={classes.link}>
+        <div>
+            <p dangerouslySetInnerHTML={{ __html: checkDescription }} />
+            <div c>
                 {url ? (
-                    <Link href={url}> Lien du site</Link>
+                    <a href={url}> Lien du site</a>
                 ) : (
                     "site en cours de déploiement"
                 )}
             </div>
             <img
-                className={classes.screenshot}
                 src={`${process.env.REACT_APP_HOST}/latest/${project.id}`}
                 alt={`screenshot ${project.name} : ${project.id} `}
             />
-        </Box>
+        </div>
     );
 }
 

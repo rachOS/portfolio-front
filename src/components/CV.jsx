@@ -7,23 +7,7 @@ import { Frame, Scroll, Stack } from "framer";
 // import style
 import "./style/cv.css";
 
-// import Material UI
-import {
-    Box,
-    Divider,
-    List,
-    ListItem,
-    makeStyles,
-    Typography,
-} from "@material-ui/core";
-import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
-import PhoneInTalkSharpIcon from "@material-ui/icons/PhoneInTalkSharp";
-import EmailSharpIcon from "@material-ui/icons/EmailSharp";
-import CakeSharpIcon from "@material-ui/icons/CakeSharp";
-import MyLocationIcon from "@material-ui/icons/MyLocation";
-import FaceIcon from "@material-ui/icons/Face";
-
-const useStyle = makeStyles((theme) => ({
+/* const useStyle = makeStyles((theme) => ({
     root: {
         gridArea: "screenshot",
         display: "flex",
@@ -78,14 +62,13 @@ const useStyle = makeStyles((theme) => ({
         width: "10px",
         margin: "10px",
     },
-    list_item: {
+    ul_item: {
         display: "flex",
         flexWrap: "wrap",
     },
-}));
+})); */
 
 function CV() {
-    const classes = useStyle();
     return (
         <Fragment>
             <Scroll height={"60%"} width={"30%"}>
@@ -97,357 +80,189 @@ function CV() {
                         maxWidth={"100%"}
                         padding={"0px"}
                     >
-                        <Typography
-                            className={[classes.title, classes.section]}
-                            variant="h1"
-                            align="center"
-                        >
+                        <h1>
                             Développeur web fullstack
-                            <div className={[classes.subtitle]}>
-                                <Typography className={[classes.spec]}>
+                            <div>
+                                <p>
                                     JavaScript | ReactJS | NodeJS | Versionning
                                     | Clean code | Veille techno | Anglais
-                                </Typography>
+                                </p>
                             </div>
-                        </Typography>
-                        <div className={[classes.skills]}>
-                            <Typography variant="body2" align="left">
+                        </h1>
+                        <div>
+                            <p variant="body2" align="left">
                                 Communicant / Dynamique / Bienveillant
-                            </Typography>
-                            <Typography variant="body2" align="left">
+                            </p>
+                            <p variant="body2" align="left">
                                 Motivé / Créatif / Curieux
-                            </Typography>
-                            <Typography variant="body2" align="left">
+                            </p>
+                            <p variant="body2" align="left">
                                 Polyvalent / Rigoureux / Perséverent / Autonome
-                            </Typography>
+                            </p>
                         </div>
-                        <Divider className={[classes.divider]} />
-                        <div className={[classes.skills]}>
-                            <Typography className={[classes.infos]}>
-                                <FaceIcon className={[classes.icon]} />
-                                Grégory Chamekh:
-                            </Typography>
-                            <Typography className={[classes.infos]}>
-                                <CakeSharpIcon className={[classes.icon]} /> 19
-                                juin 1977 / 43 ans
-                            </Typography>
-                            <Typography className={[classes.infos]}>
-                                <MyLocationIcon className={[classes.icon]} />
-                                Bordeaux
-                            </Typography>
-                            <Typography className={[classes.infos]}>
-                                <PhoneInTalkSharpIcon
-                                    className={[classes.icon]}
-                                />
-                                06.349.349.63 |
-                            </Typography>
-                            <Typography className={[classes.infos]}>
-                                <EmailSharpIcon className={[classes.icon]} />
-                                g.chamekh@e-nautia.com | disponible
-                            </Typography>
+                        <hr />
+                        <div>
+                            <p>Grégory Chamekh:</p>
+                            <p>juin 1977 / 43 ans</p>
+                            <p>Bordeaux</p>
+                            <p>06.349.349.63 |</p>
+                            <p>g.chamekh@e-nautia.com | disponible</p>
                         </div>
                         <div>
-                            <Typography
-                                className={[
-                                    classes.section,
-                                    classes.title_section,
-                                ]}
-                                variant="h3"
-                                align="center"
-                            >
-                                Parcours professionnel
-                            </Typography>
-                        </div>
-                        <div className={[classes.jobs]}>
-                            <Typography
-                                className={[classes.job_title]}
-                                variant="subtitle1"
-                                align="left"
-                            >
-                                Développeur web fullstack
-                            </Typography>
-                            <Typography variant="caption" align="right">
-                                WILD CODE SCHOOL de mars 2020 à juillet 2020
-                            </Typography>
+                            <p>Parcours professionnel</p>
                         </div>
                         <div>
-                            <Typography paragraph>
-                                <List disablePadding>
-                                    <ListItem>
-                                        <FiberManualRecordIcon
-                                            className={classes.dot_icon}
-                                        />{" "}
+                            <p>Développeur web fullstack</p>
+                            <p>WILD CODE SCHOOL de mars 2020 à juillet 2020</p>
+                        </div>
+                        <div>
+                            <p>
+                                <ul>
+                                    <li>
                                         Stacks :{" "}
-                                        <Typography className="javascript">
-                                            JavaScript
-                                        </Typography>{" "}
-                                        /
-                                        <Typography className="react">
-                                            ReactJS
-                                        </Typography>
-                                        /{" "}
-                                        <Typography className="node">
-                                            NodeJS
-                                        </Typography>{" "}
-                                        /{" "}
-                                        <Typography className="redux">
-                                            Redux
-                                        </Typography>{" "}
-                                    </ListItem>
-                                    <ListItem>
-                                        <FiberManualRecordIcon
-                                            className={classes.dot_icon}
-                                        />
+                                        <p className="javascript">JavaScript</p>{" "}
+                                        /<p className="react">ReactJS</p>/{" "}
+                                        <p className="node">NodeJS</p> /{" "}
+                                        <p className="redux">Redux</p>{" "}
+                                    </li>
+                                    <li>
                                         Site e-commerce de vente de cartes
                                         cadeaux en ligne.
-                                    </ListItem>{" "}
-                                    <ListItem>
-                                        <FiberManualRecordIcon
-                                            className={classes.dot_icon}
-                                        />{" "}
-                                        Jeu tour par tour multijoueurs.
-                                    </ListItem>{" "}
-                                    <ListItem>
-                                        <FiberManualRecordIcon
-                                            className={classes.dot_icon}
-                                        />
-                                        Hackathons.
-                                    </ListItem>
-                                    <ListItem>
-                                        <FiberManualRecordIcon
-                                            className={classes.dot_icon}
-                                        />{" "}
+                                    </li>
+                                    <li>Jeu tour par tour multijoueurs.</li>
+                                    <li>Hackathons.</li>
+                                    <li>
                                         Découpage d’une application web en
                                         composants.
-                                    </ListItem>
-                                    <ListItem>
-                                        <FiberManualRecordIcon
-                                            className={classes.dot_icon}
-                                        />{" "}
+                                    </li>
+                                    <li>
                                         Création et consommation d’API.
                                         Modélisation de bases de données (MCD,
                                         MLD)
-                                    </ListItem>
-                                </List>
-                            </Typography>
+                                    </li>
+                                </ul>
+                            </p>
                         </div>
 
-                        <div className={[classes.jobs]}>
-                            <Typography
-                                className={[classes.job_title]}
-                                variant="subtitle1"
-                                align="left"
-                            >
-                                Photographe
-                            </Typography>
-                            <Typography variant="caption" align="right">
-                                HANS LUCAS de mars 2019 à ce jour
-                            </Typography>
+                        <div>
+                            <p>Photographe</p>
+                            <p>HANS LUCAS de mars 2019 à ce jour</p>
                         </div>
-                        <div className={[classes.paragraph]}>
-                            <Typography paragraph>
-                                <List disablePadding>
-                                    <ListItem>
-                                        <FiberManualRecordIcon
-                                            className={classes.dot_icon}
-                                        />{" "}
+                        <div>
+                            <p paragraph>
+                                <ul disablePadding>
+                                    <li>
                                         Edition des métadonnées selon les normes
                                         des métiers de l’information avec
                                         Exiftool en CLI.
-                                    </ListItem>
-                                    <ListItem>
-                                        <FiberManualRecordIcon
-                                            className={classes.dot_icon}
-                                        />{" "}
+                                    </li>
+                                    <li>
                                         Prises de vues photographique sur des
                                         sujets de société.
-                                    </ListItem>{" "}
-                                    <ListItem>
-                                        <FiberManualRecordIcon
-                                            className={classes.dot_icon}
-                                        />{" "}
+                                    </li>
+                                    <li>
                                         Rédaction d’un tutoriel sur l’édition
                                         des métadonnées pour les utilisateurs
                                         Linux
-                                    </ListItem>{" "}
-                                </List>
-                            </Typography>
+                                    </li>
+                                </ul>
+                            </p>
                         </div>
-                        <Divider className={[classes.divider]} />
-                        <div className={[classes.jobs]}>
-                            <Typography
-                                className={[classes.job_title]}
-                                variant="subtitle1"
-                                align="left"
-                            >
-                                Agent de quai
-                            </Typography>
-                            <Typography variant="caption" align="right">
+                        <hr />
+                        <div>
+                            <p>Agent de quai</p>
+                            <p>
                                 ENVIE 2E AQUITAINE de juillet 2018 à février
                                 2020
-                            </Typography>
-                        </div>
-                        <div className={[classes.paragraph]}>
-                            <Typography paragraph>
-                                <List disablePadding>
-                                    <ListItem>
-                                        <FiberManualRecordIcon
-                                            className={classes.dot_icon}
-                                        />{" "}
-                                        Elaboration d’un projet professionnel en
-                                        tant que développeur web.
-                                    </ListItem>
-                                    <ListItem>
-                                        <FiberManualRecordIcon
-                                            className={classes.dot_icon}
-                                        />{" "}
-                                        Réception de colis postaux, tri selectif
-                                        des produits...
-                                    </ListItem>
-                                </List>
-                            </Typography>
+                            </p>
                         </div>
                         <div>
-                            <Typography
-                                className={[
-                                    classes.section,
-                                    classes.title_section,
-                                ]}
-                                variant="h3"
-                                align="center"
-                            >
-                                Formations
-                            </Typography>
+                            <p>
+                                <ul>
+                                    <li>
+                                        Elaboration d’un projet professionnel en
+                                        tant que développeur web.
+                                    </li>
+                                    <li>
+                                        Réception de colis postaux, tri selectif
+                                        des produits...
+                                    </li>
+                                </ul>
+                            </p>
                         </div>
-                        <div className={[classes.jobs]}>
-                            <Typography
-                                className={[classes.job_title]}
-                                variant="subtitle1"
-                                align="left"
-                            >
-                                Développeur web fullstack
-                            </Typography>
-                            <Typography variant="caption" align="right">
-                                WILD CODE SCHOOL mars 2020 à juillet 2020
-                            </Typography>
+                        <div>
+                            <p>Formations</p>
                         </div>
-                        <div lassName={[classes.paragraph]}>
-                            <Typography>
-                                Méthodologie, clean-code, fondamentaux :
-                            </Typography>
-                            <Typography paragraph>
-                                <List disablePadding>
-                                    <ListItem>
-                                        <FiberManualRecordIcon
-                                            className={classes.dot_icon}
-                                        />
-                                        <Typography className="javascript">
+                        <div>
+                            <p>Développeur web fullstack</p>
+                            <p>WILD CODE SCHOOL mars 2020 à juillet 2020</p>
+                        </div>
+                        <div>
+                            <p>Méthodologie, clean-code, fondamentaux :</p>
+                            <p paragraph>
+                                <ul disablePadding>
+                                    <li>
+                                        <p className="javascript">
                                             Vanilla JavaScript
-                                        </Typography>
-                                        /{" "}
-                                        <Typography className="react">
-                                            ReactJS
-                                        </Typography>{" "}
-                                        /
-                                        <Typography className="node">
-                                            NodeJS
-                                        </Typography>{" "}
-                                        /{" "}
-                                        <Typography className="redux">
-                                            Redux
-                                        </Typography>{" "}
-                                        /{" "}
-                                        <Typography className="sql">
-                                            SQL
-                                        </Typography>
-                                    </ListItem>
-                                    <ListItem>
-                                        <FiberManualRecordIcon
-                                            className={classes.dot_icon}
-                                        />{" "}
+                                        </p>
+                                        <p className="react">ReactJS</p>/
+                                        <p className="node">NodeJS</p> /{" "}
+                                        <p className="redux">Redux</p> /{" "}
+                                        <p className="sql">SQL</p>
+                                    </li>
+                                    <li>
                                         Git / UNIX SCRUM / Agile / Télétravail /
                                         veille technologique
-                                    </ListItem>
-                                    <ListItem>
-                                        <FiberManualRecordIcon
-                                            className={classes.dot_icon}
-                                        />{" "}
+                                    </li>
+                                    <li>
                                         SCRUM / Agile / Télétravail / veille
                                         technologique
-                                    </ListItem>
-                                    <ListItem>
-                                        <FiberManualRecordIcon
-                                            className={classes.dot_icon}
-                                        />
+                                    </li>
+                                    <li>
                                         modélisation de BDD (MCD, MLD), cryptage
                                         password, JSON web tokens...
-                                    </ListItem>
-                                </List>
-                            </Typography>
+                                    </li>
+                                </ul>
+                            </p>
                         </div>
-                        <Box>
-                            <Typography
-                                className={[
-                                    classes.section,
-                                    classes.title_section,
-                                ]}
-                                variant="h3"
-                                align="center"
-                            >
-                                Loisirs et intérêts
-                            </Typography>
-                            <Typography>
-                                <List disablePadding>
-                                    <ListItem className={classes.list_item}>
-                                        <Typography
-                                            className={[classes.job_title]}
-                                        >
-                                            Sport
-                                        </Typography>
-                                        <Typography>
+                        <div>
+                            <p>Loisirs et intérêts</p>
+                            <p>
+                                <ul>
+                                    <li>
+                                        <p>Sport</p>
+                                        <p>
                                             : 1er Dan World Taekwondo Fédération
                                             (élève de Maître Han Chun Tec),
                                             souplesse quotidienne, musculation
                                             au poid du corps.
-                                        </Typography>
-                                    </ListItem>
-                                    <ListItem className={classes.list_item}>
-                                        <Typography
-                                            className={[classes.job_title]}
-                                        >
-                                            Jardinage
-                                        </Typography>{" "}
-                                        <Typography>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Jardinage</p>
+                                        <p>
                                             : système self-watering, semis et
                                             bouturages en tout genre
-                                        </Typography>
-                                    </ListItem>
-                                    <ListItem className={classes.list_item}>
-                                        <Typography
-                                            className={[classes.job_title]}
-                                        >
-                                            Gaming
-                                        </Typography>{" "}
-                                        <Typography>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Gaming</p>
+                                        <p>
                                             : EVE online, LoL, KI 3, SF V,
                                             participation à des tournois de Vs
                                             fighting
-                                        </Typography>
-                                    </ListItem>
-                                    <ListItem className={classes.list_item}>
-                                        <Typography
-                                            className={[classes.job_title]}
-                                        >
-                                            Wachting
-                                        </Typography>
-                                        <Typography>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Wachting</p>
+                                        <p>
                                             : sérievore, cinémavore,
                                             documentavore
-                                        </Typography>
-                                    </ListItem>
-                                </List>
-                            </Typography>
-                        </Box>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
                     </Frame>
                 </Stack>
             </Scroll>

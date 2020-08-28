@@ -5,20 +5,7 @@ import Axios from "axios";
 // import components
 import Informations from "./Informations";
 
-// import Material UI
-import { makeStyles, Paper } from "@material-ui/core";
-
-const useStyle = makeStyles((theme) => ({
-    root: {
-        gridArea: "main",
-        padding: "12px",
-        borderRadius: "0px",
-        backgroundColor: "#fbfbfb",
-    },
-}));
-
 function Project({ projects }) {
-    const classes = useStyle();
 
     const { id } = useParams();
     const [project, setProject] = useState([{}]);
@@ -34,12 +21,10 @@ function Project({ projects }) {
         getOneProject(id);
     }, [id]);
 
-    console.log("ID", id);
-
     return (
-        <Paper className={`main ${classes.root}`} maxWidth="fluid">
+        <div >
             <Informations projects={projects} project={project} />
-        </Paper>
+        </div>
     );
 }
 

@@ -1,39 +1,10 @@
 import React from "react";
 import { Link, useRouteMatch } from "react-router-dom";
-import { Container, makeStyles, Tabs, Tab } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: "flex",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        backgroundColor: "transparent",
-
-    },
-    content: {
-        margin: "5px",
-        padding: "10px",
-        maxWidth: "50%",
-
-    },
-    tabs:{
-        textDecoration:"none",
-        color:"#000000"
-    },
-    tab:{
-        textDecoration:"none",
-        textTransform:"none",
-        fontWeight:"200",
-        fontSize:"1em",
-        color:"#000000",
-        fontFamily: "'Sora', sans-serif",
-    }
-}));
 function NavBar() {
-    const classes = useStyles();
     let { url } = useRouteMatch();
 
-    const tabLabel = [
+    const tabsLabel = [
         {
             label: "La description",
             url: `${url}/description`,
@@ -52,18 +23,11 @@ function NavBar() {
         },
     ];
 
-    const links = tabLabel.map((tab) => (
-        <Link className={classes.tabs} to={`${tab.url}`}>
-            {" "}
-            <Tab  className={classes.tab} label={tab.label} />
-        </Link>
+    const links = tabsLabel.map((tab) => (
+        <Link to={`${tab.url}`}>{tab.label}</Link>
     ));
 
-    return (
-        <Container className={classes.root}>
-            <Tabs >{links}</Tabs>
-        </Container>
-    );
+    return <div>{links}</div>;
 }
 
 export default NavBar;

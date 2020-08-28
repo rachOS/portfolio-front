@@ -1,3 +1,16 @@
+:root {
+    --primary-color: #d8d8d8;
+    --secondary-color: #fbfbfb;
+
+    --font-tile: "Poiret One", cursive;
+    --font-content: "Sora", sans-serif;
+
+    --shadow-content: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14) 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    --shadow-title: 3px 3px 0px #cccccc, 3.7px 3.4px 3px rgb(255, 255, 255),
+        4.1px 0.9px 1.5px rgb(77, 77, 77), 5.1px 0.5px 0.3px rgb(255, 255, 255);
+}
+
 .container {
     display: grid;
     grid-template-columns: 0.7fr 1fr 1fr 1fr 1fr;
@@ -7,8 +20,6 @@
         "leftMenu main main main main"
         "leftMenu main main main main"
         "leftMenu footer footer footer footer";
-    row-gap: 5px;
-    column-gap: 5px;
     background-color: #d8d8d8;
     justify-items: stretch;
     align-items: stretch;
@@ -41,16 +52,6 @@
     grid-area: footer;
 } */
 
-
-.MuiList-root.MuiList-padding {
-    display: flex;
-    margin: 1.4rem;
-}
-
 /* .contact {
     background-color: #4ec044;
 } */
-
-.MuiPaper-root {
-    background-color: #F0F0F0;
-}
