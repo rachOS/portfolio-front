@@ -1,16 +1,16 @@
 // import core
-import React from "react";
+import React, { Fragment } from "react";
 
 
 function Features() {
     return (
-        <div>
-            <h1>Rédaction en cours</h1>
+        <Fragment>
+            <p>Rédaction en cours</p>
             <img
                 src="https://media.giphy.com/media/NHUONhmbo448/giphy.gif"
                 alt="work in progress"
             />
-        </div>
+        </Fragment>
     );
 }
 

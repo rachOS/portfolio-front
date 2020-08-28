@@ -1,9 +1,12 @@
 // import library
 import React from "react";
 
+// import style
+import "../responsive.css"
+
 const Footer = () => {
     return (
-        <footer>
+        <footer className="footer">
             <a href="https://www.instagram.com/gregory.rachid.chamekh/">
                 InstagramIcon
             </a>

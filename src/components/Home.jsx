@@ -1,24 +1,28 @@
 // import core
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
+
+// import style
+import "../responsive.css";
 
 function Home({ projects }) {
     const lastProjects = projects.map((project) => (
-        <div>
+        <Fragment>
             <Link to={`/portfolio/${project.id}/description`}>
                 <img
+                    className="preview"
                     src={`${process.env.REACT_APP_HOST}/latest/${project.id}`}
                     alt={`screenshot ${project.name} : ${project.id} `}
                 />
             </Link>
             <p>{project.name}</p>
-        </div>
+        </Fragment>
     ));
 
     return (
-        <div>
+        <div className="main">
             <h1>Projets récents</h1>
-            <div>{lastProjects.slice(0, 3)}</div>
+            {lastProjects.slice(0, 3)}
         </div>
     );
 }

@@ -5,6 +5,9 @@ import Axios from "axios";
 // import library
 import { Form } from "react-advanced-form";
 
+// import style
+import "../responsive.css"
+
 function Contact() {
     const initialUserState = {
         user_email: "",
@@ -45,65 +48,63 @@ function Contact() {
     };
 
     return (
-        <div>
-            <Form ref={(form) => (form = form)} onReset={() => handleReset()}>
-                <h2>Me contacter</h2>
-                <div>
-                    <input
-                        id="fullname"
-                        label="Nom et prénom"
-                        name="fullname"
-                        type="text"
-                        value={user.fullname}
-                        onChange={(event) => handleChange(event)}
-                        required
-                    />
-                </div>
-                <div>
-                    <input
-                        id="user_email"
-                        label="email"
-                        name="user_email"
-                        type="email"
-                        value={user.user_email}
-                        onChange={(event) => handleChange(event)}
-                        placeholder="mon@email.com"
-                        required
-                    />
-                </div>
-                <div>
-                    <input
-                        id="subject"
-                        label="sujet"
-                        name="subject"
-                        type="text"
-                        value={user.subject}
-                        onChange={(event) => handleChange(event)}
-                    />
-                </div>
-                <div>
-                    <input
-                        id="text"
-                        label="Message"
-                        name="text"
-                        type="textarea"
-                        value={user.text}
-                        onChange={(event) => handleChange(event)}
-                        variant="outlined"
-                        multiline
-                        rows={6}
-                        required
-                    />
-                </div>
-                <button
-                    component="submit"
-                    onClick={(event) => handleSubmit(event)}
-                    onSubmit={(event) => handleReset(event)}
-                >
-                    Envoyer
-                </button>
-            </Form>
-        </div>
+        <Form ref={(form) => (form = form)} onReset={() => handleReset()}>
+            <h2>Me contacter</h2>
+            <div>
+                <input
+                    id="fullname"
+                    label="Nom et prénom"
+                    name="fullname"
+                    type="text"
+                    value={user.fullname}
+                    onChange={(event) => handleChange(event)}
+                    required
+                />
+            </div>
+            <div>
+                <input
+                    id="user_email"
+                    label="email"
+                    name="user_email"
+                    type="email"
+                    value={user.user_email}
+                    onChange={(event) => handleChange(event)}
+                    placeholder="mon@email.com"
+                    required
+                />
+            </div>
+            <div>
+                <input
+                    id="subject"
+                    label="sujet"
+                    name="subject"
+                    type="text"
+                    value={user.subject}
+                    onChange={(event) => handleChange(event)}
+                />
+            </div>
+            <div>
+                <input
+                    id="text"
+                    label="Message"
+                    name="text"
+                    type="textarea"
+                    value={user.text}
+                    onChange={(event) => handleChange(event)}
+                    variant="outlined"
+                    multiline
+                    rows={6}
+                    required
+                />
+            </div>
+            <button
+                component="submit"
+                onClick={(event) => handleSubmit(event)}
+                onSubmit={(event) => handleReset(event)}
+            >
+                Envoyer
+            </button>
+        </Form>
     );
 }
 

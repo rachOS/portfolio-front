@@ -2,12 +2,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// import css
+// import style
 import "./style/header.css";
+import "../responsive.css"
 
 const Header = ({ lastProject }) => {
     return (
-        <header>
+        <header className="header">
             <nav>
                 <Link to="/">Accueil</Link>
                 <Link to={`/portfolio/${lastProject.id}/description`}>

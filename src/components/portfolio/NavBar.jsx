@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 
 function NavBar() {
@@ -27,7 +27,7 @@ function NavBar() {
         <Link to={`${tab.url}`}>{tab.label}</Link>
     ));
 
-    return <div>{links}</div>;
+    return <Fragment>{links}</Fragment>;
 }
 
 export default NavBar;

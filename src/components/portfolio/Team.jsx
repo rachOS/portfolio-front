@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import Axios from "axios";
 import { useParams } from "react-router-dom";
 
@@ -28,24 +28,20 @@ function Team() {
 
     const listOfDeveloppers = developpers.map((developper) => (
         <div>
-            <div
-                title={`${developper.firstname} `}
-                subheader={`${developper.lastname} `}
-            />
-            <div>
-                <a href={developper.linkedIn}>LinkedInIcon</a>
-                <a href={developper.github}>GitHubIcon</a>
-            </div>
+            <p>{developper.firstname}</p>
+            <p>{developper.lastname}</p>
+            <a href={developper.linkedIn}>LinkedInIcon</a>
+            <a href={developper.github}>GitHubIcon</a>
         </div>
     ));
     return (
-        <div>
+        <Fragment>
             <p>
                 {nbrOfDevsByTeam.Nbr_devs} développeur.s.ses a.ont réalisé.e.s
                 le projet <strong>{nbrOfDevsByTeam.name}</strong> :
             </p>
             <div>{listOfDeveloppers}</div>
-        </div>
+        </Fragment>
     );
 }
 

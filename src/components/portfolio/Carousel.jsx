@@ -1,5 +1,5 @@
 // import core
-import React from "react";
+import React, { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 
 // import library
@@ -21,7 +21,7 @@ function Carousel({ projects }) {
     };
 
     return (
-        <div>
+        <Fragment>
             <Slider {...settings} >
                 {projects.map((project, index) => (
                     <NavLink
@@ -32,7 +32,7 @@ function Carousel({ projects }) {
                     </NavLink>
                 ))}
             </Slider>
-        </div>
+        </Fragment>
     );
 }
 

@@ -6,6 +6,7 @@ import { Frame, Scroll, Stack } from "framer";
 
 // import style
 import "./style/cv.css";
+import "../responsive.css"
 
 /* const useStyle = makeStyles((theme) => ({
     root: {

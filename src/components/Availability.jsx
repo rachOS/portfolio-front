@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// import style
+import "../responsive.css"
+
 function Availability() {
     return (
-        <div>
+        <section>
             <h2>Disponibilités et infos</h2>
             <p>
                 Je suis actuellement en recherche de stage de fin d'études afin
@@ -42,7 +45,7 @@ function Availability() {
                 Pour toutes autres infos, n' hésitez pas à
                 <Link to="/contact"> me contacter</Link>
             </p>
-        </div>
+        </section>
     );
 }
 

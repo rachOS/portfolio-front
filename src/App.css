@@ -1,17 +1,4 @@
-:root {
-    --primary-color: #d8d8d8;
-    --secondary-color: #fbfbfb;
-
-    --font-tile: "Poiret One", cursive;
-    --font-content: "Sora", sans-serif;
-
-    --shadow-content: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-        0px 1px 1px 0px rgba(0, 0, 0, 0.14) 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-    --shadow-title: 3px 3px 0px #cccccc, 3.7px 3.4px 3px rgb(255, 255, 255),
-        4.1px 0.9px 1.5px rgb(77, 77, 77), 5.1px 0.5px 0.3px rgb(255, 255, 255);
-}
-
-.container {
+/* .main-grid {
     display: grid;
     grid-template-columns: 0.7fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 0.1fr 0.2fr 1fr 0.125fr;
@@ -25,16 +12,20 @@
     align-items: stretch;
     padding: 5px;
     height: 100vh;
+} */
+
+header {
+    grid-area: header;
+}
+.main {
+    grid-area: main;
+}
+.about {
+    grid-area: about;
 }
 
-.preview {
-    grid-area: preview;
-}
-.nav-project {
-    grid-area: nav-project;
-}
-.infos {
-    grid-area: infos;
+footer {
+    grid-area: footer;
 }
 
 /* .left-menu {

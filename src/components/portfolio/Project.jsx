@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { useParams } from "react-router-dom";
 import Axios from "axios";
 
@@ -22,9 +22,9 @@ function Project({ projects }) {
     }, [id]);
 
     return (
-        <div >
+        <Fragment >
             <Informations projects={projects} project={project} />
-        </div>
+        </Fragment>
     );
 }
 

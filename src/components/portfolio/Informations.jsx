@@ -1,5 +1,5 @@
 // import core
-import React from "react";
+import React, { Fragment } from "react";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 
 // import components
@@ -13,36 +13,28 @@ import NavBar from "./NavBar";
 function Informations({ projects, project }) {
     const { path } = useRouteMatch();
     return (
-        <div>
+        <Fragment>
             <NavBar />
             <Carousel projects={projects} />
             <Switch>
                 <Route path={`${path}/description`}>
-                    <div>
-                        <Description
-                            project={project}
-                            projectName={project.name}
-                            url={project.site_link}
-                        />
-                    </div>
+                    <Description
+                        project={project}
+                        projectName={project.name}
+                        url={project.site_link}
+                    />
                 </Route>
                 <Route path={`${path}/team`}>
-                    <div>
-                        <Team project={project} />
-                    </div>
+                    <Team project={project} />
                 </Route>
                 <Route path={`${path}/stacks-tools`}>
-                    <div>
-                        <Stacks project={project} />
-                    </div>
+                    <Stacks project={project} />
                 </Route>
                 <Route path={`${path}/features`}>
-                    <div>
-                        <Features project={project} />
-                    </div>
+                    <Features project={project} />
                 </Route>
             </Switch>
-        </div>
+        </Fragment>
     );
 }
 

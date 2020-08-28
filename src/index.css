@@ -1,10 +1,80 @@
+:root {
+    --primary-color: #fbfbfb;
+    --secondary-color: #192a31;
 
+    --font-size: 2vmin;
+    --font-title: "Poiret One", cursive;
+    --font-content: "Sora", sans-serif;
+
+    --h1-title: 8em;
+    --h2-title: 5em;
+    --h3-title: 3em;
+
+    --shadow-content: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14) 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    --shadow-title: 3px 1px 0px #fbfbfb, 3px 0px 2px #ffffff, 5px 3px 3px #192a3133, 2px 1px 3px #192a31;
+}
+* {
+    margin: 0 auto;
+    background-color: var(--primary-color);
+}
 body {
     width: auto;
     max-width: 100%;
     height: auto;
     max-width: 100%;
-    background-color: transparent;
+    font-family: var(--font-size, --font-content);
+    padding: 3%;
+}
+
+div {
+    position: relative;
+    display: flex;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--secondary-color);
+    font-family: var(--font-title);
+}
+
+h1 {
+    color: transparent;
+    font-size: var(--h1-title);
+}
+
+h2 {
+    font-size: var(--h2-title);
+
+}
+
+h3 {
+    font-size: var(--h3-title);
+}
+p {
+    font-family: var(--font-content);
+    font-size: var(--font-size);
+    color: var(--secondary-color);
+    text-align: justify;
+    word-break: normal;
+}
+
+img {
+    width: auto;
+    height: 100%;
+    border-radius: 13px;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+button {
+    width: min-content;
+    height: min-content;
+    border-radius: 3px;
 }
 
 /*

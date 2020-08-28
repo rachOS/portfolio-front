@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import Axios from "axios";
 import { useParams } from "react-router-dom";
 
@@ -27,30 +27,27 @@ function Stacks() {
 
     const listOfStacks = stacks.map((stack) => (
         <div>
-            <div title={stack.name} subheader={stack.version_used} />
+            <p>{stack.name}</p>
+            <p>{stack.version_used}</p>
             <a href={stack.site}>site officiel</a>
         </div>
     ));
 
     const listOfTools = tools.map((tool) => (
         <div>
-            <div title={tool.name} subheader={tool.version_used} />
+            <p>{tool.name} </p>
+            <p>{tool.version_used}</p>
             <a href={tool.site}>site officiel</a>
         </div>
     ));
     return (
-        <div>
-            <div>
-                {listOfStacks}
-                <h3>Les technos</h3>
-            </div>
+        <Fragment>
+            <h3>Les technos</h3>
+            {listOfStacks}
             <hr />
-
-            <div>
-                {listOfTools}
-                <h3>Les outils</h3>
-            </div>
-        </div>
+            <h3>Les outils</h3>
+            {listOfTools}
+        </Fragment>
     );
 }
 
