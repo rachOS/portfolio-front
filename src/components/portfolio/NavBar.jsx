@@ -27,7 +27,7 @@ function NavBar() {
         <Link to={`${tab.url}`}>{tab.label}</Link>
     ));
 
-    return <Fragment>{links}</Fragment>;
+    return <nav>{links}</nav>;
 }
 
 export default NavBar;

@@ -1,10 +1,10 @@
-a.links {
+/* a.links {
     width: auto;
     text-align: center;
     max-width: max-content;
     text-decoration: none;
     color: #000;
-}
+} */
 
 .slick-prev:before, .slick-next:before {
     font-family: 'slick';

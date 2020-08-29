@@ -8,12 +8,12 @@ const Footer = () => {
     return (
         <footer className="footer">
             <a href="https://www.instagram.com/gregory.rachid.chamekh/">
-                InstagramIcon
+                Insta
             </a>
             <a href="https://www.linkedin.com/in/gregory-chamekh/">
-                LinkedInIcon
+                LinkedIn
             </a>
-            <a href="https://github.com/rachOS">GitHubIcon</a>
+            <a href="https://github.com/rachOS">GitHub</a>
             <p>Design et développement par Grégory Chamekh</p>
         </footer>
     );

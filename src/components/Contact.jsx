@@ -6,7 +6,7 @@ import Axios from "axios";
 import { Form } from "react-advanced-form";
 
 // import style
-import "../responsive.css"
+import "../responsive.css";
 
 function Contact() {
     const initialUserState = {
@@ -50,53 +50,54 @@ function Contact() {
     return (
         <Form ref={(form) => (form = form)} onReset={() => handleReset()}>
             <h2>Me contacter</h2>
-            <div>
+            <fieldset>
+                <legend>Nom et prénom</legend>
+                <label for="fullname" />
                 <input
                     id="fullname"
-                    label="Nom et prénom"
-                    name="fullname"
                     type="text"
+                    name="fullname"
                     value={user.fullname}
                     onChange={(event) => handleChange(event)}
                     required
                 />
-            </div>
-            <div>
+            </fieldset>
+            <fieldset>
+                <legend>Email</legend>
+                <label for="fullname" />
                 <input
                     id="user_email"
-                    label="email"
-                    name="user_email"
                     type="email"
+                    name="user_email"
                     value={user.user_email}
                     onChange={(event) => handleChange(event)}
                     placeholder="mon@email.com"
                     required
                 />
-            </div>
-            <div>
+            </fieldset>
+            <fieldset>
+                <legend>Sujet</legend>
+                <label for="fullname" />
                 <input
                     id="subject"
-                    label="sujet"
-                    name="subject"
                     type="text"
+                    name="subject"
                     value={user.subject}
                     onChange={(event) => handleChange(event)}
                 />
-            </div>
-            <div>
+            </fieldset>
+            <fieldset>
+                <legend>Message</legend>
+                <label for="fullname" />
                 <input
                     id="text"
-                    label="Message"
-                    name="text"
                     type="textarea"
+                    name="text"
                     value={user.text}
                     onChange={(event) => handleChange(event)}
-                    variant="outlined"
-                    multiline
-                    rows={6}
                     required
                 />
-            </div>
+            </fieldset>
             <button
                 component="submit"
                 onClick={(event) => handleSubmit(event)}

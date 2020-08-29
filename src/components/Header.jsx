@@ -1,23 +1,22 @@
 // import core
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // import style
-import "./style/header.css";
 import "../responsive.css"
 
 const Header = ({ lastProject }) => {
     return (
         <header className="header">
             <nav>
-                <Link to="/">Accueil</Link>
-                <Link to={`/portfolio/${lastProject.id}/description`}>
+                <NavLink to="/">Accueil</NavLink>
+                <NavLink to={`/portfolio/${lastProject.id}/description`}>
                     Portfolio
-                </Link>
+                </NavLink>
 
-                <Link to="/details">Détails</Link>
+                <NavLink to="/details">Détails</NavLink>
 
-                <Link to="/contact">Contact</Link>
+                <NavLink to="/contact">Contact</NavLink>
             </nav>
         </header>
     );

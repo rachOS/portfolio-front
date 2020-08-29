@@ -14,8 +14,7 @@ import Footer from "./components/Footer";
 import Project from "./components/portfolio/Project";
 
 // import style
-import "./App.css";
-import "./responsive.css"
+import "./responsive.css";
 
 function App() {
     const [projects, setProjects] = useState([{}]);
@@ -43,19 +42,21 @@ function App() {
             <div className="main-grid">
                 <LeftContent />
                 <Header lastProject={lastProject} />
-                <Switch>
-                    <Route exact path="/">
-                        <Home projects={projects} />
-                    </Route>
-                    <Route path="/portfolio/:lastProject">
-                        <Portfolio />
-                        <Route path="/portfolio/:id">
-                            <Project projects={projects} />
+                <main className="main">
+                    <Switch>
+                        <Route exact path="/">
+                            <Home projects={projects} />
                         </Route>
-                    </Route>
-                    <Route path="/details" component={Details} />
-                    <Route path="/contact" component={Contact} />
-                </Switch>
+                        <Route path="/portfolio/:lastProject">
+                            <Portfolio />
+                            <Route path="/portfolio/:id">
+                                <Project projects={projects} />
+                            </Route>
+                        </Route>
+                        <Route path="/details" component={Details} />
+                        <Route path="/contact" component={Contact} />
+                    </Switch>
+                </main>
                 <Footer className="footer" />
             </div>
         </Router>

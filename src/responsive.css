@@ -1,56 +1,5 @@
 /* mobile first */
 
-@media (max-width: 375px) {
-    .main-grid {
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: auto;
-        grid-template-areas:
-            "header"
-            "about"
-            "main"
-            "footer ";
-        align-content: center;
-        justify-content: center;
-        padding: 0;
-    }
-    div {
-        width: auto;
-        max-width: 100vw;
-    }
-    h1 {
-        --h1-title: 21vmin;
-        font-size: var(--font-size);
-        font-weight: 200;
-        text-shadow: 3px 3px 0px rgba(25, 42, 49, 0.2), 3.7px 3.4px 2px #fbfbfb,
-            4.1px 1.5px 1.5px #192a31, 5.1px 0.5px 0.3px #fbfbfb;
-    }
-    h2 {
-        --h2-title: 13vmin;
-        font-size: var(--font-size);
-    }
-    h3 {
-        --h3-title: 8vmin;
-        font-size: var(--font-size);
-    }
-    p {
-        --font-size: 5vmin;
-        font-size: var(--font-size);
-    }
+@media screen and (max-width: 375px) {
 
-    .self-portrait {
-        width: 30vw;
-        height: 100%;
-    }
-
-    .preview{
-        width: auto;
-        height: 20vh;
-
-    }
-
-    .main{
-        display: flex;
-        flex-direction: column;
-    }
 }

@@ -20,10 +20,10 @@ function Home({ projects }) {
     ));
 
     return (
-        <div className="main">
+        <section>
             <h1>Projets récents</h1>
             {lastProjects.slice(0, 3)}
-        </div>
+        </section>
     );
 }
 

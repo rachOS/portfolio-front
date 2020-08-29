@@ -1,6 +1,43 @@
-.MuiAccordionSummary-content {
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content:space-between;
+.self-portrait {
+    width: 30vw;
+    height: 100%;
+    float: left;
+    margin: 13px;
 }
 
+
+/* ACCORDION */
+.accordion {
+    overflow: hidden;
+}
+
+.accordion_input {
+    display: none;
+}
+
+.accordion_input:checked ~ .accordion_content {
+    display: block;
+}
+
+.accordion_label {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    padding: 13px 0px;
+    min-width: 100%;
+    font-size: var(--h2-title);
+    font-weight: var(--h2-weight);
+    font-family: var(--font-title);
+    transition: background 100ms;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.accordion_label:hover {
+    background: var(--bg-hover);
+}
+.accordion_content {
+    line-height: 8vmin;
+    font-weight: 300;
+    display: none;
+}

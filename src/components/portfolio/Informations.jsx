@@ -13,7 +13,7 @@ import NavBar from "./NavBar";
 function Informations({ projects, project }) {
     const { path } = useRouteMatch();
     return (
-        <Fragment>
+        <section>
             <NavBar />
             <Carousel projects={projects} />
             <Switch>
@@ -34,7 +34,7 @@ function Informations({ projects, project }) {
                     <Features project={project} />
                 </Route>
             </Switch>
-        </Fragment>
+        </section>
     );
 }
 

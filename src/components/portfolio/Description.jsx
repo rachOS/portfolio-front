@@ -1,5 +1,5 @@
 // import core
-import React, { useEffect, useState, Fragment } from "react";
+import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import { useParams } from "react-router-dom";
 
@@ -22,24 +22,20 @@ function Description({ project, projectName, url }) {
         : "Description du projet";
 
     return (
-        <Fragment>
-            <section>
-                <article
-                    dangerouslySetInnerHTML={{ __html: checkDescription }}
-                />
-                <p>
-                    {url ? (
-                        <a href={url}> Lien du site</a>
-                    ) : (
-                        "site en cours de déploiement"
-                    )}
-                </p>
-                <img
-                    src={`${process.env.REACT_APP_HOST}/latest/${project.id}`}
-                    alt={`screenshot ${project.name} : ${project.id} `}
-                />
-            </section>
-        </Fragment>
+        <section>
+            <article dangerouslySetInnerHTML={{ __html: checkDescription }} />
+            <p>
+                {url ? (
+                    <a href={url}> Lien du site</a>
+                ) : (
+                    "site en cours de déploiement"
+                )}
+            </p>
+            <img
+                src={`${process.env.REACT_APP_HOST}/latest/${project.id}`}
+                alt={`screenshot ${project.name} : ${project.id} `}
+            />
+        </section>
     );
 }
 

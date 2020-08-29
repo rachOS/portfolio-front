@@ -21,18 +21,16 @@ function Carousel({ projects }) {
     };
 
     return (
-        <Fragment>
-            <Slider {...settings} >
-                {projects.map((project, index) => (
-                    <NavLink
-                        className="links"
-                        to={`/portfolio/${project.id}/description`}
-                    >
-                        <p>{project.name}</p>
-                    </NavLink>
-                ))}
-            </Slider>
-        </Fragment>
+        <Slider {...settings}>
+            {projects.map((project, index) => (
+                <NavLink
+                    className="links"
+                    to={`/portfolio/${project.id}/description`}
+                >
+                    <p>{project.name}</p>
+                </NavLink>
+            ))}
+        </Slider>
     );
 }
 
