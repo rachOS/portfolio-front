@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import { useParams } from "react-router-dom";
 
+// import style
+import "../style/description.css"
+
 function Description({ project, projectName, url }) {
     const { id } = useParams();
     const [description, SetDescription] = useState(null);
@@ -22,16 +25,23 @@ function Description({ project, projectName, url }) {
         : "Description du projet";
 
     return (
-        <section>
-            <article dangerouslySetInnerHTML={{ __html: checkDescription }} />
+        <section className="description">
+            <article
+                className="description-content"
+                dangerouslySetInnerHTML={{ __html: checkDescription }}
+            />
             <p>
                 {url ? (
-                    <a href={url}> Lien du site</a>
+                    <a href={url} title="lien du site">
+                        {" "}
+                        Lien du site
+                    </a>
                 ) : (
                     "site en cours de déploiement"
                 )}
             </p>
             <img
+                className="description-img"
                 src={`${process.env.REACT_APP_HOST}/latest/${project.id}`}
                 alt={`screenshot ${project.name} : ${project.id} `}
             />

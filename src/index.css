@@ -8,8 +8,10 @@
     --border-color: rgba(25, 42, 49, 0.2);
 
     --font-size: 5vmin;
+    --font-size-small: 3vmin;
     --font-title: "Poiret One", cursive;
     --font-content: "Sora", sans-serif;
+    --first-letter: 34vmin;
 
     --h1-title: 21vmin;
     --h2-title: 13vmin;
@@ -29,12 +31,9 @@
     background-color: var(--primary-color);
 }
 body {
-    /* width: auto; */
-    /* max-width: 100%; */
-    /* height: auto; */
-    /* min-width: 94.4vw; */
+    width: auto;
+    height: auto;
     font-family: var(--font-size, --font-content);
-    padding: 3%;
 }
 /* MAIN GRID TEMPLATE  */
 .main-grid {
@@ -47,7 +46,7 @@ body {
         "main"
         "footer ";
     justify-content: center;
-    margin: 37px auto;
+    margin: 0 13px;
     padding: 0;
 }
 
@@ -70,8 +69,8 @@ div.about-menu {
 /* GENERAL */
 div {
     position: relative;
-    /* width: auto;
-    max-width: 100vw; */
+    width: auto;
+    /* max-width: 100vw; */
 }
 
 h1,
@@ -82,6 +81,7 @@ h5,
 h6 {
     color: var(--secondary-color);
     font-family: var(--font-title);
+    -webkit-font-smoothing: antialiased;
     text-align: center;
 }
 
@@ -110,7 +110,25 @@ p {
 }
 
 .first-paragraph::first-letter {
-    font-size: 3em;
+    font-size: var(--first-letter);
+    font-family: var(--font-title);
+    line-height: 0.8;
+    margin: 16px 20px;
+    float: left;
+    font-weight: 700;
+}
+
+ul {
+    margin: 0px 13vmin;
+}
+
+li {
+    font-family: var(--font-content);
+    font-size: var(--font-size);
+    color: var(--secondary-color);
+    margin: 2vmin;
+    line-height: 1.5em;
+    font-style: italic;
 }
 
 a {
@@ -120,7 +138,7 @@ a {
     text-transform: lowercase;
     text-decoration: none;
     margin: 0 auto;
-    padding: 13px 9px;
+    padding: 13px 8px;
     text-align: center;
 }
 a:hover {
@@ -177,21 +195,38 @@ button {
     background-color: var(--primary-color);
 }
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: sticky;
     margin: 0;
     padding: 0;
     width: auto;
-    max-width: 100%;
+    height: 100%;
     border-bottom: 1px solid var(--border-color);
+    /* background: url(./static/image/mask/mask_header.png) no-repeat;
+    mix-blend-mode: luminosity;
+    background-size: contain; */
 }
 
 nav {
     display: flex;
     justify-content: space-evenly;
     background-color: transparent;
-    width: 100vw;
+    width: auto;
     margin: 0;
     padding: 0;
+}
+
+footer {
+    margin: 0;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* background: url(./static/image/mask/mask_footer.png) no-repeat;
+    background-size: contain;
+    mix-blend-mode: luminosity;
+    background-size: contain; */
+}
+footer p {
+    font-size: var(--font-size-small);
+    text-align: right;
 }

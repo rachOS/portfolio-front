@@ -1,16 +1,25 @@
-/* a.links {
-    width: auto;
-    text-align: center;
-    max-width: max-content;
-    text-decoration: none;
-    color: #000;
-} */
+:root {
+    --test: red;
+}
 
-.slick-prev:before, .slick-next:before {
-    font-family: 'slick';
-    font-size: 20px;
+div.carousel {
+    width: 80vw;
+}
+
+.carousel .links {
+    width: auto;
+    max-width: 100%;
+    padding: 5px;
+    color: var(--secondary-color);
+    background-color: transparent;
+}
+
+/* .slick-prev:before,
+.slick-next:before {
+    font-family: "slick";
+    font-size: var(--font-size);
     line-height: 3;
-    opacity: .75;
+    opacity: 0.75;
     color: black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -21,4 +30,4 @@
     width: auto;
     min-width: 100%;
     justify-content: space-evenly;
-}
+} */

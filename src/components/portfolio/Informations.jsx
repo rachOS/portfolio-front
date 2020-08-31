@@ -14,8 +14,8 @@ function Informations({ projects, project }) {
     const { path } = useRouteMatch();
     return (
         <section>
-            <NavBar />
             <Carousel projects={projects} />
+            <NavBar />
             <Switch>
                 <Route path={`${path}/description`}>
                     <Description

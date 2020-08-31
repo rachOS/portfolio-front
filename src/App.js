@@ -13,8 +13,14 @@ import LeftContent from "./components/LeftContent";
 import Footer from "./components/Footer";
 import Project from "./components/portfolio/Project";
 
+
 // import style
 import "./responsive.css";
+
+// import fontawesome
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+library.add(fab)
 
 function App() {
     const [projects, setProjects] = useState([{}]);

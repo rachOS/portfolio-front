@@ -15,9 +15,10 @@ function Carousel({ projects }) {
         dots: true,
         dotsClass: "slick-dots slick-thumb",
         infinite: true,
-        speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
+        adaptiveHeight: true,
+        className: "carousel",
     };
 
     return (
@@ -27,7 +28,7 @@ function Carousel({ projects }) {
                     className="links"
                     to={`/portfolio/${project.id}/description`}
                 >
-                    <p>{project.name}</p>
+                    {project.name}
                 </NavLink>
             ))}
         </Slider>
