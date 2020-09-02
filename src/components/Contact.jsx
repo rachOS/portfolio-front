@@ -48,64 +48,69 @@ function Contact() {
     };
 
     return (
-        <Form ref={(form) => (form = form)} onReset={() => handleReset()}>
-            <h2>Me contacter</h2>
-            <fieldset>
-                <legend>Nom et prénom</legend>
-                <label for="fullname" />
-                <input
-                    id="fullname"
-                    type="text"
-                    name="fullname"
-                    value={user.fullname}
-                    onChange={(event) => handleChange(event)}
-                    required
-                />
-            </fieldset>
-            <fieldset>
-                <legend>Email</legend>
-                <label for="fullname" />
-                <input
-                    id="user_email"
-                    type="email"
-                    name="user_email"
-                    value={user.user_email}
-                    onChange={(event) => handleChange(event)}
-                    placeholder="mon@email.com"
-                    required
-                />
-            </fieldset>
-            <fieldset>
-                <legend>Sujet</legend>
-                <label for="fullname" />
-                <input
-                    id="subject"
-                    type="text"
-                    name="subject"
-                    value={user.subject}
-                    onChange={(event) => handleChange(event)}
-                />
-            </fieldset>
-            <fieldset>
-                <legend>Message</legend>
-                <label for="fullname" />
-                <input
-                    id="text"
-                    type="textarea"
-                    name="text"
-                    value={user.text}
-                    onChange={(event) => handleChange(event)}
-                    required
-                />
-            </fieldset>
-            <button
-                component="submit"
-                onClick={(event) => handleSubmit(event)}
-                onSubmit={(event) => handleReset(event)}
-            >
-                Envoyer
-            </button>
-        </Form>
+        <section className="test">
+            <Form ref={(form) => (form = form)} onReset={() => handleReset()}>
+                <h2>Me contacter</h2>
+                <fieldset>
+                    <legend>Nom et prénom</legend>
+                    <label for="fullname" />
+                    <input
+                        id="fullname"
+                        type="text"
+                        name="fullname"
+                        value={user.fullname}
+                        onChange={(event) => handleChange(event)}
+                        required
+                    />
+                </fieldset>
+                <fieldset>
+                    <legend>Email</legend>
+                    <label for="fullname" />
+                    <input
+                        id="user_email"
+                        type="email"
+                        name="user_email"
+                        value={user.user_email}
+                        onChange={(event) => handleChange(event)}
+                        placeholder="mon@email.com"
+                        required
+                    />
+                </fieldset>
+                <fieldset>
+                    <legend>Sujet</legend>
+                    <label for="fullname" />
+                    <input
+                        id="subject"
+                        type="text"
+                        name="subject"
+                        value={user.subject}
+                        onChange={(event) => handleChange(event)}
+                    />
+                </fieldset>
+                <fieldset>
+                    <legend>Message</legend>
+                    <label for="fullname" />
+                    <textarea
+                        id="text"
+                        type="textarea"
+                        name="text"
+                        value={user.text}
+                        onChange={(event) => handleChange(event)}
+                        required
+                        cols="26"
+                        maxLength="1000"
+                        minLength="100"
+                    />
+                </fieldset>
+                <button
+                    component="submit"
+                    onClick={(event) => handleSubmit(event)}
+                    onSubmit={(event) => handleReset(event)}
+                >
+                    Envoyer
+                </button>
+            </Form>
+        </section>
     );
 }
 

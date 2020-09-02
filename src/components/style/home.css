@@ -1,0 +1,15 @@
+.preview {
+    width: auto;
+    height: 20vh;
+}
+.preview-link:hover{
+    width: auto;
+    animation: hover 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+}
+@keyframes hover {
+    100%{
+        background-color: var(--blue);
+        transform: scale(1.1);
+    }
+}
+

@@ -1,12 +1,11 @@
 // import Core
-import React, { Fragment } from "react";
+import React from "react";
 
 // import library
 import { Frame, Scroll, Stack } from "framer";
 
 // import style
 import "./style/cv.css";
-import "../responsive.css"
 
 /* const useStyle = makeStyles((theme) => ({
     root: {
@@ -71,15 +70,15 @@ import "../responsive.css"
 
 function CV() {
     return (
-        <Fragment>
-            <Scroll height={"60%"} width={"30%"}>
-                <Stack height={"100%"}>
+            <Scroll  height={"60%"} width={"30%"}>
+                <Stack height={"100%"} >
                     <Frame
                         backgroundColor={"none"}
                         height={"auto"}
                         width={"auto"}
                         maxWidth={"100%"}
                         padding={"0px"}
+                        visible={false}
                     >
                         <h1>
                             Développeur web fullstack
@@ -267,7 +266,6 @@ function CV() {
                     </Frame>
                 </Stack>
             </Scroll>
-        </Fragment>
     );
 }
 

@@ -1,3 +1,7 @@
+.cv-container{
+    display: none;
+}
+
 .javascript {
     background-color: #f7e018;
     padding: 0 5px;

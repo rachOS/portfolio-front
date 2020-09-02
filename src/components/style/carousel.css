@@ -3,31 +3,25 @@
 }
 
 div.carousel {
-    width: 80vw;
+    width: 55vmin;
+    height: 13vmax;
 }
 
 .carousel .links {
     width: auto;
     max-width: 100%;
+    writing-mode: unset;
     padding: 5px;
     color: var(--secondary-color);
     background-color: transparent;
 }
-
-/* .slick-prev:before,
-.slick-next:before {
-    font-family: "slick";
-    font-size: var(--font-size);
-    line-height: 3;
-    opacity: 0.75;
-    color: black;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.carousel .links:hover {
+    animation: carousel-project-name 50ms cubic-bezier(0.785, 0.135, 0.15, 1.86) forwards;
 }
 
-.slick-list {
-    transform: translate3d(0, 0, 0);
-    width: auto;
-    min-width: 100%;
-    justify-content: space-evenly;
-} */
+@keyframes carousel-project-name{
+    100%{
+        background-color: none;
+        transform: scale(1.2);
+    }
+}

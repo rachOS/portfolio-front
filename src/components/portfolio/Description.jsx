@@ -30,9 +30,9 @@ function Description({ project, projectName, url }) {
                 className="description-content"
                 dangerouslySetInnerHTML={{ __html: checkDescription }}
             />
-            <p>
+            <p >
                 {url ? (
-                    <a href={url} title="lien du site">
+                    <a className="site-link" href={url} title="lien du site">
                         {" "}
                         Lien du site
                     </a>

@@ -1,32 +1,35 @@
 .nav-projects {
-    width: 97vw;
+    width: 89vmin;
     align-items: center;
-    background-color: #f46922;
-    height: 34vmin;
+    height: auto;
+    padding: 8vmax 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
 }
 .nav-projects a {
-    color: var(--primary-color);
-    height: max-content;
-    font-weight: 600;
-    animation: testa 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    color: var(--secondary-color);
+    writing-mode: unset;
+    padding: 3vmax 8vmin;
+    margin: 1vmax 5vmin;
+    border-radius: 3px;
+    position: sticky;
+    width: 50%;
+    background-color: transparent;
 }
 .nav-projects a:hover {
-    font-weight: 300;
-    animation: testb 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation: hover 100ms cubic-bezier(1, 1, 1, 1) forwards;
 }
 
-@keyframes testa {
+@keyframes hover {
+
     100% {
-        font-size: 3vmin;
-        transform: rotateZ(-45deg);
+        color: white;
+        font-weight: 500;
+        background-color: var(--secondary-color);
+        transform: skewY(10);
     }
 }
-@keyframes testb {
-    0% {
-        transform: rotateZ(-95deg);
-    }
-    100% {
-        font-size: 5vmin;
-        transform: rotateZ(-0deg);
-    }
-}
+
+
+

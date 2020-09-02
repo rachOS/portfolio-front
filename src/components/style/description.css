@@ -7,3 +7,11 @@
     width: 80%;
     height: auto;
 }
+
+.site-link{
+    font-variant-caps: all-petite-caps;
+    padding: 2vmax 5vmin;
+    writing-mode: unset;
+    background: white;
+    transform: none;
+}
