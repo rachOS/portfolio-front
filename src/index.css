@@ -11,7 +11,7 @@
     --orange: #ffa650;
     --pink: #ff7c7c;
 
-    --red:#ff6913ef;
+    --red: #ff6913ef;
 
     --javascript: #f7e018;
     --react: #62daee;
@@ -34,6 +34,8 @@
     --neumorphism-br: 10px;
     --neumorphism-bgr: linear-gradient(225deg, #ffffff, #e2e2e2);
     --neumorphism-box: -5px 5px 8px #bababa, 5px -5px 8px #ffffff;
+    --shadow-img-box: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
     --shadow-content: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
         0px 1px 1px 0px rgba(0, 0, 0, 0.14) 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
     --shadow-title: 3px 1px 0px #fbfbfb, 3px 0px 2px #ffffff,
@@ -93,7 +95,8 @@ body::before {
     background-size: cover;
     border-radius: 10px;
     opacity: 1;
-    height: 70vmax;
+    width: auto;
+    height: 34vmax;
 }
 
 .main {
@@ -105,12 +108,12 @@ body::before {
     border-radius: 10px;
 }
 
-.main::before{
-content: "";
-width: 100%;
-display: block;
-    border: 1px dotted;
-    margin-bottom: 50px ;
+.main::before {
+    content: "";
+    width: 80%;
+    display: block;
+    border: 1px dashed #888888;
+    margin: 0px auto 50px auto;
 }
 
 .main section,
@@ -202,19 +205,34 @@ a {
     writing-mode: vertical-rl;
     text-orientation: upright;
     background-color: transparent;
+    box-shadow: var(--neumorphism-box);
+    animation: anchor 500ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
 }
 a:hover {
-    animation: menu 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    animation: anchor-hover 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55)
+        forwards;
 }
 a:focus {
     color: var(--primary-color);
     background-color: var(--blue);
 }
 
-@keyframes menu {
+@keyframes anchor {
+    from {
+        box-shadow: var(--neumorphism-box);
+        transform: scale(1.1);
+        transform: rotateX(15deg);
+    }
+    to {
+        box-shadow: none;
+        transform: none;
+    }
+}
+
+@keyframes anchor-hover {
     100% {
-        transform: scale(1);
-        background-color: var(--blue);
+        box-shadow: var(--neumorphism-box);
+        transform: scale(1.1);
     }
 }
 @keyframes focus {
@@ -233,26 +251,73 @@ a.links {
     text-decoration: none;
 }
 
+a.icon {
+    padding: 2vmin;
+    animation: icons 50ms cubic-bezier(1, 0, 1, 1.8) forwards;
+}
+
+a.icon:hover {
+    animation: icons-hover 200ms cubic-bezier(1, 0, 1, 1.8) forwards;
+}
+
+@keyframes icons {
+    from {
+        box-shadow: none;
+        transform: scale(1.1);
+    }
+    to {
+        box-shadow: none;
+        transform: none;
+    }
+}
+@keyframes icons-hover {
+    0% {
+        box-shadow: none;
+    }
+    1%{
+        transform: rotateZ(180deg);
+
+    }
+    100% {
+        box-shadow: none;
+        transform: scale(1.1);
+
+    }
+}
+
 img {
     width: 100%;
     height: auto;
     border-radius: 13px;
-    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--shadow-img-box);
 }
 
 button {
     border: none;
     width: min-content;
     height: min-content;
-    border-radius: 1px;
-    padding: 8px 13px;
     color: var(--secondary-color);
-    font-weight: 600;
+    font-weight: 300;
     text-transform: uppercase;
     text-decoration: capitalise;
     background-color: var(--primary-color);
+    writing-mode: initial;
+    padding: 10px 20px 10px 20px;
+    background: var(--green);
+    background-image: linear-gradient(
+        0%var (--green),
+        1% white,
+        55% #15ff00 1%,
+        var(--green)
+    );
+    -webkit-border-radius: 2;
+    -moz-border-radius: 2;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 2px 3px #1a1918;
+    -moz-box-shadow: 0px 2px 3px #1a1918;
+    box-shadow: 0px 2px 3px #1a1918;
 }
+
 header {
     position: sticky;
     margin: 0 auto;
@@ -275,19 +340,18 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    /* background: url(./static/image/mask/mask_footer.png) no-repeat;
-    background-size: contain;
-    mix-blend-mode: luminosity;
-    background-size: contain; */
 }
+
 footer p {
     font-size: var(--font-size-small);
-    text-align: right;
+    text-align: justify;
+    margin: 3vmax 0;
 }
 
 form {
     width: 89vmin;
 }
+
 fieldset {
     border-radius: 1vmin;
     margin: 0 auto;

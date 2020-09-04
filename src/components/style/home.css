@@ -1,15 +1,75 @@
 .preview {
     width: auto;
-    height: 20vh;
+    height: 13vmax;
+    border-radius: 5px 5px 0px 0px;
+    display: block;
+    box-shadow: none;
 }
-.preview-link:hover{
-    width: auto;
+
+.preview-link:hover {
     animation: hover 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
 }
 @keyframes hover {
-    100%{
-        background-color: var(--blue);
-        transform: scale(1.1);
+    100% {
+        transform: rotateY(15deg);
     }
 }
 
+.card {
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin: 2vmax 3vmin;
+    animation: cards 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+@keyframes cards {
+    from {
+        box-shadow: var(--shadow-img-box);
+        transform: scale(1.1);
+    }
+    to {
+        box-shadow: none;
+        transform: none;
+    }
+}
+
+.card:hover {
+    animation: cards-hover 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275)
+        forwards;
+}
+
+@keyframes cards-hover {
+    50%{
+        transform: rotateX(15deg);
+    }
+    100% {
+        box-shadow: var(--shadow-img-box);
+        transform: scale(1.1);
+    }
+}
+.card .preview-link {
+    writing-mode: unset;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+.card .preview-link :hover {
+    transform: none;
+}
+
+.project-name {
+    animation: project-name 500ms ease-in-out ;
+    font-weight: 200;
+    text-align: right;
+}
+
+@keyframes project-name {
+    0%{
+        font-weight: unset;
+        opacity: 0;
+        transform: translateX(-50%);
+
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

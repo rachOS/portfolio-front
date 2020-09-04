@@ -7,16 +7,19 @@ import "./style/home.css";
 
 function Home({ projects }) {
     const lastProjects = projects.map((project) => (
-        <Fragment>
-            <NavLink className="preview-link" to={`/portfolio/${project.id}/description`}>
+        <div className="card">
+            <NavLink
+                className="preview-link"
+                to={`/portfolio/${project.id}/description`}
+            >
                 <img
                     className="preview"
                     src={`${process.env.REACT_APP_HOST}/latest/${project.id}`}
                     alt={`screenshot ${project.name} : ${project.id} `}
                 />
             </NavLink>
-            <p>{project.name}</p>
-        </Fragment>
+            <p className="project-name">{project.name}</p>
+        </div>
     ));
 
     return (

@@ -5,19 +5,27 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // import style
-import "../responsive.css";
+import "./style/footer.css";
 
 const Footer = () => {
     return (
         <footer className="footer">
-            <a href="https://www.instagram.com/gregory.rachid.chamekh/" title="Instagram">
-                <FontAwesomeIcon icon={["fab", "instagram"]} />
+            <a
+                className="icon"
+                href="https://www.instagram.com/gregory.rachclassName.chamekh/"
+                title="Instagram"
+            >
+                <FontAwesomeIcon icon={["fab", "instagram"]} size="2x" />
             </a>
-            <a href="https://www.linkedin.com/in/gregory-chamekh/" title="LinkedIn">
-                <FontAwesomeIcon icon={["fab", "linkedin"]} />
+            <a
+                className="icon"
+                href="https://www.linkedin.com/in/gregory-chamekh/"
+                title="LinkedIn"
+            >
+                <FontAwesomeIcon icon={["fab", "linkedin"]} size="2x" />
             </a>
-            <a href="https://github.com/rachOS" title="GitHub">
-                <FontAwesomeIcon icon={["fab", "github"]} />
+            <a className="icon" href="https://github.com/rachOS" title="GitHub">
+                <FontAwesomeIcon icon={["fab", "github"]} size="2x" />
             </a>
             <p>Design et développement par Grégory Chamekh</p>
         </footer>

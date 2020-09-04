@@ -1,0 +1,44 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.icons-container {
+    display: inline-flex;
+    padding: 8px 13px;
+}
+.dev-card a,
+.dev-card a:hover {
+    writing-mode: unset;
+    box-shadow: none;
+    animation: none;
+}
+
+.dev-card {
+    box-shadow: var(--shadow-img-box);
+    border-radius: 0px 0px 10px 10px;
+    margin: 13px;
+    padding-bottom: 8px;
+    width: auto;
+    max-width: min-content;
+    background: var(--primary-color);
+}
+
+.firstname,
+.lastname {
+    font-weight: 200;
+    text-align: center;
+    margin: 0 auto;
+}
+.fullname:hover {
+    background-color: var(--blue);
+    transition: background-color 5sec;
+}
+
+.firstname {
+    padding-top: 13px;
+}
+.lastname {
+    padding-bottom: 13px;
+    margin-bottom: 8px;
+}

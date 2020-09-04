@@ -45,7 +45,10 @@ function Availability() {
 
                 <p>
                     Pour toutes autres infos, n' hésitez pas à
-                    <Link to="/contact"> me contacter</Link>
+                    <Link to="/contact">
+                        {" "}
+                        <button>me contacter</button>
+                    </Link>
                 </p>
             </article>
         </section>

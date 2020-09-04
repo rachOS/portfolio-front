@@ -2,6 +2,12 @@ import React, { useState, useEffect, Fragment } from "react";
 import Axios from "axios";
 import { useParams } from "react-router-dom";
 
+// import fontawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// import style
+import "../style/team.css";
+
 function Team() {
     const { id } = useParams();
     const [nbrOfDevsByTeam, setNbrOfDevsByTeam] = useState([{}]);
@@ -27,11 +33,28 @@ function Team() {
     }, [id]);
 
     const listOfDeveloppers = developpers.map((developper) => (
-        <div>
-            <p>{developper.firstname}</p>
-            <p>{developper.lastname}</p>
-            <a href={developper.linkedIn}>LinkedInIcon</a>
-            <a href={developper.github}>GitHubIcon</a>
+        <div className="dev-card">
+            <div className="fullname">
+                <p className="firstname">{developper.firstname}</p>
+                <p className="lastname">{developper.lastname}</p>
+            </div>
+            <div className="icons-container">
+                <a
+                    className="icon"
+                    href={developper.linkedIn}
+                    title="LinkedIn"
+                >
+                    <FontAwesomeIcon icon={["fab", "linkedin"]} size="2x" />
+                </a>
+                <a
+                    className="icon"
+                    href={developper.github}
+                    title="GitHub"
+                >
+                    {" "}
+                    <FontAwesomeIcon icon={["fab", "github"]} size="2x" />
+                </a>
+            </div>
         </div>
     ));
     return (
@@ -40,7 +63,7 @@ function Team() {
                 {nbrOfDevsByTeam.Nbr_devs} développeur.s.ses a.ont réalisé.e.s
                 le projet <strong>{nbrOfDevsByTeam.name}</strong> :
             </p>
-            <div>{listOfDeveloppers}</div>
+            <div className="cards">{listOfDeveloppers}</div>
         </Fragment>
     );
 }

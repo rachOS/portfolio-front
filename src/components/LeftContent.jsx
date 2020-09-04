@@ -94,7 +94,7 @@ const LeftContent = () => {
                     name="availability"
                     id="availability"
                 />
-                <label className="accordion_label" for="availability">
+                <label className="accordion_label" for="availability" id="availability">
                     Disponibilités
                 </label>
                 <article className="accordion_content">

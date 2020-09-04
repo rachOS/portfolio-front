@@ -8,10 +8,12 @@
     height: auto;
 }
 
-.site-link{
+.site-link, .site-link:hover{
     font-variant-caps: all-petite-caps;
     padding: 2vmax 5vmin;
     writing-mode: unset;
-    background: white;
-    transform: none;
+    background: transparent;
+    text-decoration: underline;
+    box-shadow: none;
+    animation: none;
 }

@@ -1,6 +1,11 @@
+// import core
 import React, { useState, useEffect, Fragment } from "react";
 import Axios from "axios";
 import { useParams } from "react-router-dom";
+
+
+// import style
+import "../style/stacks.css"
 
 function Stacks() {
     const { id } = useParams();
@@ -26,18 +31,18 @@ function Stacks() {
     }, [id]);
 
     const listOfStacks = stacks.map((stack) => (
-        <div>
+        <div className="card">
             <p>{stack.name}</p>
             <p>{stack.version_used}</p>
-            <a href={stack.site}>site officiel</a>
+            <a className="site-link" href={stack.site}>site officiel</a>
         </div>
     ));
 
     const listOfTools = tools.map((tool) => (
-        <div>
+        <div  className="card">
             <p>{tool.name} </p>
             <p>{tool.version_used}</p>
-            <a href={tool.site}>site officiel</a>
+            <a className="site-link" href={tool.site}>site officiel</a>
         </div>
     ));
     return (
