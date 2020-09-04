@@ -1,3 +1,55 @@
 .site-link {
     writing-mode: unset;
 }
+.cards {
+    flex-wrap: wrap;
+}
+.stacks,
+.tools {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 21px auto;
+}
+.stack-title,
+.tool-title {
+    width: 100%;
+    padding: 0px 9px;
+}
+.stack-title {
+    text-align: left;
+}
+.tool-title {
+    text-align: right;
+}
+
+.stack-card, .tool-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    width: min-content;
+    background-color: var(--primary-color);
+    flex-grow: 1;
+    margin: 21px;
+    box-shadow: var(--shadow-img-box);
+}
+
+.version {
+    font-weight: 300;
+    font-size: 3vmin;
+    vertical-align: center;
+}
+.name {
+    border-radius: 10px 10px 0px 0px;
+    padding: 13px 0px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+.stack:hover {
+    background-color: var(--green);
+}
+.tool:hover {
+    background-color: var(--yellow);
+}

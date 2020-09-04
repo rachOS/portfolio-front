@@ -59,7 +59,7 @@ function Team() {
     ));
     return (
         <Fragment>
-            <p>
+            <p className="devs-number">
                 {nbrOfDevsByTeam.Nbr_devs} développeur.s.ses a.ont réalisé.e.s
                 le projet <strong>{nbrOfDevsByTeam.name}</strong> :
             </p>

@@ -7,7 +7,7 @@ import "./style/home.css";
 
 function Home({ projects }) {
     const lastProjects = projects.map((project) => (
-        <div className="card">
+        <div className="preview-card">
             <NavLink
                 className="preview-link"
                 to={`/portfolio/${project.id}/description`}

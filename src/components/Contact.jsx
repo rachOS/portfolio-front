@@ -102,7 +102,7 @@ function Contact() {
                         minLength="100"
                     />
                 </fieldset>
-                <button
+                <button className="send-button"
                     component="submit"
                     onClick={(event) => handleSubmit(event)}
                     onSubmit={(event) => handleReset(event)}

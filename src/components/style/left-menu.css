@@ -1,9 +1,10 @@
 .self-portrait {
-    width: 30vw;
-    height: 100%;
+    width: 20vmin;
+    height: auto;
     float: left;
     margin: 13px;
 }
+
 
 /* ACCORDION */
 .accordion {

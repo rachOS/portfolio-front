@@ -24,12 +24,18 @@ const LeftContent = () => {
     };
     return (
         <div className="about-menu">
+            {/* <h1>Développeur fullstack JavaScript</h1> */}
             <section className=" about-menu accordion">
-                <input className="accordion_input" type="checkbox" name="about" id="about"/>
+                <input
+                    className="accordion_input"
+                    type="checkbox"
+                    name="about"
+                    id="about"
+                />
                 <label className="accordion_label" htmlFor="about">
                     A propos
                 </label>
-                <article className="accordion_content">
+                <div className="accordion_content self-card">
                     <img
                         className="self-portrait"
                         src={portrait}
@@ -39,7 +45,7 @@ const LeftContent = () => {
                         Grégory Chamekh, développeur web fullstacks ReactJS /
                         NodeJS, ambassadeur Wild Code School.
                     </p>
-                </article>
+                </div>
                 <article className="accordion_content">
                     <p className="first-paragraph">
                         Touche à tout et bienveillant, ces deux qualités me
@@ -70,7 +76,12 @@ const LeftContent = () => {
                 </article>
             </section>
             <section className="accordion">
-                <input className="accordion_input" type="checkbox" name="cv" id="cv"/>
+                <input
+                    className="accordion_input"
+                    type="checkbox"
+                    name="cv"
+                    id="cv"
+                />
                 <label className="accordion_label" for="cv" id="cv">
                     C.V.
                 </label>
@@ -94,7 +105,11 @@ const LeftContent = () => {
                     name="availability"
                     id="availability"
                 />
-                <label className="accordion_label" for="availability" id="availability">
+                <label
+                    className="accordion_label"
+                    for="availability"
+                    id="availability"
+                >
                     Disponibilités
                 </label>
                 <article className="accordion_content">

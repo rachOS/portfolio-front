@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // import style
 import "../responsive.css";
@@ -43,13 +43,7 @@ function Availability() {
                     qu'il peut y avoir avec le métier de développeur web.
                 </p>
 
-                <p>
-                    Pour toutes autres infos, n' hésitez pas à
-                    <Link to="/contact">
-                        {" "}
-                        <button>me contacter</button>
-                    </Link>
-                </p>
+                <a href="/contact"> me contacter</a>
             </article>
         </section>
     );

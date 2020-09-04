@@ -3,9 +3,8 @@ import React, { useState, useEffect, Fragment } from "react";
 import Axios from "axios";
 import { useParams } from "react-router-dom";
 
-
 // import style
-import "../style/stacks.css"
+import "../style/stacks.css";
 
 function Stacks() {
     const { id } = useParams();
@@ -31,28 +30,35 @@ function Stacks() {
     }, [id]);
 
     const listOfStacks = stacks.map((stack) => (
-        <div className="card">
-            <p>{stack.name}</p>
-            <p>{stack.version_used}</p>
-            <a className="site-link" href={stack.site}>site officiel</a>
+        <div className="stack-card">
+            <p className="name stack">{stack.name}</p>
+            <p className="version">{stack.version_used}</p>
+            <a className="site-link" href={stack.site}>
+                site officiel
+            </a>
         </div>
     ));
 
     const listOfTools = tools.map((tool) => (
-        <div  className="card">
-            <p>{tool.name} </p>
-            <p>{tool.version_used}</p>
-            <a className="site-link" href={tool.site}>site officiel</a>
+        <div className="tool-card">
+            <p className="name tool">{tool.name} </p>
+            <p className="version">{tool.version_used}</p>
+            <a className="site-link" href={tool.site}>
+                site officiel
+            </a>
         </div>
     ));
     return (
-        <Fragment>
-            <h3>Les technos</h3>
-            {listOfStacks}
-            <hr />
-            <h3>Les outils</h3>
-            {listOfTools}
-        </Fragment>
+        <div className="cards">
+            <div className="stacks">
+                <h3 className="stack-title">Les technos</h3>
+                {listOfStacks}
+            </div>
+            <div className="tools">
+                <h3 className="tool-title">Les outils</h3>
+                {listOfTools}
+            </div>
+        </div>
     );
 }
 

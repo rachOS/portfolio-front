@@ -19,8 +19,7 @@
     border-radius: 0px 0px 10px 10px;
     margin: 13px;
     padding-bottom: 8px;
-    width: auto;
-    max-width: min-content;
+    width: min-content;
     background: var(--primary-color);
 }
 
@@ -41,4 +40,7 @@
 .lastname {
     padding-bottom: 13px;
     margin-bottom: 8px;
+}
+.devs-number{
+    text-align: left;
 }

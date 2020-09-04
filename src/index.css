@@ -90,13 +90,15 @@ body::before {
     bottom: 0;
     left: 0;
     right: 0;
-    background: transparent url(./static/image/mask/mask_header.png) no-repeat;
+    background: transparent
+        url(./static/image/wallpaper/wp2141419-web-design-wallpapers.png)
+        no-repeat;
     /* mix-blend-mode: luminosity; */
-    background-size: cover;
+    background-size: contain;
     border-radius: 10px;
     opacity: 1;
-    width: auto;
-    height: 34vmax;
+    width: 100%;
+    height: auto;
 }
 
 .main {
@@ -274,14 +276,12 @@ a.icon:hover {
     0% {
         box-shadow: none;
     }
-    1%{
+    1% {
         transform: rotateZ(180deg);
-
     }
     100% {
         box-shadow: none;
         transform: scale(1.1);
-
     }
 }
 
@@ -294,8 +294,6 @@ img {
 
 button {
     border: none;
-    width: min-content;
-    height: min-content;
     color: var(--secondary-color);
     font-weight: 300;
     text-transform: uppercase;
@@ -303,19 +301,27 @@ button {
     background-color: var(--primary-color);
     writing-mode: initial;
     padding: 10px 20px 10px 20px;
-    background: var(--green);
-    background-image: linear-gradient(
-        0%var (--green),
-        1% white,
-        55% #15ff00 1%,
-        var(--green)
-    );
-    -webkit-border-radius: 2;
-    -moz-border-radius: 2;
+    background: var(--primary-color);
     border-radius: 2px;
-    -webkit-box-shadow: 0px 2px 3px #1a1918;
-    -moz-box-shadow: 0px 2px 3px #1a1918;
-    box-shadow: 0px 2px 3px #1a1918;
+    margin: 0 auto;
+    animation: button 300ms ease forwards;
+    cursor: pointer;
+}
+.send-button {
+    margin: 8px auto;
+    transform: translateX(100%);
+}
+article a {
+    writing-mode: unset;
+    position: absolute;
+    right: 10%;
+}
+
+article a,
+article a:hover {
+}
+article p {
+    font-weight: 300;
 }
 
 header {
