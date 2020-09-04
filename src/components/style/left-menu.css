@@ -1,22 +1,16 @@
 .self-portrait {
-    width: 20vmin;
+    width: 21vmin;
     height: auto;
     float: left;
-    margin: 13px;
+    margin: 3vmin;
 }
-
 
 /* ACCORDION */
 .accordion {
-    margin: 2vmax auto;
-    /* background-color: var(--blue); */
-    border-radius: 10px;
+    margin: 2vmin auto;
+    border-radius: var(-border-radius);
     overflow: hidden;
     width: auto;
-    max-width: 89vmin;
-    /* background-color: var(--neumorphism-bgr);
-    box-shadow: var(--neumorphism-box);
-    border-radius: var(--neumorphism-br); */
 }
 
 .accordion_input {
@@ -33,13 +27,10 @@
 .accordion_label {
     display: block;
     cursor: pointer;
-    position: relative;
-    padding: 13px 0px;
-    min-width: 100%;
-    font-size: var(--h2-title);
+    font-size: 8vmin;
     font-weight: var(--h2-weight);
     font-family: var(--font-title);
-    transition: background 500ms;
+    color: var(--secondary-color);
     text-align: center;
 }
 
@@ -50,7 +41,7 @@
     100% {
         background: var(--bg-hover);
         color: var(--secondary-color);
-        border-radius: 0px;
+        border-radius: 0vmin;
     }
 }
 .accordion_content {
@@ -62,17 +53,21 @@
     animation: accordion-content 500ms ease-in-out forwards;
 }
 .accordion_content p {
-    margin: 0 13px;
+    margin: 0 13vmin;
 }
 
 @keyframes accordion-content {
     100% {
         background: var(--bg-hover);
         color: var(--secondary-color);
-        border-radius: 0px;
+        border-radius: 0;
     }
 }
 
 #availability {
     color: black;
+}
+.about-menu-container {
+    grid-area: about;
+    top: 13vmin;
 }

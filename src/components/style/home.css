@@ -1,6 +1,6 @@
 .preview {
     width: 100%;
-    height: 13vmax;
+    height: auto;
     border-radius: 5px 5px 0px 0px;
     display: block;
     box-shadow: none;
@@ -21,18 +21,19 @@ a .preview:hover {
 
 .preview-card {
     background-color: #ffffff;
-    border-radius: 5px;
-    margin: 2vmax 3vmin;
+    border-radius: 1vmin;
+    margin: 2vmin 3vmin;
+    width: 55vmin;
     animation: cards 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 @keyframes cards {
     from {
         box-shadow: var(--shadow-img-box);
-        transform: scale(1.1);
+        transform: scale(1.13);
     }
     to {
         box-shadow: none;
-        transform: none;
+        transform: scale(.8);
     }
 }
 
@@ -42,12 +43,12 @@ a .preview:hover {
 }
 
 @keyframes cards-hover {
-    50% {
-        transform: rotateX(15deg);
+    0% {
+        transform: rotateX(13deg);
     }
     100% {
         box-shadow: var(--shadow-img-box);
-        transform: scale(1.1);
+        transform: scale(1.21);
     }
 }
 .preview-card .preview-link {
@@ -64,6 +65,8 @@ a .preview:hover {
     animation: project-name 500ms ease-in-out;
     font-weight: 200;
     text-align: right;
+    padding: 2vmin 3vmin;
+    margin: 0;
 }
 
 @keyframes project-name {

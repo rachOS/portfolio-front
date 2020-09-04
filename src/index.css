@@ -20,6 +20,8 @@
     --sql: #01618b;
 
     --border-color: rgba(25, 42, 49, 0.2);
+    --border-radius: 2vmin;
+    --form-border: 0.1vmin solid rgb(190, 190, 190);
 
     --font-size: 5vmin;
     --font-size-small: 3vmin;
@@ -31,9 +33,9 @@
     --h2-title: 13vmin;
     --h3-title: 8vmin;
 
-    --neumorphism-br: 10px;
+    --neumorphism-br: 1vmin;
     --neumorphism-bgr: linear-gradient(225deg, #ffffff, #e2e2e2);
-    --neumorphism-box: -5px 5px 8px #bababa, 5px -5px 8px #ffffff;
+    --neumorphism-box: -1vmin 1vmin 2vmin #bababa, 1vmin -1vmin 2vmin #ffffff;
     --shadow-img-box: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
         0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
     --shadow-content: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
@@ -47,8 +49,8 @@
 }
 
 body {
-    width: auto;
-    height: 100vh;
+    /* width: auto; */
+    /* height: 100vh; */
     font-family: var(--font-content);
     background-color: transparent;
 }
@@ -69,18 +71,18 @@ body::before {
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas:
+        "about"
         "header"
-        "about-menu"
         "main"
         "footer ";
     justify-content: center;
-    margin: 0 13px;
+    margin: 0 13vmin;
     padding: 0;
-    border-radius: 10px;
-    margin: 10px;
-    border-radius: 10px;
+    padding-top: 34vmin;
+    margin: 5vmin;
+    border-radius: var(--border-radius);
     background: linear-gradient(225deg, #ffffff, #e2e2e2);
-    box-shadow: -5px 5px 8px #bababa, 5px -5px 8px #ffffff;
+    box-shadow: var(--neumorphism-box);
 }
 
 .main-grid::before {
@@ -95,27 +97,23 @@ body::before {
         no-repeat;
     /* mix-blend-mode: luminosity; */
     background-size: contain;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     opacity: 1;
     width: 100%;
     height: auto;
 }
 
 .main {
-    width: auto;
-    max-width: 89vw;
     margin: 0 auto;
-    padding: 5vmax 0;
-    /* background-color: var(--blue); */
-    border-radius: 10px;
+    padding: 5vmin 0;
 }
 
 .main::before {
     content: "";
-    width: 80%;
+    width: 80vmin;
     display: block;
-    border: 1px dashed #888888;
-    margin: 0px auto 50px auto;
+    border: 0.1vmin dashed #888888;
+    margin: 0 auto 5vmin auto;
 }
 
 .main section,
@@ -125,14 +123,13 @@ body::before {
 }
 
 div.about-menu {
-    max-width: 100vw;
+    max-width: 100vmin;
 }
 
 /* GENERAL */
 div {
     position: relative;
     width: auto;
-    /* max-width: 100vw; */
 }
 
 h1,
@@ -150,9 +147,6 @@ h6 {
 h1 {
     color: var(--secondary-color);
     font-size: var(--h1-title);
-    /* font-weight: 200; */
-    /* text-shadow: 3px 3px 0px rgba(25, 42, 49, 0.2), 3.7px 3.4px 2px #fbfbfb,
-            4.1px 1.5px 1.5px #192a31, 5.1px 0.5px 0.3px #fbfbfb; */
 }
 
 h2 {
@@ -168,20 +162,19 @@ p {
     color: var(--secondary-color);
     text-align: justify;
     word-break: normal;
-    margin: 13px;
+    margin: 8vmin;
 }
 
 .first-paragraph::first-letter {
     font-size: var(--first-letter);
     font-family: var(--font-title);
-    line-height: 0.8;
-    margin: 16px 20px;
+    margin: 5vmin 3vmin;
     float: left;
     font-weight: 700;
 }
 
 ul {
-    margin: 0px 13vmin;
+    margin: 0vmin 13vmin;
 }
 
 li {
@@ -200,9 +193,9 @@ a {
     text-transform: lowercase;
     text-decoration: none;
     margin: 0 auto;
-    padding: 3vmax 5vmin;
+    padding: 3vmin 5vmin;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 2vmin;
     transform: scale(0.85);
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -247,7 +240,7 @@ a:focus {
 a.links {
     color: var(--primary-color);
     background-color: var(--links-color);
-    padding: 0px 5px;
+    padding: 0 5vmin;
     font-family: var(--font-content);
     text-transform: capitalize;
     text-decoration: none;
@@ -288,8 +281,8 @@ a.icon:hover {
 img {
     width: 100%;
     height: auto;
-    border-radius: 13px;
-    box-shadow: var(--shadow-img-box);
+    border-radius: 13vmin;
+    /* box-shadow: var(--shadow-img-box); */
 }
 
 button {
@@ -300,49 +293,45 @@ button {
     text-decoration: capitalise;
     background-color: var(--primary-color);
     writing-mode: initial;
-    padding: 10px 20px 10px 20px;
+    padding: 5vmin 13vmin;
     background: var(--primary-color);
-    border-radius: 2px;
+    border-radius: 2vmin;
     margin: 0 auto;
     animation: button 300ms ease forwards;
     cursor: pointer;
 }
 .send-button {
-    margin: 8px auto;
+    margin: 8vmin auto;
     transform: translateX(100%);
 }
 article a {
     writing-mode: unset;
     position: absolute;
-    right: 10%;
+    right: 5vmin;
 }
 
-article a,
-article a:hover {
-}
 article p {
     font-weight: 300;
 }
 
 header {
-    position: sticky;
-    margin: 0 auto;
+    margin: 5vmin auto;
+    margin-bottom: 0;
     padding: 0;
-    width: 89vmin;
+    width: 90vmin;
     height: 100%;
 }
 
 nav {
-    position: sticky;
     display: flex;
     justify-content: space-evenly;
     width: auto;
-    padding: 3vmax 0;
+    padding: 5vmin 0;
 }
 
 footer {
     margin: 0;
-    padding: 5vmax 0;
+    padding: 13vmin 0 0 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -351,38 +340,36 @@ footer {
 footer p {
     font-size: var(--font-size-small);
     text-align: justify;
-    margin: 3vmax 0;
+    margin: 3vmin 0;
 }
 
 form {
-    width: 89vmin;
+    width: 90vmin;
 }
 
 fieldset {
     border-radius: 1vmin;
     margin: 0 auto;
     width: 50vmin;
-    border: 1px solid rgb(190, 190, 190);
+    border: var(--form-border);
 }
 
 legend {
-    margin: 13px 8px;
+    margin: 5vmin 8vmin;
     font-family: var(--font-content);
     font-weight: 200;
 }
 
 label {
     color: var(--primary-color);
-    z-index: 10;
 }
 
 input,
 textarea {
     text-align: center;
     border-radius: 1vmin;
-    border: 1px solid;
-    height: 5vmax;
-    margin: 13px;
+    height: 13vmin;
+    margin: 3vmin;
     background: #ffffff;
-    border: 1px solid rgb(190, 190, 190);
+    border: var(--form-border);
 }

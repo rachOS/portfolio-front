@@ -1,6 +1,5 @@
 // import core
-import React, { useState, Fragment } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
 // import library
 import { Document, Page, pdfjs } from "react-pdf/dist/entry.webpack";
@@ -23,7 +22,7 @@ const LeftContent = () => {
         return error.message;
     };
     return (
-        <div className="about-menu">
+        <div className="about-menu-container">
             {/* <h1>Développeur fullstack JavaScript</h1> */}
             <section className=" about-menu accordion">
                 <input
