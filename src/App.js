@@ -4,23 +4,23 @@ import Axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // import components
-import Home from "./components/Home";
-import Portfolio from "./components/Portfolio";
-import Details from "./components/Details";
+import Banner from "./components/Banner.jsx";
 import Contact from "./components/Contact";
-import Header from "./components/Header";
-import LeftContent from "./components/LeftContent";
+import Details from "./components/Details";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import LeftContent from "./components/LeftContent";
+import Portfolio from "./components/Portfolio";
 import Project from "./components/portfolio/Project";
-
 
 // import style
 import "./responsive.css";
 
 // import fontawesome
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-library.add(fab)
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+library.add(fab);
 
 function App() {
     const [projects, setProjects] = useState([{}]);
@@ -46,6 +46,7 @@ function App() {
     return (
         <Router>
             <div className="main-grid">
+                <Banner />
                 <LeftContent />
                 <Header lastProject={lastProject} />
                 <main className="main">

@@ -10,8 +10,9 @@
     --green: #7fff7f;
     --orange: #ffa650;
     --pink: #ff7c7c;
-
     --red: #ff6913ef;
+
+    --wcs: #f76c6b;
 
     --javascript: #f7e018;
     --react: #62daee;
@@ -70,22 +71,17 @@ body::before {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas:
-        "about"
-        "header"
-        "main"
-        "footer ";
+    grid-template-areas: "banner" "about" "header" "main" "footer ";
     justify-content: center;
     margin: 0 13vmin;
     padding: 0;
-    padding-top: 34vmin;
     margin: 5vmin;
     border-radius: var(--border-radius);
     background: linear-gradient(225deg, #ffffff, #e2e2e2);
     box-shadow: var(--neumorphism-box);
 }
 
-.main-grid::before {
+/* .main-grid::before {
     content: "";
     position: absolute;
     top: 0;
@@ -95,13 +91,12 @@ body::before {
     background: transparent
         url(./static/image/wallpaper/wp2141419-web-design-wallpapers.png)
         no-repeat;
-    /* mix-blend-mode: luminosity; */
     background-size: contain;
     border-radius: var(--border-radius);
     opacity: 1;
     width: 100%;
     height: auto;
-}
+} */
 
 .main {
     margin: 0 auto;
@@ -239,8 +234,8 @@ a:focus {
 
 a.links {
     color: var(--primary-color);
-    background-color: var(--links-color);
-    padding: 0 5vmin;
+    background-color: var(--wcs);
+    padding: 0.1vmin 3vmin;
     font-family: var(--font-content);
     text-transform: capitalize;
     text-decoration: none;
@@ -281,8 +276,19 @@ a.icon:hover {
 img {
     width: 100%;
     height: auto;
-    border-radius: 13vmin;
+    border-radius: var(--border-radius);
     /* box-shadow: var(--shadow-img-box); */
+}
+
+.banner-container {
+    margin: 0 auto;
+}
+
+.banner {
+    grid-area: banner;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    width: 100%;
+    height: auto;
 }
 
 button {
@@ -301,13 +307,13 @@ button {
     cursor: pointer;
 }
 .send-button {
-    margin: 8vmin auto;
-    transform: translateX(100%);
+    margin: 0 2vmin;
+    transform: translate(34vmin, 3vmin);
+    padding: 3vmin 13vmin;
 }
 article a {
     writing-mode: unset;
-    position: absolute;
-    right: 5vmin;
+    /* position: absolute; */
 }
 
 article p {
@@ -366,10 +372,12 @@ label {
 
 input,
 textarea {
-    text-align: center;
+    text-align: left;
     border-radius: 1vmin;
     height: 13vmin;
     margin: 3vmin;
+    padding: 1vmin 3vmin;
     background: #ffffff;
     border: var(--form-border);
+    z-index: 1;
 }

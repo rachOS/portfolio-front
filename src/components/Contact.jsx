@@ -48,7 +48,6 @@ function Contact() {
     };
 
     return (
-        <section className="test">
             <Form ref={(form) => (form = form)} onReset={() => handleReset()}>
                 <h2>Me contacter</h2>
                 <fieldset>
@@ -72,7 +71,6 @@ function Contact() {
                         name="user_email"
                         value={user.user_email}
                         onChange={(event) => handleChange(event)}
-                        placeholder="mon@email.com"
                         required
                     />
                 </fieldset>
@@ -100,6 +98,8 @@ function Contact() {
                         cols="26"
                         maxLength="1000"
                         minLength="100"
+                        placeholder="min 100 / max 1000 caractères"
+
                     />
                 </fieldset>
                 <button className="send-button"
@@ -110,7 +110,6 @@ function Contact() {
                     Envoyer
                 </button>
             </Form>
-        </section>
     );
 }
 

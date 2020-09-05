@@ -23,7 +23,16 @@
     margin: 0;
     background-color: var(--primary-color);
 }
+.accordion_input:hover ~ .accordion_content-cv,
+.accordion_input:checked ~ .accordion_content-cv {
+   padding: 8vmin;
+}
 
+.react-pdf__Document {
+    margin: 0 auto;
+    width: 100%;
+    max-width: max-content;
+}
 .accordion_label {
     display: block;
     cursor: pointer;
@@ -56,6 +65,18 @@
     margin: 0 13vmin;
 }
 
+.download-cv {
+    transform: translate(-3vmin, -13vmin);
+}
+
+.download-cv a,
+.download-cv a:hover {
+    animation: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
 @keyframes accordion-content {
     100% {
         background: var(--bg-hover);
@@ -69,5 +90,5 @@
 }
 .about-menu-container {
     grid-area: about;
-    top: 13vmin;
+    top: 5vmin;
 }
