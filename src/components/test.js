@@ -1,12 +1,20 @@
 // burger menu animation
-let $aboutMenuContainer =  document.getElementsByClassName("about-menu-container")
 const open = () => {
-    // document.getElementById("about-menu").style.width = "21vmin";
-    document.getElementById("test").style.border = "1px solid"
+    let aboutMenuContainer = document.getElementById("main-container");
+    let openButton = document.getElementById("open-button");
+
+    openButton.style.display = "none";
+    aboutMenuContainer.style.display = "flex";
+    aboutMenuContainer.style.width = "90vmin";
+    aboutMenuContainer.style.height = "auto";
+    aboutMenuContainer.style.flexDirection = "column";
 };
 const close = () => {
-    // document.getElementById("about-menu").style.width = "0vmin";
-    document.getElementById("test").style.border= "0";
+    let aboutMenuContainer = document.getElementById("main-container");
+    let openButton = document.getElementById("open-button");
+
+    openButton.style.display = "block";
+    aboutMenuContainer.style.display = "none";
 };
 
-module.exports = {open, close}
+module.exports = { open, close };

@@ -20,7 +20,8 @@ import "./responsive.css";
 // import fontawesome
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-library.add(fab);
+import { faBars, faChevronCircleDown, faWindowClose } from "@fortawesome/free-solid-svg-icons";
+library.add(fab, faBars, faChevronCircleDown,faWindowClose);
 
 function App() {
     const [projects, setProjects] = useState([{}]);
