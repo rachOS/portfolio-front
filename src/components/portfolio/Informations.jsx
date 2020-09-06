@@ -13,7 +13,7 @@ import NavBar from "./NavBar";
 function Informations({ projects, project }) {
     const { path } = useRouteMatch();
     return (
-        <section>
+        <section className="information">
             <Carousel projects={projects} />
             <NavBar />
             <Switch>

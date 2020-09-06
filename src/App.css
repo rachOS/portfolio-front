@@ -24,8 +24,8 @@
     --border-radius: 2vmin;
     --form-border: 0.1vmin solid rgb(190, 190, 190);
 
-    --font-size: 5vmin;
-    --font-size-small: 3vmin;
+    --font-size: 4vmin;
+    --font-size-small: 3.5vmin;
     --font-title: "Poiret One", cursive;
     --font-content: "Sora", sans-serif;
     --first-letter: 34vmin;
@@ -155,14 +155,15 @@ p {
     text-align: justify;
     word-break: normal;
     margin: 8vmin;
+    line-height: 5vmin;
 }
 
 .first-paragraph::first-letter {
     font-size: var(--first-letter);
     font-family: var(--font-title);
-    margin: 13vmin 8vmin 8vmin 5vmin;
+    margin: 2vmin 3vmin 0vmin 1vmin;
     float: left;
-    font-size: 34vmin;
+    font-size: 21vmin;
     font-weight: 700;
 }
 
@@ -172,7 +173,7 @@ ul {
 
 li {
     font-family: var(--font-content);
-    font-size: var(--font-size);
+    font-size: var(--font-size-small);
     color: var(--secondary-color);
     margin: 2vmin;
     line-height: 1.5em;
@@ -316,7 +317,7 @@ button {
     animation: button 300ms ease forwards;
     cursor: pointer;
     padding: 2vmin 3vmin;
-font-size: 2vmin;
+    font-size: 2vmin;
 }
 .send-button {
     margin: 0 2vmin;
@@ -368,7 +369,7 @@ form {
 fieldset {
     border-radius: 1vmin;
     margin: 0 auto;
-    width: 50vmin;
+    width: 55vmin;
     border: var(--form-border);
 }
 
@@ -387,6 +388,7 @@ textarea {
     text-align: left;
     border-radius: 1vmin;
     height: 13vmin;
+    width: 55vmin;
     margin: 3vmin;
     padding: 1vmin 3vmin;
     background: #ffffff;
@@ -395,48 +397,41 @@ textarea {
 }
 
 /* Responsive  */
-@media only screen and (min-width: 380px) {
-    p {
-        font-size: 4.9vmin;
-    }
-}
-@media only screen and (min-width: 413px) {
-    p {
-        font-size: 4.6vmin;
-    }
-}
-@media only screen and (min-width: 440px) {
-    p {
-        font-size: 4.4vmin;
-    }
-}
-@media only screen and (min-width: 490px) {
-    p {
-        font-size: 4.3vmin;
-    }
-}
+
 @media only screen and (min-width: 568px) {
     h1 {
         font-size: 20vmin;
         width: 100%;
     }
 }
-@media only screen and (min-width: 570px) {
-    p {
-        font-size: 2.5vmax;
-    }
-}
+
 @media only screen and (min-width: 569px) {
     .banner-container {
         width: 100%;
     }
 }
 @media only screen and (min-width: 768px) {
-    a {
-        font-size: 2.5vmax;
+    p {
+        font-size: 2vmax;
     }
-}
-@media only screen and (min-width: 832px) {
+    .first-paragraph::first-letter {
+        font-size: 13vmin;
+        margin: 2.5vmin 3vmin 0vmin 0vmin;
+    }
+
+    a {
+        font-size: 1.8vmax;
+    }
+    .main section.information {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    li {
+        font-size: 2.5vmin;
+    }
+
     .accordion_content p {
         padding: 8vmin 8vmin;
     }
@@ -490,6 +485,11 @@ textarea {
 @media only screen and (min-width: 1093px) {
     .accordion_content p {
         padding: 10vmin 8vmin;
+    }
+}
+@media only screen and (min-width: 1093px) {
+    p, li, a {
+        font-size: 2vmin;
     }
 }
 @media only screen and (min-width: 1669px) {
