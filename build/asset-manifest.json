@@ -1,30 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.00e400a9.chunk.css",
-    "main.js": "/static/js/main.c9080d4e.chunk.js",
-    "main.js.map": "/static/js/main.c9080d4e.chunk.js.map",
+    "main.css": "/static/css/main.da639fe5.chunk.css",
+    "main.js": "/static/js/main.8e3050af.chunk.js",
+    "main.js.map": "/static/js/main.8e3050af.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c06be3f6.js",
     "runtime-main.js.map": "/static/js/runtime-main.c06be3f6.js.map",
     "static/css/2.bf0413c3.chunk.css": "/static/css/2.bf0413c3.chunk.css",
-    "static/js/2.fd20158a.chunk.js": "/static/js/2.fd20158a.chunk.js",
-    "static/js/2.fd20158a.chunk.js.map": "/static/js/2.fd20158a.chunk.js.map",
+    "static/js/2.0cf468cb.chunk.js": "/static/js/2.0cf468cb.chunk.js",
+    "static/js/2.0cf468cb.chunk.js.map": "/static/js/2.0cf468cb.chunk.js.map",
     "e60b15daa51dd5ca873c.worker.js": "/e60b15daa51dd5ca873c.worker.js",
     "e60b15daa51dd5ca873c.worker.js.LICENSE.txt": "/e60b15daa51dd5ca873c.worker.js.LICENSE.txt",
     "e60b15daa51dd5ca873c.worker.js.map": "/e60b15daa51dd5ca873c.worker.js.map",
     "index.html": "/index.html",
-    "precache-manifest.396c43fbd1d68804684a20fc969e9b5f.js": "/precache-manifest.396c43fbd1d68804684a20fc969e9b5f.js",
+    "precache-manifest.af4bbfbe78ed4371de7bca06eb681d92.js": "/precache-manifest.af4bbfbe78ed4371de7bca06eb681d92.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.bf0413c3.chunk.css.map": "/static/css/2.bf0413c3.chunk.css.map",
-    "static/css/main.00e400a9.chunk.css.map": "/static/css/main.00e400a9.chunk.css.map",
-    "static/js/2.fd20158a.chunk.js.LICENSE.txt": "/static/js/2.fd20158a.chunk.js.LICENSE.txt",
+    "static/css/main.da639fe5.chunk.css.map": "/static/css/main.da639fe5.chunk.css.map",
+    "static/js/2.0cf468cb.chunk.js.LICENSE.txt": "/static/js/2.0cf468cb.chunk.js.LICENSE.txt",
     "static/media/Grégory_Chamekh_DéveloppeurWebFullstack-junior-v10b.pdf": "/static/media/Grégory_Chamekh_DéveloppeurWebFullstack-junior-v10b.c62a0754.pdf",
-    "static/media/slick-theme.css": "/static/media/slick.f97e3bbf.svg"
+    "static/media/slick-theme.css": "/static/media/slick.f97e3bbf.svg",
+    "static/media/wp2141419-web-design-wallpapers.png": "/static/media/wp2141419-web-design-wallpapers.286cb4a4.png"
   },
   "entrypoints": [
     "static/js/runtime-main.c06be3f6.js",
     "static/css/2.bf0413c3.chunk.css",
-    "static/js/2.fd20158a.chunk.js",
-    "static/css/main.00e400a9.chunk.css",
-    "static/js/main.c9080d4e.chunk.js"
+    "static/js/2.0cf468cb.chunk.js",
+    "static/css/main.da639fe5.chunk.css",
+    "static/js/main.8e3050af.chunk.js"
   ]
 }
