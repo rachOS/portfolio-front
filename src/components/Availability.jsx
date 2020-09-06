@@ -1,7 +1,7 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 // import style
+import "./style/availability.css"
 import "../responsive.css";
 
 function Availability() {
@@ -9,7 +9,7 @@ function Availability() {
         <section>
             <h2>Disponibilités et infos</h2>
             <article>
-                <p className="first-paragraph">
+                <p >
                     Je suis actuellement en recherche de stage de fin d'études
                     afin de pouvoir monter en compétences. Aussi, ce stage
                     pourra me servir comme support pour le passage du titre
@@ -43,7 +43,7 @@ function Availability() {
                     qu'il peut y avoir avec le métier de développeur web.
                 </p>
 
-                <a href="/contact"> me contacter</a>
+                <a className="contact-me" href="/contact">me contacter</a>
             </article>
         </section>
     );

@@ -1,7 +1,9 @@
 /* mobile first */
 
-@media only screen and (max-width: 375px) {
-
+@media only screen and (min-width: 383px) {
+    .banner-container {
+        width: 90vmin;
+    }
 }
 
 /* Extra small devices (phones, 600px and down) */

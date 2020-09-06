@@ -1,0 +1,500 @@
+/* INIT */
+:root {
+    --primary-color: #fbfbfb;
+    --secondary-color: #000000;
+    --links-color: #312119;
+    --bg-hover: #ebe9e7;
+
+    --blue: #20d5ff;
+    --yellow: #f5e11e;
+    --green: #7fff7f;
+    --orange: #ffa650;
+    --pink: #ff7c7c;
+    --red: #ff6913ef;
+
+    --wcs: #f76c6b;
+
+    --javascript: #f7e018;
+    --react: #62daee;
+    --node: #2fa44f;
+    --redux: #9875cd;
+    --sql: #01618b;
+
+    --border-color: rgba(25, 42, 49, 0.2);
+    --border-radius: 2vmin;
+    --form-border: 0.1vmin solid rgb(190, 190, 190);
+
+    --font-size: 5vmin;
+    --font-size-small: 3vmin;
+    --font-title: "Poiret One", cursive;
+    --font-content: "Sora", sans-serif;
+    --first-letter: 34vmin;
+
+    --h1-title: 21vmin;
+    --h2-title: 9vmin;
+    --h3-title: 5vmin;
+
+    --neumorphism-br: 1vmin;
+    --neumorphism-bgr: linear-gradient(225deg, #ffffff, #e2e2e2);
+    --neumorphism-box: -1vmin 1vmin 2vmin #bababa, 1vmin -1vmin 2vmin #ffffff;
+    --shadow-img-box: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    --shadow-content: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14) 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    --shadow-title: 3px 1px 0px #fbfbfb, 3px 0px 2px #ffffff,
+        5px 3px 3px #192a3133, 2px 1px 3px #192a31;
+}
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+
+body {
+    font-family: var(--font-content);
+    background-color: transparent;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    opacity: 1;
+}
+
+/* MAIN GRID TEMPLATE  */
+.main-grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "banner" "about" "header" "main" "footer ";
+    justify-content: center;
+    margin: 0 13vmin;
+    padding: 0;
+    margin: 5vmin;
+    border-radius: var(--border-radius);
+    background: linear-gradient(225deg, #ffffff, #e2e2e2);
+    box-shadow: var(--neumorphism-box);
+}
+
+/* .main-grid::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent
+        url(./static/image/wallpaper/wp2141419-web-design-wallpapers.png)
+        no-repeat;
+    background-size: contain;
+    border-radius: var(--border-radius);
+    opacity: 1;
+    width: 100%;
+    height: auto;
+} */
+
+.main {
+    margin: 0 auto;
+    padding: 5vmin 0;
+}
+
+.main::before {
+    content: "";
+    width: 89vmin;
+    display: block;
+    border: 0.1vmin dashed #888888;
+    margin: 0 auto 5vmin auto;
+}
+
+.main section,
+.main fieldset {
+    display: grid;
+    justify-items: center;
+}
+
+div.about-menu {
+    max-width: 100vmin;
+}
+
+/* GENERAL */
+div {
+    position: relative;
+    width: auto;
+}
+
+h1 {
+    color: var(--secondary-color);
+    font-size: var(--h1-title);
+}
+
+h2 {
+    font-size: var(--h2-title);
+}
+
+h3 {
+    font-size: var(--h3-title);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--secondary-color);
+    font-family: var(--font-title);
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+}
+p {
+    font-family: var(--font-content);
+    font-size: var(--font-size);
+    color: var(--secondary-color);
+    text-align: justify;
+    word-break: normal;
+    margin: 8vmin;
+}
+
+.first-paragraph::first-letter {
+    font-size: var(--first-letter);
+    font-family: var(--font-title);
+    margin: 13vmin 8vmin 8vmin 5vmin;
+    float: left;
+    font-size: 34vmin;
+    font-weight: 700;
+}
+
+ul {
+    margin: 0vmin 13vmin;
+}
+
+li {
+    font-family: var(--font-content);
+    font-size: var(--font-size);
+    color: var(--secondary-color);
+    margin: 2vmin;
+    line-height: 1.5em;
+    font-style: italic;
+}
+
+a {
+    color: var(--secondary-color);
+    font-family: var(--font-content);
+    font-weight: 300;
+    font-size: 3.5vmin;
+    text-transform: lowercase;
+    text-decoration: none;
+    margin: 0 auto;
+    padding: 3vmin 5vmin;
+    text-align: center;
+    border-radius: 2vmin;
+    transform: scale(0.85);
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    background-color: transparent;
+    box-shadow: var(--neumorphism-box);
+    animation: anchor 500ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+a:hover {
+    animation: anchor-hover 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55)
+        forwards;
+}
+a:focus {
+    color: var(--primary-color);
+    background-color: var(--blue);
+}
+
+@keyframes anchor {
+    from {
+        box-shadow: var(--neumorphism-box);
+        transform: scale(1.1);
+        transform: rotateX(15deg);
+    }
+    to {
+        box-shadow: none;
+        transform: none;
+    }
+}
+
+@keyframes anchor-hover {
+    100% {
+        box-shadow: var(--neumorphism-box);
+        transform: scale(1.1);
+    }
+}
+@keyframes focus {
+    100% {
+        color: var(--primary-color);
+        background-color: var(--secondary-color);
+    }
+}
+
+a.links {
+    color: var(--primary-color);
+    background-color: var(--wcs);
+    padding: 0.1vmin 3vmin;
+    font-family: var(--font-content);
+    text-transform: capitalize;
+    text-decoration: none;
+}
+a.links {
+    color: var(--primary-color);
+    background-color: var(--wcs);
+    padding: 0.1vmin 3vmin;
+    font-family: var(--font-content);
+    text-transform: capitalize;
+    text-decoration: none;
+    animation: none;
+    box-shadow: none;
+}
+
+a.icon {
+    padding: 2vmin;
+    animation: icons 50ms cubic-bezier(1, 0, 1, 1.8) forwards;
+}
+
+a.icon:hover {
+    animation: icons-hover 200ms cubic-bezier(1, 0, 1, 1.8) forwards;
+}
+
+@keyframes icons {
+    from {
+        box-shadow: none;
+        transform: scale(1.1);
+    }
+    to {
+        box-shadow: none;
+        transform: none;
+    }
+}
+@keyframes icons-hover {
+    0% {
+        box-shadow: none;
+    }
+    1% {
+        transform: rotateZ(180deg);
+    }
+    100% {
+        box-shadow: none;
+        transform: scale(1.1);
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    /* box-shadow: var(--shadow-img-box); */
+}
+
+.banner-container {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.banner {
+    grid-area: banner;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    width: 100%;
+    height: auto;
+}
+
+button {
+    border: none;
+    color: var(--secondary-color);
+    font-weight: 300;
+    text-transform: uppercase;
+    text-decoration: capitalise;
+    background-color: var(--primary-color);
+    writing-mode: initial;
+    padding: 5vmin 13vmin;
+    background: var(--primary-color);
+    border-radius: 2vmin;
+    margin: 0 auto;
+    animation: button 300ms ease forwards;
+    cursor: pointer;
+    padding: 2vmin 3vmin;
+font-size: 2vmin;
+}
+.send-button {
+    margin: 0 2vmin;
+    transform: translate(34vmin, 3vmin);
+    padding: 3vmin 13vmin;
+}
+article a {
+    writing-mode: unset;
+    /* position: absolute; */
+}
+
+article p {
+    font-weight: 300;
+}
+
+header {
+    margin: 5vmin auto;
+    margin-bottom: 0;
+    padding: 0;
+    width: 90vmin;
+    height: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: auto;
+    padding: 5vmin 0;
+}
+
+footer {
+    margin: 0;
+    padding: 13vmin 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+footer p {
+    font-size: var(--font-size-small);
+    text-align: justify;
+    margin: 3vmin 0;
+}
+
+form {
+    width: 90vmin;
+}
+
+fieldset {
+    border-radius: 1vmin;
+    margin: 0 auto;
+    width: 50vmin;
+    border: var(--form-border);
+}
+
+legend {
+    margin: 5vmin 8vmin;
+    font-family: var(--font-content);
+    font-weight: 200;
+}
+
+label {
+    color: var(--primary-color);
+}
+
+input,
+textarea {
+    text-align: left;
+    border-radius: 1vmin;
+    height: 13vmin;
+    margin: 3vmin;
+    padding: 1vmin 3vmin;
+    background: #ffffff;
+    border: var(--form-border);
+    z-index: 1;
+}
+
+/* Responsive  */
+@media only screen and (min-width: 380px) {
+    p {
+        font-size: 4.9vmin;
+    }
+}
+@media only screen and (min-width: 413px) {
+    p {
+        font-size: 4.6vmin;
+    }
+}
+@media only screen and (min-width: 440px) {
+    p {
+        font-size: 4.4vmin;
+    }
+}
+@media only screen and (min-width: 490px) {
+    p {
+        font-size: 4.3vmin;
+    }
+}
+@media only screen and (min-width: 568px) {
+    h1 {
+        font-size: 20vmin;
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 570px) {
+    p {
+        font-size: 2.5vmax;
+    }
+}
+@media only screen and (min-width: 569px) {
+    .banner-container {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    a {
+        font-size: 2.5vmax;
+    }
+}
+@media only screen and (min-width: 832px) {
+    .accordion_content p {
+        padding: 8vmin 8vmin;
+    }
+}
+
+@media only screen and (min-width: 861px) {
+    h1 {
+        font-size: 21vmin;
+    }
+    .main section,
+    .main fieldset {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-wrap: wrap;
+    }
+    .preview-card {
+        width: 21vmin;
+        flex-grow: 1;
+    }
+    @keyframes cards-hover {
+        0% {
+            transform: rotateX(13deg);
+        }
+        100% {
+            box-shadow: var(--shadow-img-box);
+            transform: scale(1.1);
+        }
+    }
+    .project-name {
+        font-size: 3vmin;
+    }
+
+    footer {
+        margin: 0;
+        padding: 5vmin;
+        display: flex;
+        justify-content: end;
+        flex-direction: row-reverse;
+    }
+    footer a.icon {
+        margin: 0;
+        font-size: 2vmin;
+    }
+    footer p {
+        margin: 0;
+        padding: 3vmin;
+        font-size: 2vmin;
+    }
+}
+@media only screen and (min-width: 1093px) {
+    .accordion_content p {
+        padding: 10vmin 8vmin;
+    }
+}
+@media only screen and (min-width: 1669px) {
+    .main-grid {
+        width: 1600px;
+        margin: 3vmin auto;
+    }
+}

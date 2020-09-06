@@ -5,7 +5,7 @@ const open = () => {
 
     openButton.style.display = "none";
     aboutMenuContainer.style.display = "flex";
-    aboutMenuContainer.style.width = "90vmin";
+    aboutMenuContainer.style.width = "100%";
     aboutMenuContainer.style.height = "auto";
     aboutMenuContainer.style.flexDirection = "column";
 };

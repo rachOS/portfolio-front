@@ -15,7 +15,9 @@ import Portfolio from "./components/Portfolio";
 import Project from "./components/portfolio/Project";
 
 // import style
-import "./responsive.css";
+import './responsive.css'
+import "./App.css";
+
 
 // import fontawesome
 import { library } from "@fortawesome/fontawesome-svg-core";

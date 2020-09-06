@@ -16,6 +16,9 @@
     width: 50%;
     background-color: transparent;
 }
+.nav-projects a:focus:hover {
+    color: black;
+}
 .nav-projects a:hover {
     animation: hover 100ms cubic-bezier(1, 1, 1, 1) forwards;
 }
